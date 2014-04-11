@@ -8,21 +8,10 @@
 
 #import "RouteMapViewController.h"
 
-
-//static const CGFloat kNavBarHeight = 52.0f;
-static const CGFloat kLabelHeight = 20.0f;
-static const CGFloat kMargin = 10.0f;
-static const CGFloat kSpacer = 9.0f;
-//static const CGFloat kLabelFontSize = 12.0f;
-//static const CGFloat kAddressHeight = 24.0f;
-
 @interface RouteMapViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
-@property (weak, nonatomic) UILabel *pageTitle;
-
-- (void)buildPageTitle;
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
 
@@ -30,7 +19,6 @@ static const CGFloat kSpacer = 9.0f;
 
 @implementation RouteMapViewController
 @synthesize webView;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,8 +35,6 @@ static const CGFloat kSpacer = 9.0f;
     // Do any additional setup after loading the view.
     
     self.webView.delegate = self;
-    
-    [self buildPageTitle];
     [self loadRequestFromString:@"http://apps.esrgc.org/maps/seagullcentury/index.html?route=0"];
     
 }
@@ -58,7 +44,6 @@ static const CGFloat kSpacer = 9.0f;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 /*
 #pragma mark - Navigation
 
@@ -70,20 +55,6 @@ static const CGFloat kSpacer = 9.0f;
 }
 */
 #pragma Design Methods
-- (void)buildPageTitle
-{
-    UINavigationBar *navBar = self.navigationController.navigationBar;
-    CGRect labelFrame = CGRectMake(kMargin, kSpacer, navBar.bounds.size.width - 2 * kMargin, kLabelHeight);
-    UILabel *label = [[UILabel alloc] initWithFrame:labelFrame];
-    label.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    label.backgroundColor = [UIColor clearColor];
-    label.font = [UIFont systemFontOfSize:16];
-    label.textColor = [UIColor whiteColor];
-    label.textAlignment = NSTextAlignmentCenter;
-    [navBar addSubview:label];
-    self.pageTitle = label;
-}
-
 - (void)loadRequestFromString:(NSString *)urlString
 {
     NSURL *url = [NSURL URLWithString:urlString];
@@ -95,14 +66,29 @@ static const CGFloat kSpacer = 9.0f;
     [self.webView loadRequest:urlRequest];
 }
 
+#pragma mark - Updating the UI
+-(void)updateTitle:(UIWebView *)aWebView
+{
+    NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.title = pageTitle;
+}
+
 #pragma mark - UIWebViewDelegate
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    self.webView.scalesPageToFit = YES;
 }
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateTitle:self.webView];
+}
+
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self informError:error];
 }
 
 #pragma mark - Error Handling

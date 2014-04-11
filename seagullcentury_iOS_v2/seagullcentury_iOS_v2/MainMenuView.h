@@ -10,7 +10,7 @@
 
 @interface MainMenuView : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 
 @end

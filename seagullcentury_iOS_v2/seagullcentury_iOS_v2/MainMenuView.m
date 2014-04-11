@@ -11,6 +11,7 @@
 
 @interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
+@property (strong, nonatomic) IBOutlet UIView *mainView;
 @end
 
 @implementation MainMenuView
@@ -32,8 +33,7 @@
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    
-    
+
     return YES;
 }
 
@@ -57,12 +57,11 @@
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
+    
     [mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-}
-
--(UIStatusBarStyle)preferredStatusBarStyle
-{
-    return UIStatusBarStyleLightContent;
+    
+    self.title = @"Route Selection";
+    
 }
 
 @end
