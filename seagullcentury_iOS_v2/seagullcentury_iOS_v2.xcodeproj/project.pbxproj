@@ -14,13 +14,18 @@
 		CA49C44B18F5EE9B0085E101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44A18F5EE9B0085E101 /* main.m */; };
 		CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44E18F5EE9B0085E101 /* AppDelegate.m */; };
 		CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45018F5EE9B0085E101 /* Main.storyboard */; };
-		CA49C45518F5EE9B0085E101 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* ViewController.m */; };
+		CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuView.m */; };
 		CA49C45718F5EE9B0085E101 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45618F5EE9B0085E101 /* Images.xcassets */; };
 		CA49C45E18F5EE9B0085E101 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C45D18F5EE9B0085E101 /* XCTest.framework */; };
 		CA49C45F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C46018F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
 		CA49C46818F5EE9B0085E101 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA49C46618F5EE9B0085E101 /* InfoPlist.strings */; };
 		CA49C46A18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C46918F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m */; };
+		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
+		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
+		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
+		CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA79DF6F18F778C6008637F9 /* SUStart.gpx */; };
+		CA79DF7918F77E83008637F9 /* MainMenuNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF7818F77E83008637F9 /* MainMenuNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +50,23 @@
 		CA49C44D18F5EE9B0085E101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA49C44E18F5EE9B0085E101 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CA49C45118F5EE9B0085E101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CA49C45318F5EE9B0085E101 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CA49C45418F5EE9B0085E101 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		CA49C45318F5EE9B0085E101 /* MainMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
+		CA49C45418F5EE9B0085E101 /* MainMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
 		CA49C45618F5EE9B0085E101 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seagullcentury_iOS_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C45D18F5EE9B0085E101 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA49C46518F5EE9B0085E101 /* seagullcentury_iOS_v2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "seagullcentury_iOS_v2Tests-Info.plist"; sourceTree = "<group>"; };
 		CA49C46718F5EE9B0085E101 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA49C46918F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seagullcentury_iOS_v2Tests.m; sourceTree = "<group>"; };
+		CA79DF6618F76D11008637F9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		CA79DF6718F76D11008637F9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarSettingsTableViewController.h; sourceTree = "<group>"; };
+		CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarSettingsTableViewController.m; sourceTree = "<group>"; };
+		CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteMapViewController.h; sourceTree = "<group>"; };
+		CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteMapViewController.m; sourceTree = "<group>"; };
+		CA79DF6F18F778C6008637F9 /* SUStart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SUStart.gpx; path = ../SUStart.gpx; sourceTree = "<group>"; };
+		CA79DF7718F77E83008637F9 /* MainMenuNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuNavigationController.h; path = ../MainMenuNavigationController.h; sourceTree = "<group>"; };
+		CA79DF7818F77E83008637F9 /* MainMenuNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuNavigationController.m; path = ../MainMenuNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +96,10 @@
 		CA49C43218F5EE9B0085E101 = {
 			isa = PBXGroup;
 			children = (
-				CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */,
-				CA49C46318F5EE9B0085E101 /* seagullcentury_iOS_v2Tests */,
 				CA49C43D18F5EE9B0085E101 /* Frameworks */,
 				CA49C43C18F5EE9B0085E101 /* Products */,
+				CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */,
+				CA49C46318F5EE9B0085E101 /* seagullcentury_iOS_v2Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,11 +128,20 @@
 			children = (
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
-				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
-				CA49C45318F5EE9B0085E101 /* ViewController.h */,
-				CA49C45418F5EE9B0085E101 /* ViewController.m */,
 				CA49C45618F5EE9B0085E101 /* Images.xcassets */,
+				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
+				CA79DF7718F77E83008637F9 /* MainMenuNavigationController.h */,
+				CA79DF7818F77E83008637F9 /* MainMenuNavigationController.m */,
+				CA49C45318F5EE9B0085E101 /* MainMenuView.h */,
+				CA49C45418F5EE9B0085E101 /* MainMenuView.m */,
+				CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */,
+				CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */,
+				CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */,
+				CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */,
 				CA49C44518F5EE9B0085E101 /* Supporting Files */,
+				CA79DF6F18F778C6008637F9 /* SUStart.gpx */,
+				CA79DF6618F76D11008637F9 /* SWRevealViewController.h */,
+				CA79DF6718F76D11008637F9 /* SWRevealViewController.m */,
 			);
 			path = seagullcentury_iOS_v2;
 			sourceTree = "<group>";
@@ -233,6 +256,7 @@
 			files = (
 				CA49C45718F5EE9B0085E101 /* Images.xcassets in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
+				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,9 +276,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA49C45518F5EE9B0085E101 /* ViewController.m in Sources */,
+				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
+				CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
+				CA79DF7918F77E83008637F9 /* MainMenuNavigationController.m in Sources */,
+				CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */,
 				CA49C44B18F5EE9B0085E101 /* main.m in Sources */,
+				CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +489,7 @@
 				CA49C46F18F5EE9B0085E101 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CA49C47018F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "seagullcentury_iOS_v2Tests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +498,7 @@
 				CA49C47218F5EE9B0085E101 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
