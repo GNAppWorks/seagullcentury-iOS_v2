@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) NSString *urlString;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 
 
@@ -83,11 +85,20 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString:@"toMap"]){
     self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
     RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
     controller.urlRoute = urlString; 
+    }
     
     
+}
+
+-(void) viewDidLayoutSubviews{
+    self.scrollView.contentSize = CGSizeMake(320,1000);
+
+
 }
 
 - (IBAction)routeSelectMethod:(UIButton *)sender {
@@ -101,8 +112,9 @@
     } else if (button.tag == 3){
         urlString = @"http://apps.esrgc.org/maps/seagullcentury/index.html?route=2";
           NSLog(@"I Clicked the 50m");
+    } else if (button.tag == 4){
+        urlString = @"http://apps.esrgc.org/maps/seagullcentury/index.html?route=9";        NSLog(@"I Clicked the vendor button");
     }
-    
     [self performSegueWithIdentifier:@"toMap" sender:self];
     
 }

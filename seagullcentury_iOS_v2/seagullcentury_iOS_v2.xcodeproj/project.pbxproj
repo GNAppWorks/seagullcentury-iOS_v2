@@ -10,6 +10,10 @@
 		A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */; };
 		A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */; };
 		A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */; };
+		A7EA07A118FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07A018FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png */; };
+		A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */; };
+		A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AA18FB07A2006CA49D /* icon-60.png */; };
+		A7EA07AD18FB0841006CA49D /* SGCIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
 		CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
@@ -45,6 +49,10 @@
 		A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 10.57.21 AM.png"; sourceTree = "<group>"; };
 		A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 11.03.38 AM.png"; sourceTree = "<group>"; };
 		A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 11.04.19 AM.png"; sourceTree = "<group>"; };
+		A7EA07A018FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 1.20.39 PM.png"; sourceTree = "<group>"; };
+		A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 1.36.44 PM.png"; sourceTree = "<group>"; };
+		A7EA07AA18FB07A2006CA49D /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60.png"; sourceTree = "<group>"; };
+		A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SGCIcon-120.png"; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -155,6 +163,10 @@
 		CA49C44518F5EE9B0085E101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A7EA07AA18FB07A2006CA49D /* icon-60.png */,
+				A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */,
+				A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */,
+				A7EA07A018FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png */,
 				A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */,
 				A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */,
 				A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */,
@@ -266,10 +278,14 @@
 				A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */,
 				A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */,
 				CA49C45718F5EE9B0085E101 /* Images.xcassets in Resources */,
+				A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */,
+				A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */,
 				A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
+				A7EA07A118FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png in Resources */,
+				A7EA07AD18FB0841006CA49D /* SGCIcon-120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,8 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="Twv-Bt-mTU"/>
+                        <viewControllerLayoutGuide type="bottom" id="DbW-uc-AMp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -32,22 +32,23 @@
             <objects>
                 <viewController id="cDH-Yr-avZ" customClass="MainMenuView" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ngd-96-nxJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="yFh-ce-acU"/>
+                        <viewControllerLayoutGuide type="top" id="KC6-BT-dYa"/>
+                        <viewControllerLayoutGuide type="bottom" id="zPj-X2-DoL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V16-9E-BiH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
-                                <rect key="frame" x="0.0" y="66" width="320" height="905"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
                                         <rect key="frame" x="20" y="87.5" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
                                         <state key="normal" title="100K Route Map" backgroundImage="Screen Shot 2014-04-13 at 10.57.21 AM.png">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -57,8 +58,9 @@
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
                                         <rect key="frame" x="20" y="187.5" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
                                         <state key="normal" title="50 Mile Route Map" backgroundImage="Screen Shot 2014-04-13 at 11.03.38 AM.png">
-                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -68,8 +70,9 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
                                         <rect key="frame" x="20" y="287.5" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
                                         <state key="normal" title="50K Route Map" backgroundImage="Screen Shot 2014-04-13 at 11.04.19 AM.png">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -77,7 +80,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-Oa-Ocw">
-                                        <rect key="frame" x="20" y="-12.5" width="290" height="75"/>
+                                        <rect key="frame" x="20" y="0.0" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Sea Gull Century">
@@ -91,16 +94,47 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
+                                        <rect key="frame" x="20" y="388" width="290" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="Screen Shot 2014-04-13 at 1.20.39 PM.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="S4s-DB-H83"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIJ-m5-TP1">
+                                        <rect key="frame" x="20" y="488" width="290" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
+                                        <state key="normal" title="About SGC" backgroundImage="Screen Shot 2014-04-13 at 1.36.44 PM.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="0EK-ca-zEt" kind="push" id="sNX-Gg-FHd"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VnH-jn-5ck" firstAttribute="top" secondItem="KC6-BT-dYa" secondAttribute="bottom" constant="-64" id="1Dy-CW-tHv"/>
+                            <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-337" id="OLs-0Y-jdX"/>
+                            <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="akJ-dm-AnX"/>
+                            <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="jVX-a3-CYE"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-1000" id="p4a-m9-V0j"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
                     </navigationItem>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="mainView" destination="V16-9E-BiH" id="FLr-aB-8IW"/>
+                        <outlet property="scrollView" destination="VnH-jn-5ck" id="HSJ-5N-7be"/>
                         <outlet property="sidebarButton" destination="Xbk-WG-WV7" id="eTG-mf-dF4"/>
                         <segue destination="IqD-ea-mZf" kind="push" identifier="toMap" id="PDs-g8-B8m"/>
                     </connections>
@@ -114,26 +148,20 @@
             <objects>
                 <viewController id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nrK-Wl-QCg"/>
-                        <viewControllerLayoutGuide type="bottom" id="AxX-Bb-Dcd"/>
+                        <viewControllerLayoutGuide type="top" id="7sm-pb-m98"/>
+                        <viewControllerLayoutGuide type="bottom" id="TLB-Y3-Y7f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2vr-Ou-6qv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="49z-N4-hBx"/>
-                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="JKd-4n-XIe"/>
-                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="SDT-if-BcW"/>
-                            <constraint firstItem="AxX-Bb-Dcd" firstAttribute="top" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="u7R-fa-5bh"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
                     <connections>
@@ -143,6 +171,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uki-lP-BV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2234" y="32"/>
+        </scene>
+        <!--View Controller - About-->
+        <scene sceneID="uBO-Mg-hVM">
+            <objects>
+                <viewController title="About" id="0EK-ca-zEt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="90Y-Nd-Lec"/>
+                        <viewControllerLayoutGuide type="bottom" id="yUj-SM-gCE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nzt-F7-NzW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-2f-pev">
+                                <rect key="frame" x="0.0" y="175" width="320" height="350"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <mutableString key="text">A century ride is a bicycle ride of 100 miles (160.9 km) or more within 12 hours, usually as a cycling club-sponsored event. Many cycling clubs sponsor an annual century ride as both a social event for cyclists and as a fund-raiser for the club’s other activities. A sanctioned century ride is organized and conducted under the rules and liability protection of a sanctioning organization, such as the League of American Bicyclists. Sanctioned rides typically have rest stops every 25 miles or so, where water, food and toilets are available for cyclists. On a supported century ride, the route is patrolled by a sag wagon to assist riders with bicycle maintenance, or provide transportation back to the starting line for those unable to ride the entire course. Sanctioned rides are almost always supported.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SGCIcon-120.png" translatesAutoresizingMaskIntoConstraints="NO" id="po5-gZ-X8L">
+                                <rect key="frame" x="40" y="76" width="240" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="h6C-Wt-zD1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l29-AD-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2234" y="718"/>
         </scene>
         <!--Sidebar Settings Table View Controller - Settings-->
         <scene sceneID="sLP-M3-Dl5">
@@ -215,6 +276,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SGCIcon-120.png" width="120" height="120"/>
+        <image name="Screen Shot 2014-04-13 at 1.20.39 PM.png" width="290" height="75"/>
+        <image name="Screen Shot 2014-04-13 at 1.36.44 PM.png" width="290" height="75"/>
         <image name="Screen Shot 2014-04-13 at 10.57.21 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.03.38 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.04.19 AM.png" width="578" height="150"/>

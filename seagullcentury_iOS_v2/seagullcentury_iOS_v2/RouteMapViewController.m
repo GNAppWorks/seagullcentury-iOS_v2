@@ -9,8 +9,8 @@
 #import "RouteMapViewController.h"
 
 @interface RouteMapViewController () <UIWebViewDelegate>
-
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+
 
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
@@ -35,8 +35,10 @@
     // Do any additional setup after loading the view.
     self.webView.delegate = self;
     [self loadRequestFromString:_urlRoute];
-    
+   
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -78,6 +80,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.webView.scalesPageToFit = YES;
 }
+
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
