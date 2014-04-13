@@ -36,52 +36,20 @@
                         <viewControllerLayoutGuide type="bottom" id="zPj-X2-DoL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V16-9E-BiH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1337"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
-                                        <rect key="frame" x="20" y="87.5" width="290" height="75"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-Oa-Ocw">
+                                        <rect key="frame" x="15" y="0.0" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="100K Route Map" backgroundImage="Screen Shot 2014-04-13 at 10.57.21 AM.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="skp-P7-lLh"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
-                                        <rect key="frame" x="20" y="187.5" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="50 Mile Route Map" backgroundImage="Screen Shot 2014-04-13 at 11.03.38 AM.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="7BF-qM-RFm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
-                                        <rect key="frame" x="20" y="287.5" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="50K Route Map" backgroundImage="Screen Shot 2014-04-13 at 11.04.19 AM.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="zmO-eQ-ySM"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-Oa-Ocw">
-                                        <rect key="frame" x="20" y="0.0" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="rZd-c4-JSW"/>
+                                            <constraint firstAttribute="height" constant="75" id="s3N-xr-zMY"/>
+                                        </constraints>
                                         <attributedString key="attributedText">
                                             <fragment content="Sea Gull Century">
                                                 <attributes>
@@ -94,9 +62,61 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
-                                        <rect key="frame" x="20" y="388" width="290" height="75"/>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
+                                        <rect key="frame" x="15" y="88" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="8R3-cl-blL"/>
+                                            <constraint firstAttribute="width" constant="290" id="QDm-t3-RHT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
+                                        <state key="normal" title="100K Route Map" backgroundImage="Screen Shot 2014-04-13 at 10.57.21 AM.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="skp-P7-lLh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
+                                        <rect key="frame" x="15" y="188" width="290" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="Agg-79-z1r"/>
+                                            <constraint firstAttribute="height" constant="75" id="mPr-0m-qE6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
+                                        <state key="normal" title="50 Mile Route Map" backgroundImage="Screen Shot 2014-04-13 at 11.03.38 AM.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="7BF-qM-RFm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
+                                        <rect key="frame" x="15" y="288" width="290" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="GsN-gl-JsX"/>
+                                            <constraint firstAttribute="height" constant="75" id="j6b-KI-TOQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
+                                        <state key="normal" title="50K Route Map" backgroundImage="Screen Shot 2014-04-13 at 11.04.19 AM.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="zmO-eQ-ySM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
+                                        <rect key="frame" x="15" y="388" width="290" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="gKN-Tp-7Sg"/>
+                                            <constraint firstAttribute="height" constant="75" id="t1u-pR-tfl"/>
+                                        </constraints>
                                         <state key="normal" backgroundImage="Screen Shot 2014-04-13 at 1.20.39 PM.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -104,9 +124,13 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="S4s-DB-H83"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIJ-m5-TP1">
-                                        <rect key="frame" x="20" y="488" width="290" height="75"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIJ-m5-TP1">
+                                        <rect key="frame" x="15" y="488" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="LFB-eR-Heo"/>
+                                            <constraint firstAttribute="height" constant="75" id="j7X-Ha-MAZ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
                                         <state key="normal" title="About SGC" backgroundImage="Screen Shot 2014-04-13 at 1.36.44 PM.png">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -117,20 +141,36 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="VnH-jn-5ck" secondAttribute="top" constant="288" id="0UA-yI-ZQ9"/>
+                                    <constraint firstItem="D1n-Ou-zku" firstAttribute="top" secondItem="fPN-GA-h51" secondAttribute="bottom" constant="25" id="3ZP-ay-GaJ"/>
+                                    <constraint firstItem="lnC-Pp-i34" firstAttribute="top" secondItem="vrF-Oa-Ocw" secondAttribute="bottom" constant="13" id="BUz-Fc-kHu"/>
+                                    <constraint firstItem="vrF-Oa-Ocw" firstAttribute="top" secondItem="VnH-jn-5ck" secondAttribute="top" id="Hfc-i6-1Uc"/>
+                                    <constraint firstAttribute="centerX" secondItem="lnC-Pp-i34" secondAttribute="centerX" id="I4k-cJ-ux4"/>
+                                    <constraint firstAttribute="bottom" secondItem="vrF-Oa-Ocw" secondAttribute="bottom" constant="1262" id="J80-T1-Z7l"/>
+                                    <constraint firstAttribute="centerX" secondItem="Bx1-HZ-S77" secondAttribute="centerX" id="Q2i-1W-E6G"/>
+                                    <constraint firstAttribute="centerX" secondItem="D1n-Ou-zku" secondAttribute="centerX" id="XTk-YC-GZ3"/>
+                                    <constraint firstAttribute="centerX" secondItem="vrF-Oa-Ocw" secondAttribute="centerX" id="buk-o6-lPh"/>
+                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="Bx1-HZ-S77" secondAttribute="bottom" constant="25" id="c7L-Qs-IjG"/>
+                                    <constraint firstAttribute="centerX" secondItem="fPN-GA-h51" secondAttribute="centerX" id="ot1-Uc-TK3"/>
+                                    <constraint firstAttribute="trailing" secondItem="vrF-Oa-Ocw" secondAttribute="trailing" constant="15" id="vaU-h2-WQf"/>
+                                    <constraint firstItem="LIJ-m5-TP1" firstAttribute="top" secondItem="D1n-Ou-zku" secondAttribute="bottom" constant="25" id="wJb-W8-6TO"/>
+                                    <constraint firstAttribute="centerX" secondItem="LIJ-m5-TP1" secondAttribute="centerX" id="y0n-uD-PnT"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VnH-jn-5ck" firstAttribute="top" secondItem="KC6-BT-dYa" secondAttribute="bottom" constant="-64" id="1Dy-CW-tHv"/>
-                            <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-337" id="OLs-0Y-jdX"/>
-                            <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="akJ-dm-AnX"/>
-                            <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="jVX-a3-CYE"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-1000" id="p4a-m9-V0j"/>
+                            <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-337" id="8cV-f9-WwW"/>
+                            <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="Qfp-Q1-U4o"/>
+                            <constraint firstItem="VnH-jn-5ck" firstAttribute="top" secondItem="V16-9E-BiH" secondAttribute="top" id="pM2-Zb-2Mi"/>
+                            <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="rpB-5d-zWN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="mainView" destination="V16-9E-BiH" id="FLr-aB-8IW"/>
@@ -152,11 +192,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TLB-Y3-Y7f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2vr-Ou-6qv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -181,14 +221,14 @@
                         <viewControllerLayoutGuide type="bottom" id="yUj-SM-gCE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nzt-F7-NzW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-2f-pev">
-                                <rect key="frame" x="0.0" y="175" width="320" height="350"/>
+                                <rect key="frame" x="0.0" y="175" width="320" height="782"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">A century ride is a bicycle ride of 100 miles (160.9 km) or more within 12 hours, usually as a cycling club-sponsored event. Many cycling clubs sponsor an annual century ride as both a social event for cyclists and as a fund-raiser for the club’s other activities. A sanctioned century ride is organized and conducted under the rules and liability protection of a sanctioning organization, such as the League of American Bicyclists. Sanctioned rides typically have rest stops every 25 miles or so, where water, food and toilets are available for cyclists. On a supported century ride, the route is patrolled by a sag wagon to assist riders with bicycle maintenance, or provide transportation back to the starting line for those unable to ride the entire course. Sanctioned rides are almost always supported.</mutableString>
+                                <string key="text">A century ride is a bicycle ride of 100 miles (160.9 km) or more within 12 hours, usually as a cycling club-sponsored event. Many cycling clubs sponsor an annual century ride as both a social event for cyclists and as a fund-raiser for the club’s other activities. A sanctioned century ride is organized and conducted under the rules and liability protection of a sanctioning organization, such as the League of American Bicyclists. Sanctioned rides typically have rest stops every 25 miles or so, where water, food and toilets are available for cyclists. On a supported century ride, the route is patrolled by a sag wagon to assist riders with bicycle maintenance, or provide transportation back to the starting line for those unable to ride the entire course. Sanctioned rides are almost always supported.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -203,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l29-AD-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="718"/>
+            <point key="canvasLocation" x="2234" y="1238"/>
         </scene>
         <!--Sidebar Settings Table View Controller - Settings-->
         <scene sceneID="sLP-M3-Dl5">
@@ -214,7 +254,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
+                            <tableViewCell hidden="YES" opaque="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AA-IF-dGi" id="kWa-0L-5Uu">
@@ -236,7 +276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ga-F7-Rdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1683" y="-767"/>
+            <point key="canvasLocation" x="1710" y="-767"/>
         </scene>
         <!--Main Menu Navigation Controller-->
         <scene sceneID="KVr-YY-DDG">
@@ -272,7 +312,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JS6-gi-ny0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-767"/>
+            <point key="canvasLocation" x="1113" y="-767"/>
         </scene>
     </scenes>
     <resources>
