@@ -33,7 +33,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.webView.delegate = self;
     [self loadRequestFromString:@"http://apps.esrgc.org/maps/seagullcentury/index.html?route=0"];
     

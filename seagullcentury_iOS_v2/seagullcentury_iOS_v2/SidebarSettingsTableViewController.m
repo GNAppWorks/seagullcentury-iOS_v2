@@ -8,11 +8,18 @@
 
 #import "SidebarSettingsTableViewController.h"
 
-@interface SidebarSettingsTableViewController ()
+static NSString *CellIdentifier = @"SettingsList";
 
+@interface SidebarSettingsTableViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *myTableView;
+
+@property NSArray *settingsList;
+
+-(void)buildView;
 @end
 
 @implementation SidebarSettingsTableViewController
+@synthesize  settingsList;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,7 +39,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self buildView];
     
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,7 +57,7 @@
 {
 
     // Return the number of sections.
-    return 3;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -57,16 +67,30 @@
     return 3;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+ 
     // Configure the cell...
     
+    cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[settingsList objectAtIndex:indexPath.row]];
+    
+    UISwitch *settingsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+    
+    settingsSwitch.onTintColor = [UIColor colorWithRed:143/255.0f green:17/255.0f blue:17/255.0f alpha:1];
+    [cell addSubview:settingsSwitch];
+    cell.accessoryView = settingsSwitch;
+    
+    [(UISwitch *) cell.accessoryView setOn:[defaults boolForKey:[settingsList objectAtIndex:indexPath.row]]];
+    
+    [(UISwitch *) cell.accessoryView addTarget:self action:@selector(eventSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -116,5 +140,92 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)buildView
+{
+    NSUserDefaults *settingsDefault = [NSUserDefaults standardUserDefaults];
+    [settingsDefault setBool:1 forKey:@"Speed"];
+    [settingsDefault setBool:0 forKey:@"Vendors"];
+    [settingsDefault setBool:1 forKey:@"Waypoints"];
+    
+    settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Waypoints", nil];
+    
+    self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 420) style:UITableViewStyleGrouped];
+    
+    [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
+    
+    self.myTableView.dataSource = self;
+    self.myTableView.delegate = self;
+    self.myTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.myTableView.scrollEnabled = NO;
+    self.myTableView.allowsSelection = NO;
+    [self.view addSubview:self.myTableView];
+}
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    
+    if (section == 0){
+        return 30.0f;
+    }
+    
+    return 0.0f;
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    if (section == 0){
+        return 45.0f;
+    }
+    
+    return 0.0f;
+    
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (section == 0){
+        return @"Map View Options";
+    }
+    
+    return nil;
+    
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    
+    if (section == 0){
+        return @"Select which default items you\nwish to see on the map";
+    }
+
+    
+    return nil;
+}
+
+-(void) eventSwitchChanged: (id)sender
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    UISwitch * theSwitch = (UISwitch *) sender;
+    long number = ((UISwitch*) sender).tag;
+    
+    switch (number) {
+        case 0:
+            [defaults setBool:theSwitch.isOn forKey:@"Speed"];
+            break;
+        case 1:
+            [defaults setBool:theSwitch.isOn forKey:@"Vendors"];
+            break;
+        case 2:
+            [defaults setBool:theSwitch.isOn forKey:@"Waypoints"];
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
 
 @end

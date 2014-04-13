@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -83,13 +83,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="49z-N4-hBx"/>
+                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="JKd-4n-XIe"/>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="SDT-if-BcW"/>
+                            <constraint firstItem="AxX-Bb-Dcd" firstAttribute="top" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="u7R-fa-5bh"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
                     <connections>
@@ -100,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="2234" y="32"/>
         </scene>
-        <!--Table View Controller - Settings-->
+        <!--Sidebar Settings Table View Controller - Settings-->
         <scene sceneID="sLP-M3-Dl5">
             <objects>
-                <tableViewController id="TOB-1B-m32" sceneMemberID="viewController">
+                <tableViewController id="TOB-1B-m32" customClass="SidebarSettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zPq-hI-DZp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,14 +121,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AA-IF-dGi" id="kWa-0L-5Uu">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwm-MS-vE3">
-                                            <rect key="frame" x="36" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -133,6 +131,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="8Di-Pf-pWg"/>
+                    <connections>
+                        <outlet property="myTableView" destination="zPq-hI-DZp" id="wMI-qN-izJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ga-F7-Rdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
