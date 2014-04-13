@@ -9,6 +9,7 @@
 #import "MainMenuView.h"
 #import "SWRevealViewController.h"
 #import "RouteMapViewController.h"
+#import "BackgroundLayer.h"
 
 @interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
@@ -82,6 +83,17 @@
     
     self.title = @"Route Selection";
     
+    CAGradientLayer *bgLayer = [BackgroundLayer greyGradient];
+    bgLayer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:bgLayer atIndex:0];
+    
+    
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    // resize your layers based on the view’s new bounds
+    [[[self.mainView.layer sublayers] objectAtIndex:0] setFrame:self.mainView.bounds];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

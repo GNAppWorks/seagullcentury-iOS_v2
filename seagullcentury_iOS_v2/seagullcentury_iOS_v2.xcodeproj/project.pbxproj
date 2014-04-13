@@ -33,6 +33,7 @@
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
 		CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA79DF6F18F778C6008637F9 /* SUStart.gpx */; };
 		CA79DF7918F77E83008637F9 /* MainMenuNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF7818F77E83008637F9 /* MainMenuNavigationController.m */; };
+		CAE71E0E18FB1FCE0034B23E /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE71E0D18FB1FCE0034B23E /* BackgroundLayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		CA79DF6F18F778C6008637F9 /* SUStart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SUStart.gpx; path = ../SUStart.gpx; sourceTree = "<group>"; };
 		CA79DF7718F77E83008637F9 /* MainMenuNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuNavigationController.h; path = ../MainMenuNavigationController.h; sourceTree = "<group>"; };
 		CA79DF7818F77E83008637F9 /* MainMenuNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuNavigationController.m; path = ../MainMenuNavigationController.m; sourceTree = "<group>"; };
+		CAE71E0C18FB1FCE0034B23E /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
+		CAE71E0D18FB1FCE0034B23E /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 		CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				CAE71E0C18FB1FCE0034B23E /* BackgroundLayer.h */,
+				CAE71E0D18FB1FCE0034B23E /* BackgroundLayer.m */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
 				CA49C45618F5EE9B0085E101 /* Images.xcassets */,
@@ -305,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
+				CAE71E0E18FB1FCE0034B23E /* BackgroundLayer.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
 				CA79DF7918F77E83008637F9 /* MainMenuNavigationController.m in Sources */,

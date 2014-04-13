@@ -36,11 +36,11 @@
                         <viewControllerLayoutGuide type="bottom" id="zPj-X2-DoL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="V16-9E-BiH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1337"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-Oa-Ocw">
@@ -170,7 +170,6 @@
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
                     </navigationItem>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="mainView" destination="V16-9E-BiH" id="FLr-aB-8IW"/>
@@ -192,11 +191,11 @@
                         <viewControllerLayoutGuide type="bottom" id="TLB-Y3-Y7f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2vr-Ou-6qv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -221,11 +220,11 @@
                         <viewControllerLayoutGuide type="bottom" id="yUj-SM-gCE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nzt-F7-NzW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-2f-pev">
-                                <rect key="frame" x="0.0" y="175" width="320" height="782"/>
+                                <rect key="frame" x="0.0" y="175" width="320" height="350"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">A century ride is a bicycle ride of 100 miles (160.9 km) or more within 12 hours, usually as a cycling club-sponsored event. Many cycling clubs sponsor an annual century ride as both a social event for cyclists and as a fund-raiser for the club’s other activities. A sanctioned century ride is organized and conducted under the rules and liability protection of a sanctioning organization, such as the League of American Bicyclists. Sanctioned rides typically have rest stops every 25 miles or so, where water, food and toilets are available for cyclists. On a supported century ride, the route is patrolled by a sag wagon to assist riders with bicycle maintenance, or provide transportation back to the starting line for those unable to ride the entire course. Sanctioned rides are almost always supported.</string>
