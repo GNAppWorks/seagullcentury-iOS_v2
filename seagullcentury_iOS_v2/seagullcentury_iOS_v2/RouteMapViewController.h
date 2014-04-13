@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface RouteMapViewController : UIViewController
+@property (weak, nonatomic) NSString *urlRoute;
 
 @end

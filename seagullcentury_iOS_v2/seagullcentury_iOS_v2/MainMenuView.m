@@ -8,14 +8,21 @@
 
 #import "MainMenuView.h"
 #import "SWRevealViewController.h"
+#import "RouteMapViewController.h"
 
 @interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
+@property (weak, nonatomic) NSString *urlString;
+- (IBAction)routeSelectMethod:(UIButton *)sender;
+
+
 @end
 
 @implementation MainMenuView
+
 @synthesize mainView;
+@synthesize urlString;
 
 - (void)viewDidLoad
 {
@@ -25,6 +32,17 @@
     [self backgroundSetup];
     
 }
+
+
+
+//*************PlayGround
+
+
+
+
+//*****EndPlayground
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -66,6 +84,26 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
+    RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
+    controller.urlRoute = urlString; 
+    
+    
 }
 
+- (IBAction)routeSelectMethod:(UIButton *)sender {
+    UIButton *button = (UIButton*)sender;
+    if (button.tag == 1) {
+        urlString = @"http://apps.esrgc.org/maps/seagullcentury/index.html?route=0";
+        NSLog(@"I Clicked the 100k");
+    } else if (button.tag == 2) {
+        urlString = @"http://apps.esrgc.org/maps/seagullcentury/index.html?route=1";
+          NSLog(@"I Clicked the 50k");
+    } else if (button.tag == 3){
+        urlString = @"http://apps.esrgc.org/maps/seagullcentury/index.html?route=2";
+          NSLog(@"I Clicked the 50m");
+    }
+    
+    [self performSegueWithIdentifier:@"toMap" sender:self];
+    
+}
 @end

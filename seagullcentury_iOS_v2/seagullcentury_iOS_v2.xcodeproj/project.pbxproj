@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */; };
+		A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */; };
+		A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
 		CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 10.57.21 AM.png"; sourceTree = "<group>"; };
+		A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 11.03.38 AM.png"; sourceTree = "<group>"; };
+		A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 11.04.19 AM.png"; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -149,6 +155,9 @@
 		CA49C44518F5EE9B0085E101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */,
+				A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */,
+				A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */,
 				CA49C44618F5EE9B0085E101 /* seagullcentury_iOS_v2-Info.plist */,
 				CA49C44718F5EE9B0085E101 /* InfoPlist.strings */,
 				CA49C44A18F5EE9B0085E101 /* main.m */,
@@ -223,7 +232,7 @@
 				ORGANIZATIONNAME = "Seagull Century";
 				TargetAttributes = {
 					CA49C43A18F5EE9B0085E101 = {
-						DevelopmentTeam = 95NGJEZZY8;
+						DevelopmentTeam = 45LB6SLQQL;
 					};
 					CA49C45B18F5EE9B0085E101 = {
 						TestTargetID = CA49C43A18F5EE9B0085E101;
@@ -254,7 +263,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */,
+				A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */,
 				CA49C45718F5EE9B0085E101 /* Images.xcassets in Resources */,
+				A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
@@ -408,10 +420,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -422,10 +436,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
