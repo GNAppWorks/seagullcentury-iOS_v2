@@ -159,7 +159,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-337" id="8cV-f9-WwW"/>
                             <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="Qfp-Q1-U4o"/>
@@ -167,8 +166,16 @@
                             <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="rpB-5d-zWN"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="action" id="sDi-br-qyG"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
+                        <barButtonItem key="rightBarButtonItem" image="towTruck" id="AUj-aB-8ff">
+                            <connections>
+                                <action selector="callWagon:" destination="cDH-Yr-avZ" id="Xgh-hJ-cUY"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
@@ -185,7 +192,7 @@
         <!--Route Map View Controller-->
         <scene sceneID="N1J-af-G0w">
             <objects>
-                <viewController id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7sm-pb-m98"/>
                         <viewControllerLayoutGuide type="bottom" id="TLB-Y3-Y7f"/>
@@ -194,13 +201,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="HGq-ru-9ey"/>
+                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="cLC-ck-BS7"/>
+                            <constraint firstItem="TLB-Y3-Y7f" firstAttribute="top" secondItem="E6t-AE-nCi" secondAttribute="bottom" constant="-44" id="tkX-Yh-yXM"/>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="yuC-8o-Xgx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
                     <connections>
@@ -248,15 +261,15 @@
         <scene sceneID="sLP-M3-Dl5">
             <objects>
                 <tableViewController id="TOB-1B-m32" customClass="SidebarSettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zPq-hI-DZp">
+                    <tableView key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zPq-hI-DZp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell hidden="YES" opaque="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
+                            <tableViewCell hidden="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AA-IF-dGi" id="kWa-0L-5Uu">
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AA-IF-dGi" id="kWa-0L-5Uu">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -277,16 +290,20 @@
             </objects>
             <point key="canvasLocation" x="1710" y="-767"/>
         </scene>
-        <!--Main Menu Navigation Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="KVr-YY-DDG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qfl-Kq-J1G" customClass="MainMenuNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="qfl-Kq-J1G" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MmE-yI-Qm5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CS6-Qm-M5S">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="cDH-Yr-avZ" kind="relationship" relationship="rootViewController" id="5b1-mo-rx0"/>
                     </connections>
@@ -322,6 +339,7 @@
         <image name="Screen Shot 2014-04-13 at 11.03.38 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.04.19 AM.png" width="578" height="150"/>
         <image name="menu-icon" width="33" height="30"/>
+        <image name="towTruck" width="33" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

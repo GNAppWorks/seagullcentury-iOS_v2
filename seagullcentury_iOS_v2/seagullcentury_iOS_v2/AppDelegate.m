@@ -18,7 +18,9 @@
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0X8F1111)];
     [[UINavigationBar appearance] setTintColor:[UIColor yellowColor]];
-    
+    [[UIToolbar appearance] setBarTintColor:UIColorFromRGB(0X8F1111)];
+    [[UIToolbar appearance] setTintColor:[UIColor yellowColor]];
+
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);

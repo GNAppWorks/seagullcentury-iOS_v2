@@ -9,8 +9,8 @@
 #import "RouteMapViewController.h"
 
 @interface RouteMapViewController () <UIWebViewDelegate>
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
@@ -33,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
     self.webView.delegate = self;
     [self loadRequestFromString:_urlRoute];
    

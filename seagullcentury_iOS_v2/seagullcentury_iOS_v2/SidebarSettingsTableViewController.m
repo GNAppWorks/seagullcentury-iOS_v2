@@ -5,14 +5,15 @@
 //  Created by Brandon Altvater on 4/10/14.
 //  Copyright (c) 2014 Seagull Century. All rights reserved.
 //
+static NSString *CellIdentifier = @"SettingsList";
 
 #import "SidebarSettingsTableViewController.h"
 
-static NSString *CellIdentifier = @"SettingsList";
-
 @interface SidebarSettingsTableViewController ()
+
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 
+@property NSUserDefaults *masterSettings;
 @property NSArray *settingsList;
 
 -(void)buildView;
@@ -20,6 +21,7 @@ static NSString *CellIdentifier = @"SettingsList";
 
 @implementation SidebarSettingsTableViewController
 @synthesize  settingsList;
+@synthesize masterSettings;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,8 +41,8 @@ static NSString *CellIdentifier = @"SettingsList";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self buildView];
     
+    [self buildView];
     
 
 }
@@ -62,33 +64,48 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-
     // Return the number of rows in the section.
-    return 3;
+    if (section == 0) {
+        return 3;
+    }
+    
+    return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUserDefaults *defaults =[NSUserDefaults standardUserDefaults];
+    masterSettings =[NSUserDefaults standardUserDefaults];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
  
     // Configure the cell...
+    if (indexPath.section == 0) {
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[settingsList objectAtIndex:indexPath.row]];
+        
+        UISwitch *settingsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
+        
+        settingsSwitch.onTintColor = [UIColor colorWithRed:143/255.0f green:17/255.0f blue:17/255.0f alpha:1];
+        [cell addSubview:settingsSwitch];
+        cell.accessoryView = settingsSwitch;
+        
+        [(UISwitch *) cell.accessoryView setOn:[masterSettings boolForKey:[settingsList objectAtIndex:indexPath.row]]];
+        
+        [(UISwitch *) cell.accessoryView addTarget:self action:@selector(eventSwitchChanged:) forControlEvents:UIControlEventValueChanged];
+        
+        cell.accessoryView.tag = [settingsList indexOfObject:[settingsList objectAtIndex:indexPath.row]];
+        
+        
+    } if (indexPath.section == 1 ){
+        
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[settingsList objectAtIndex:indexPath.row + 3]];
+        
+        
+    }
     
-    cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[settingsList objectAtIndex:indexPath.row]];
-    
-    UISwitch *settingsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-    
-    settingsSwitch.onTintColor = [UIColor colorWithRed:143/255.0f green:17/255.0f blue:17/255.0f alpha:1];
-    [cell addSubview:settingsSwitch];
-    cell.accessoryView = settingsSwitch;
-    
-    [(UISwitch *) cell.accessoryView setOn:[defaults boolForKey:[settingsList objectAtIndex:indexPath.row]]];
-    
-    [(UISwitch *) cell.accessoryView addTarget:self action:@selector(eventSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-
     return cell;
+    
+    
 }
 
 
@@ -143,14 +160,9 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (void)buildView
 {
-    NSUserDefaults *settingsDefault = [NSUserDefaults standardUserDefaults];
-    [settingsDefault setBool:1 forKey:@"Speed"];
-    [settingsDefault setBool:0 forKey:@"Vendors"];
-    [settingsDefault setBool:1 forKey:@"Waypoints"];
-    
     settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Waypoints", nil];
     
-    self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 420) style:UITableViewStyleGrouped];
+    self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 500) style:UITableViewStyleGrouped];
     
     [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
     
@@ -160,12 +172,15 @@ static NSString *CellIdentifier = @"SettingsList";
     self.myTableView.scrollEnabled = NO;
     self.myTableView.allowsSelection = NO;
     [self.view addSubview:self.myTableView];
+     
 }
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     
     if (section == 0){
+        return 30.0f;
+    }if (section == 1) {
         return 30.0f;
     }
     
@@ -176,6 +191,8 @@ static NSString *CellIdentifier = @"SettingsList";
     
     if (section == 0){
         return 45.0f;
+    }if (section == 1) {
+        return 45.0f;
     }
     
     return 0.0f;
@@ -184,9 +201,14 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    if (section == 0){
-        return @"Map View Options";
-    }
+    
+        if (section == 0){
+            return @"Map View Options";
+        }if (section == 1) {
+            return @"Social Media";
+        }
+    
+    
     
     return nil;
     
@@ -196,30 +218,29 @@ static NSString *CellIdentifier = @"SettingsList";
     
     if (section == 0){
         return @"Select which default items you\nwish to see on the map";
+    } if (section == 1){
+        return @"Select which social media site\nyou wish to post to";
     }
 
-    
     return nil;
 }
 
 -(void) eventSwitchChanged: (id)sender
 {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+    masterSettings = [NSUserDefaults standardUserDefaults];
     UISwitch * theSwitch = (UISwitch *) sender;
     long number = ((UISwitch*) sender).tag;
     
     switch (number) {
         case 0:
-            [defaults setBool:theSwitch.isOn forKey:@"Speed"];
+            [masterSettings setBool:theSwitch.isOn forKey:@"Speed"];
             break;
         case 1:
-            [defaults setBool:theSwitch.isOn forKey:@"Vendors"];
+            [masterSettings setBool:theSwitch.isOn forKey:@"Vendors"];
             break;
         case 2:
-            [defaults setBool:theSwitch.isOn forKey:@"Waypoints"];
+            [masterSettings setBool:theSwitch.isOn forKey:@"Waypoints"];
             break;
-            
         default:
             break;
     }
