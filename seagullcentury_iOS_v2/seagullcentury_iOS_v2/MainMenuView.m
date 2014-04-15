@@ -13,9 +13,8 @@
 @interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
-@property (weak, nonatomic) NSString *urlString;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
+@property (weak, nonatomic) NSString *urlString;
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender;
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
@@ -126,20 +125,6 @@
         RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
         controller.urlRoute = urlString;
     }
-    
-}
-
--(void) viewDidLayoutSubviews{
-    
-    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
-        self.scrollView.contentSize = CGSizeMake(320,800);
-        NSLog(@"Device Is in portrait");
-    }else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)){
-        self.scrollView.contentSize = CGSizeMake(320, 600);
-        NSLog(@"Device Is in landscape");
-    }
-    
-    
     
 }
 
@@ -264,7 +249,6 @@
     
 }
 
-
 // A function for parsing URL parameters returned by the Feed Dialog.
 - (NSDictionary*)parseURLParams:(NSString *)query {
     NSArray *pairs = [query componentsSeparatedByString:@"&"];
@@ -278,10 +262,7 @@
     return params;
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     
     BOOL urlWasHandled = [FBAppCall handleOpenURL:url
                                 sourceApplication:sourceApplication
