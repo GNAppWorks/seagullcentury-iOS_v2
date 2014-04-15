@@ -131,8 +131,14 @@
 
 -(void) viewDidLayoutSubviews{
     
+    if (UIDeviceOrientationIsPortrait(self.interfaceOrientation)) {
+        self.scrollView.contentSize = CGSizeMake(320,800);
+        NSLog(@"Device Is in portrait");
+    }else if (UIDeviceOrientationIsLandscape(self.interfaceOrientation)){
+        self.scrollView.contentSize = CGSizeMake(320, 600);
+        NSLog(@"Device Is in landscape");
+    }
     
-    self.scrollView.contentSize = CGSizeMake(320,1000);
     
     
 }
