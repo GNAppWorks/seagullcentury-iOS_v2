@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import <FacebookSDK/FacebookSDK.h>
+#import <Social/Social.h>
 
 
 @interface MainMenuView : UIViewController

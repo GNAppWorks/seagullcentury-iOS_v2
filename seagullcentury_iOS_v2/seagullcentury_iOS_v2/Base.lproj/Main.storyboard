@@ -173,14 +173,21 @@
                                 <action selector="callWagon:" destination="cDH-Yr-avZ" id="yzi-ia-sYJ"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aRD-53-RJT"/>
+                        <barButtonItem image="facebook" id="5c5-NX-XU0">
+                            <connections>
+                                <action selector="facebookShare:" destination="cDH-Yr-avZ" id="uOD-OF-iN4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="T12-57-eaH"/>
+                        <barButtonItem image="twitter" id="vkx-nH-UAX">
+                            <connections>
+                                <action selector="twitterShare:" destination="cDH-Yr-avZ" id="mFB-GT-SD8"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="AUj-aB-8ff">
-                            <connections>
-                                <action selector="share:" destination="cDH-Yr-avZ" id="djA-Cl-n1U"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
@@ -343,8 +350,10 @@
         <image name="Screen Shot 2014-04-13 at 10.57.21 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.03.38 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.04.19 AM.png" width="578" height="150"/>
+        <image name="facebook" width="32" height="32"/>
         <image name="menu-icon" width="33" height="30"/>
-        <image name="towTruck" width="33" height="30"/>
+        <image name="towTruck" width="33" height="15"/>
+        <image name="twitter" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

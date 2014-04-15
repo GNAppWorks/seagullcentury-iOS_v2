@@ -9,8 +9,6 @@
 #import "MainMenuView.h"
 #import "SWRevealViewController.h"
 #import "RouteMapViewController.h"
-#import "BackgroundLayer.h"
-
 
 @interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
@@ -18,6 +16,9 @@
 @property (weak, nonatomic) NSString *urlString;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
+
+- (IBAction)facebookShare:(UIBarButtonItem *)sender;
+- (IBAction)twitterShare:(UIBarButtonItem *)sender;
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
 - (void) checkLocation;
@@ -77,15 +78,7 @@
     
     [mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.title = @"Route Selection";
-    
-    /*
-    // This is just for cool purposes, When you remove this make sure you remove the header files
-    CAGradientLayer *bgLayer = [BackgroundLayer greyGradient];
-    bgLayer.frame = mainView.bounds;
-    [self.view.layer insertSublayer:bgLayer atIndex:0];
-     */
-    
+    self.title = @"Home";
     
     [self checkLocation];
     
@@ -95,8 +88,7 @@
 - (void) checkLocation{
     
     if([CLLocationManager locationServicesEnabled]){
-        
-        //NSLog(@"Location Services Enabled");
+
         
         if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App Permission Denied"
@@ -107,7 +99,7 @@
             [alert show];
         }
     }else{
-        NSLog(@"Location Services Disabled");
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
                                                         message:@"To re-enable, please go to Settings and turn on Location Service for this app."
                                                        delegate:nil
@@ -139,7 +131,9 @@
 
 -(void) viewDidLayoutSubviews{
     
+    
     self.scrollView.contentSize = CGSizeMake(320,1000);
+    
     
 }
 
@@ -164,30 +158,134 @@
     [self performSegueWithIdentifier:@"toMap" sender:self];
     
 }
-- (IBAction)share:(UIBarButtonItem *)sender {
+
+- (IBAction)facebookShare:(UIBarButtonItem *)sender {
     
-    NSString *text = @"How to add Facebook and Twitter sharing to an iOS app";
-    NSURL *url = [NSURL URLWithString:@"http://roadfiresoftware.com/2014/02/how-to-add-facebook-and-twitter-sharing-to-an-ios-app/"];
-    //UIImage *image = [UIImage imageNamed:@"roadfire-icon-square-200"];
+    // Check if the Facebook app is installed and we can present the share dialog
+    FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
+    params.link = [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
+    params.name = @"Sharing Tutorial";
+    params.caption = @"Build great social apps and get more installs.";
+    params.picture = [NSURL URLWithString:@"http://i.imgur.com/g3Qc1HN.png"];
+    params.description = @"Allow your users to share stories on Facebook from your app using the iOS SDK.";
     
-    UIActivityViewController *controller =[[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
+    // If the Facebook app is installed and we can present the share dialog
+    if ([FBDialogs canPresentShareDialogWithParams:params]) {
+        
+        // Present share dialog
+        [FBDialogs presentShareDialogWithLink:params.link
+                                         name:params.name
+                                      caption:params.caption
+                                  description:params.description
+                                      picture:params.picture
+                                  clientState:nil
+                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
+                                          if(error) {
+                                              // An error occurred, we need to handle the error
+                                              // See: https://developers.facebook.com/docs/ios/errors
+                                              NSLog(@"Error publishing story: %@", error.description);
+                                          } else {
+                                              // Success
+                                              NSLog(@"result %@", results);
+                                          }
+                                      }];
+        
+        // If the Facebook app is NOT installed and we can't present the share dialog
+        
+    } else {
+        // FALLBACK: publish just a link using the Feed dialog
+        
+        // Put together the dialog parameters
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                       @"Sharing Tutorial", @"name",
+                                       @"Build great social apps and get more installs.", @"caption",
+                                       @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
+                                       @"https://developers.facebook.com/docs/ios/share/", @"link",
+                                       @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+                                       nil];
+        
+        // Show the feed dialog
+        [FBWebDialogs presentFeedDialogModallyWithSession:nil
+                                               parameters:params
+                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
+                                                      if (error) {
+                                                          // An error occurred, we need to handle the error
+                                                          // See: https://developers.facebook.com/docs/ios/errors
+                                                          NSLog(@"Error publishing story: %@", error.description);
+                                                      } else {
+                                                          if (result == FBWebDialogResultDialogNotCompleted) {
+                                                              // User canceled.
+                                                              NSLog(@"User cancelled.");
+                                                          } else {
+                                                              // Handle the publish feed callback
+                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
+                                                              
+                                                              if (![urlParams valueForKey:@"post_id"]) {
+                                                                  // User canceled.
+                                                                  NSLog(@"User cancelled.");
+                                                                  
+                                                              } else {
+                                                                  // User clicked the Share button
+                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
+                                                                  NSLog(@"result %@", result);
+                                                              }
+                                                          }
+                                                      }
+                                                  }];
+    }
+
+
+}
+
+- (IBAction)twitterShare:(UIBarButtonItem *)sender {
     
-    controller.excludedActivityTypes = @[UIActivityTypePostToWeibo,
-                                         UIActivityTypeMessage,
-                                         UIActivityTypeMail,
-                                         UIActivityTypePrint,
-                                         UIActivityTypeCopyToPasteboard,
-                                         UIActivityTypeAssignToContact,
-                                         UIActivityTypeSaveToCameraRoll,
-                                         UIActivityTypeAddToReadingList,
-                                         UIActivityTypePostToFlickr,
-                                         UIActivityTypePostToVimeo,
-                                         UIActivityTypePostToTencentWeibo,
-                                         UIActivityTypeAirDrop];
-     
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"#seagullcentury"];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
     
-    [self presentViewController:controller animated:YES completion:nil];
+}
+
+
+// A function for parsing URL parameters returned by the Feed Dialog.
+- (NSDictionary*)parseURLParams:(NSString *)query {
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        NSString *val =
+        [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        params[kv[0]] = val;
+    }
+    return params;
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
     
+    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
+                                sourceApplication:sourceApplication
+                                  fallbackHandler:^(FBAppCall *call) {
+                                      NSLog(@"Unhandled deep link: %@", url);
+                                      // Here goes the code to handle the links
+                                      // Use the links to show a relevant view of your app to the user
+                                  }];
+    
+    return urlWasHandled;
 }
 
 - (IBAction)callWagon:(UIBarButtonItem *)sender {

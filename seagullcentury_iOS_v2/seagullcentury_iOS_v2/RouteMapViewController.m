@@ -39,8 +39,6 @@
    
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,6 +54,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 #pragma Design Methods
 - (void)loadRequestFromString:(NSString *)urlString
 {

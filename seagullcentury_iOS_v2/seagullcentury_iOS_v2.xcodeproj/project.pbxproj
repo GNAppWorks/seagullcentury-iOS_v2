@@ -14,6 +14,8 @@
 		A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */; };
 		A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AA18FB07A2006CA49D /* icon-60.png */; };
 		A7EA07AD18FB0841006CA49D /* SGCIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */; };
+		CA46E10018FDA4FC00B83937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA46E0FF18FDA4FC00B83937 /* Images.xcassets */; };
+		CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46E10118FDB50700B83937 /* FacebookSDK.framework */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
 		CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
@@ -22,7 +24,6 @@
 		CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44E18F5EE9B0085E101 /* AppDelegate.m */; };
 		CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45018F5EE9B0085E101 /* Main.storyboard */; };
 		CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuView.m */; };
-		CA49C45718F5EE9B0085E101 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45618F5EE9B0085E101 /* Images.xcassets */; };
 		CA49C45E18F5EE9B0085E101 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C45D18F5EE9B0085E101 /* XCTest.framework */; };
 		CA49C45F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C46018F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
@@ -32,7 +33,6 @@
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
 		CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA79DF6F18F778C6008637F9 /* SUStart.gpx */; };
-		CAE71E0E18FB1FCE0034B23E /* BackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CAE71E0D18FB1FCE0034B23E /* BackgroundLayer.m */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +54,8 @@
 		A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 1.36.44 PM.png"; sourceTree = "<group>"; };
 		A7EA07AA18FB07A2006CA49D /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60.png"; sourceTree = "<group>"; };
 		A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SGCIcon-120.png"; sourceTree = "<group>"; };
+		CA46E0FF18FDA4FC00B83937 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
+		CA46E10118FDB50700B83937 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -67,7 +69,6 @@
 		CA49C45118F5EE9B0085E101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA49C45318F5EE9B0085E101 /* MainMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
 		CA49C45418F5EE9B0085E101 /* MainMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
-		CA49C45618F5EE9B0085E101 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seagullcentury_iOS_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C45D18F5EE9B0085E101 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA49C46518F5EE9B0085E101 /* seagullcentury_iOS_v2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "seagullcentury_iOS_v2Tests-Info.plist"; sourceTree = "<group>"; };
@@ -80,8 +81,6 @@
 		CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteMapViewController.h; sourceTree = "<group>"; };
 		CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteMapViewController.m; sourceTree = "<group>"; };
 		CA79DF6F18F778C6008637F9 /* SUStart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SUStart.gpx; path = ../SUStart.gpx; sourceTree = "<group>"; };
-		CAE71E0C18FB1FCE0034B23E /* BackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundLayer.h; sourceTree = "<group>"; };
-		CAE71E0D18FB1FCE0034B23E /* BackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundLayer.m; sourceTree = "<group>"; };
 		CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -91,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */,
+				CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */,
 				CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
@@ -132,6 +132,7 @@
 		CA49C43D18F5EE9B0085E101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA46E10118FDB50700B83937 /* FacebookSDK.framework */,
 				CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */,
 				CA49C43E18F5EE9B0085E101 /* Foundation.framework */,
 				CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */,
@@ -146,9 +147,7 @@
 			children = (
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
-				CAE71E0C18FB1FCE0034B23E /* BackgroundLayer.h */,
-				CAE71E0D18FB1FCE0034B23E /* BackgroundLayer.m */,
-				CA49C45618F5EE9B0085E101 /* Images.xcassets */,
+				CA46E0FF18FDA4FC00B83937 /* Images.xcassets */,
 				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
 				CA49C45318F5EE9B0085E101 /* MainMenuView.h */,
 				CA49C45418F5EE9B0085E101 /* MainMenuView.m */,
@@ -281,9 +280,9 @@
 			files = (
 				A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */,
 				A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */,
-				CA49C45718F5EE9B0085E101 /* Images.xcassets in Resources */,
 				A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */,
 				A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */,
+				CA46E10018FDA4FC00B83937 /* Images.xcassets in Resources */,
 				A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
@@ -309,7 +308,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
-				CAE71E0E18FB1FCE0034B23E /* BackgroundLayer.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
 				CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */,
@@ -441,6 +439,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Brandon/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
@@ -457,6 +459,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Brandon/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";

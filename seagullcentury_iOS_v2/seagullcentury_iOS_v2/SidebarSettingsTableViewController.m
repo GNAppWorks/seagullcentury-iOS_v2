@@ -201,14 +201,11 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
-    
         if (section == 0){
             return @"Map View Options";
         }if (section == 1) {
             return @"Social Media";
         }
-    
-    
     
     return nil;
     
@@ -225,8 +222,8 @@ static NSString *CellIdentifier = @"SettingsList";
     return nil;
 }
 
--(void) eventSwitchChanged: (id)sender
-{
+-(void) eventSwitchChanged: (id)sender{
+    
     masterSettings = [NSUserDefaults standardUserDefaults];
     UISwitch * theSwitch = (UISwitch *) sender;
     long number = ((UISwitch*) sender).tag;
@@ -246,7 +243,4 @@ static NSString *CellIdentifier = @"SettingsList";
     }
     
 }
-
-
-
 @end
