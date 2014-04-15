@@ -159,6 +159,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <color key="backgroundColor" red="0.95198899872448983" green="0.95198899872448983" blue="0.95198899872448983" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-337" id="8cV-f9-WwW"/>
                             <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="Qfp-Q1-U4o"/>
@@ -167,13 +168,17 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem systemItem="action" id="sDi-br-qyG"/>
+                        <barButtonItem image="towTruck" id="sDi-br-qyG">
+                            <connections>
+                                <action selector="callWagon:" destination="cDH-Yr-avZ" id="yzi-ia-sYJ"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
-                        <barButtonItem key="rightBarButtonItem" image="towTruck" id="AUj-aB-8ff">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="AUj-aB-8ff">
                             <connections>
-                                <action selector="callWagon:" destination="cDH-Yr-avZ" id="Xgh-hJ-cUY"/>
+                                <action selector="share:" destination="cDH-Yr-avZ" id="djA-Cl-n1U"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -202,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
@@ -211,7 +216,7 @@
                         <constraints>
                             <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="HGq-ru-9ey"/>
                             <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="cLC-ck-BS7"/>
-                            <constraint firstItem="TLB-Y3-Y7f" firstAttribute="top" secondItem="E6t-AE-nCi" secondAttribute="bottom" constant="-44" id="tkX-Yh-yXM"/>
+                            <constraint firstItem="TLB-Y3-Y7f" firstAttribute="top" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="tkX-Yh-yXM"/>
                             <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="yuC-8o-Xgx"/>
                         </constraints>
                     </view>
@@ -222,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uki-lP-BV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="32"/>
+            <point key="canvasLocation" x="2242" y="32"/>
         </scene>
         <!--View Controller - About-->
         <scene sceneID="uBO-Mg-hVM">
@@ -255,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l29-AD-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2234" y="1238"/>
+            <point key="canvasLocation" x="2242" y="1381"/>
         </scene>
         <!--Sidebar Settings Table View Controller - Settings-->
         <scene sceneID="sLP-M3-Dl5">

@@ -79,11 +79,12 @@
     
     self.title = @"Route Selection";
     
-    
+    /*
     // This is just for cool purposes, When you remove this make sure you remove the header files
     CAGradientLayer *bgLayer = [BackgroundLayer greyGradient];
     bgLayer.frame = mainView.bounds;
     [self.view.layer insertSublayer:bgLayer atIndex:0];
+     */
     
     
     [self checkLocation];
@@ -161,6 +162,31 @@
         
     }
     [self performSegueWithIdentifier:@"toMap" sender:self];
+    
+}
+- (IBAction)share:(UIBarButtonItem *)sender {
+    
+    NSString *text = @"How to add Facebook and Twitter sharing to an iOS app";
+    NSURL *url = [NSURL URLWithString:@"http://roadfiresoftware.com/2014/02/how-to-add-facebook-and-twitter-sharing-to-an-ios-app/"];
+    //UIImage *image = [UIImage imageNamed:@"roadfire-icon-square-200"];
+    
+    UIActivityViewController *controller =[[UIActivityViewController alloc] initWithActivityItems:@[text, url] applicationActivities:nil];
+    
+    controller.excludedActivityTypes = @[UIActivityTypePostToWeibo,
+                                         UIActivityTypeMessage,
+                                         UIActivityTypeMail,
+                                         UIActivityTypePrint,
+                                         UIActivityTypeCopyToPasteboard,
+                                         UIActivityTypeAssignToContact,
+                                         UIActivityTypeSaveToCameraRoll,
+                                         UIActivityTypeAddToReadingList,
+                                         UIActivityTypePostToFlickr,
+                                         UIActivityTypePostToVimeo,
+                                         UIActivityTypePostToTencentWeibo,
+                                         UIActivityTypeAirDrop];
+     
+    
+    [self presentViewController:controller animated:YES completion:nil];
     
 }
 
