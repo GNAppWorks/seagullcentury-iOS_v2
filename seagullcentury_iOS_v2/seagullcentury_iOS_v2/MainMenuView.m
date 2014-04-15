@@ -20,6 +20,7 @@
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
+
 - (void) checkLocation;
 
 @property NSUserDefaults *masterSettings;

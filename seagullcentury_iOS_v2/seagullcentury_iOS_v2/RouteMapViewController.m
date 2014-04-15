@@ -14,6 +14,7 @@
 
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
+- (IBAction)callWagon:(UIBarButtonItem *)sender;
 
 @end
 
@@ -104,5 +105,19 @@
                               otherButtonTitles:nil];
     [alertView show];
 }
+
+- (IBAction)callWagon:(UIBarButtonItem *)sender {
+    UIDevice *device = [UIDevice currentDevice];
+    if ([[device model] isEqualToString:@"iPhone"] ){
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
+        
+    }else{
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@" This is not an iPhone and cannot make calls" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 
 @end

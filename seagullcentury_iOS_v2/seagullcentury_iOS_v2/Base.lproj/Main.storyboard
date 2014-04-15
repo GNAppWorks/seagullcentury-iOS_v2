@@ -209,7 +209,7 @@
         <!--Route Map View Controller-->
         <scene sceneID="N1J-af-G0w">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
+                <viewController id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7sm-pb-m98"/>
                         <viewControllerLayoutGuide type="bottom" id="TLB-Y3-Y7f"/>
@@ -219,19 +219,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="HGq-ru-9ey"/>
-                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="cLC-ck-BS7"/>
-                            <constraint firstItem="TLB-Y3-Y7f" firstAttribute="top" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="tkX-Yh-yXM"/>
-                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="yuC-8o-Xgx"/>
+                            <constraint firstAttribute="bottom" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="MIO-5S-nMm"/>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="U4X-6H-e2N"/>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="hcZ-xG-7YR"/>
+                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="w3W-GP-4Db"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem image="towTruck" id="iH7-uB-v7f">
+                            <connections>
+                                <action selector="callWagon:" destination="IqD-ea-mZf" id="oSg-Pw-WKc"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
                     <connections>
                         <outlet property="webView" destination="E6t-AE-nCi" id="zhA-xP-Rzc"/>
