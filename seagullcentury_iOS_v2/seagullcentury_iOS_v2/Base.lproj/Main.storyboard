@@ -188,7 +188,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="PzE-ei-9po">
                         <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
-                        <barButtonItem key="rightBarButtonItem" image="info_icon" id="RHZ-Y0-6dm">
+                        <barButtonItem key="rightBarButtonItem" image="better_info" id="RHZ-Y0-6dm">
                             <connections>
                                 <segue destination="0EK-ca-zEt" kind="push" id="5jl-T5-fJD"/>
                             </connections>
@@ -355,8 +355,8 @@
         <image name="Screen Shot 2014-04-13 at 10.57.21 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.03.38 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.04.19 AM.png" width="578" height="150"/>
+        <image name="better_info" width="24" height="24"/>
         <image name="facebook" width="32" height="32"/>
-        <image name="info_icon" width="33" height="33"/>
         <image name="menu-icon" width="33" height="30"/>
         <image name="towTruck" width="33" height="15"/>
         <image name="twitter" width="32" height="32"/>
@@ -367,6 +367,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sNX-Gg-FHd"/>
+        <segue reference="5jl-T5-fJD"/>
     </inferredMetricsTieBreakers>
 </document>

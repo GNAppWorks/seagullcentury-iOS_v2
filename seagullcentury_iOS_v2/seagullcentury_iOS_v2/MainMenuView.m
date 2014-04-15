@@ -154,11 +154,11 @@
     
     // Check if the Facebook app is installed and we can present the share dialog
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
-    params.link = [NSURL URLWithString:@"https://developers.facebook.com/docs/ios/share/"];
-    params.name = @"Sharing Tutorial";
-    params.caption = @"Build great social apps and get more installs.";
-    params.picture = [NSURL URLWithString:@"http://i.imgur.com/g3Qc1HN.png"];
-    params.description = @"Allow your users to share stories on Facebook from your app using the iOS SDK.";
+    params.link = [NSURL URLWithString:@"http://www.seagullcentury.org"];
+    params.name = @"Seagull Century";
+    params.caption = @"100 mile bike ride held in Salisbury, MD.";
+    params.picture = [NSURL URLWithString:@"http://www.seagullcentury.org/template/images/sgc-logo08.jpg"];
+    params.description = @"100 mile bike ride.";
     
     // If the Facebook app is installed and we can present the share dialog
     if ([FBDialogs canPresentShareDialogWithParams:params]) {
@@ -173,7 +173,6 @@
                                       handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
                                           if(error) {
                                               // An error occurred, we need to handle the error
-                                              // See: https://developers.facebook.com/docs/ios/errors
                                               NSLog(@"Error publishing story: %@", error.description);
                                           } else {
                                               // Success
@@ -182,26 +181,23 @@
                                       }];
         
         // If the Facebook app is NOT installed and we can't present the share dialog
-        
     } else {
         // FALLBACK: publish just a link using the Feed dialog
         
         // Put together the dialog parameters
         NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"Sharing Tutorial", @"name",
-                                       @"Build great social apps and get more installs.", @"caption",
-                                       @"Allow your users to share stories on Facebook from your app using the iOS SDK.", @"description",
-                                       @"https://developers.facebook.com/docs/ios/share/", @"link",
-                                       @"http://i.imgur.com/g3Qc1HN.png", @"picture",
+                                       @"Seagull Century", @"name",
+                                       @"100 mile bike ride held in Salisbury, MD.", @"caption",
+                                       @"100 mile bike ride.", @"description",
+                                       @"http://www.seagullcentury.org", @"link",
+                                       @"http://www.seagullcentury.org/template/images/sgc-logo08.jpg", @"picture",
                                        nil];
-        
         // Show the feed dialog
         [FBWebDialogs presentFeedDialogModallyWithSession:nil
                                                parameters:params
                                                   handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
                                                       if (error) {
                                                           // An error occurred, we need to handle the error
-                                                          // See: https://developers.facebook.com/docs/ios/errors
                                                           NSLog(@"Error publishing story: %@", error.description);
                                                       } else {
                                                           if (result == FBWebDialogResultDialogNotCompleted) {
@@ -251,6 +247,7 @@
 
 // A function for parsing URL parameters returned by the Feed Dialog.
 - (NSDictionary*)parseURLParams:(NSString *)query {
+    
     NSArray *pairs = [query componentsSeparatedByString:@"&"];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
     for (NSString *pair in pairs) {
@@ -274,6 +271,7 @@
     
     return urlWasHandled;
 }
+ 
 
 - (IBAction)callWagon:(UIBarButtonItem *)sender {
     
