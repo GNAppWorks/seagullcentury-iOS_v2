@@ -174,13 +174,13 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="aRD-53-RJT"/>
-                        <barButtonItem image="facebook" id="5c5-NX-XU0">
+                        <barButtonItem image="Facebook 2" id="5c5-NX-XU0">
                             <connections>
                                 <action selector="facebookShare:" destination="cDH-Yr-avZ" id="uOD-OF-iN4"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="T12-57-eaH"/>
-                        <barButtonItem image="twitter" id="vkx-nH-UAX">
+                        <barButtonItem image="Twitter 2" id="vkx-nH-UAX">
                             <connections>
                                 <action selector="twitterShare:" destination="cDH-Yr-avZ" id="mFB-GT-SD8"/>
                             </connections>
@@ -356,17 +356,17 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Facebook 2" width="25" height="25"/>
         <image name="SGCIcon-120.png" width="120" height="120"/>
         <image name="Screen Shot 2014-04-13 at 1.20.39 PM.png" width="290" height="75"/>
         <image name="Screen Shot 2014-04-13 at 1.36.44 PM.png" width="290" height="75"/>
         <image name="Screen Shot 2014-04-13 at 10.57.21 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.03.38 AM.png" width="580" height="150"/>
         <image name="Screen Shot 2014-04-13 at 11.04.19 AM.png" width="578" height="150"/>
+        <image name="Twitter 2" width="25" height="25"/>
         <image name="better_info" width="24" height="24"/>
-        <image name="facebook" width="32" height="32"/>
         <image name="menu-icon" width="33" height="30"/>
         <image name="towTruck" width="33" height="15"/>
-        <image name="twitter" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

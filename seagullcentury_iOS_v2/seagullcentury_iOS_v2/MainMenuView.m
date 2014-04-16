@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "RouteMapViewController.h"
 
-@interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
+@interface MainMenuView () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -22,6 +22,7 @@
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
 
 - (void) checkLocation;
+
 
 @property NSUserDefaults *masterSettings;
 
@@ -80,36 +81,42 @@
     
     self.title = @"Home";
     
-    [self checkLocation];
     
+    [self checkLocation];
     
 }
 
 - (void) checkLocation{
     
-    if([CLLocationManager locationServicesEnabled]){
-
-        
-        if([CLLocationManager authorizationStatus]==kCLAuthorizationStatusDenied){
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"App Permission Denied"
-                                                            message:@"To re-enable, please go to Settings and turn on Location Service for this app."
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
+    {
+        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized)
+        {
+            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
+                                                          message:@"To re-enable, please go to Settings and turn on Location Service for this app."
+                                                         delegate:nil
+                                                cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil];
             [alert show];
+            alert= nil;
         }
-    }else{
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled"
-                                                        message:@"To re-enable, please go to Settings and turn on Location Service for this app."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-        
     }
-
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES]
+                                                  forKey:@"userWasAskedForLocationOnce"];
+        
+        if ([CLLocationManager locationServicesEnabled]) //this will trigger the system prompt
+        {
+            [locationManager startUpdatingLocation];
+        }
+    }
+    
 }
+
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
@@ -152,7 +159,7 @@
 }
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender {
-    
+    /*
     // Check if the Facebook app is installed and we can present the share dialog
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
     params.link = [NSURL URLWithString:@"http://www.seagullcentury.org"];
@@ -222,7 +229,26 @@
                                                   }];
     }
 
-
+*/
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+    {
+        SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [facebookSheet setInitialText:@"Seagull Century"];
+        [self presentViewController:facebookSheet animated:YES completion:nil];
+    }
+    else
+    {
+        UIAlertView *alertView = [[UIAlertView alloc]
+                                  initWithTitle:@"Sorry"
+                                  message:@"You can't send a Facebook posts right now, make sure your device has an internet connection and you have at least one Facebook account setup"
+                                  delegate:self
+                                  cancelButtonTitle:@"OK"
+                                  otherButtonTitles:nil];
+        [alertView show];
+    }
+ 
+    
 }
 
 - (IBAction)twitterShare:(UIBarButtonItem *)sender {
@@ -230,7 +256,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"#seagullcentury"];
+        [tweetSheet setInitialText:@" #SGC14"];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
     else

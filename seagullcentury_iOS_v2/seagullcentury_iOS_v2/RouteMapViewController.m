@@ -8,6 +8,7 @@
 
 #import "RouteMapViewController.h"
 
+
 @interface RouteMapViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -15,6 +16,7 @@
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
+
 
 @end
 
@@ -34,6 +36,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+  
+    
+    
+    
+    
+    
     
     self.webView.delegate = self;
     [self loadRequestFromString:_urlRoute];
@@ -59,6 +68,7 @@
 #pragma Design Methods
 - (void)loadRequestFromString:(NSString *)urlString
 {
+    
     NSURL *url = [NSURL URLWithString:urlString];
     if (!url.scheme) {
         NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",urlString];
@@ -97,6 +107,7 @@
 #pragma mark - Error Handling
 - (void)informError:(NSError *)error
 {
+    
     NSString* localizedDescription = [error localizedDescription];
     UIAlertView* alertView = [[UIAlertView alloc]
                               initWithTitle:NSLocalizedString(@"Error", @"Title for error alert.")
@@ -104,6 +115,7 @@
                               cancelButtonTitle:NSLocalizedString(@"OK", @"OK button in error alert.")
                               otherButtonTitles:nil];
     [alertView show];
+     
 }
 
 - (IBAction)callWagon:(UIBarButtonItem *)sender {

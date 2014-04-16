@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreLocation/CoreLocation.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface MainMenuView : UIViewController
