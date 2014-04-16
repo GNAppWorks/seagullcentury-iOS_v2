@@ -14,7 +14,6 @@
 		A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */; };
 		A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AA18FB07A2006CA49D /* icon-60.png */; };
 		A7EA07AD18FB0841006CA49D /* SGCIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */; };
-		CA46E10018FDA4FC00B83937 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA46E0FF18FDA4FC00B83937 /* Images.xcassets */; };
 		CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46E10118FDB50700B83937 /* FacebookSDK.framework */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
@@ -29,6 +28,7 @@
 		CA49C46018F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
 		CA49C46818F5EE9B0085E101 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA49C46618F5EE9B0085E101 /* InfoPlist.strings */; };
 		CA49C46A18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C46918F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m */; };
+		CA612AA218FEB4E700D0B0F7 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA612AA118FEB4E700D0B0F7 /* images.xcassets */; };
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
@@ -54,7 +54,6 @@
 		A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 1.36.44 PM.png"; sourceTree = "<group>"; };
 		A7EA07AA18FB07A2006CA49D /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60.png"; sourceTree = "<group>"; };
 		A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SGCIcon-120.png"; sourceTree = "<group>"; };
-		CA46E0FF18FDA4FC00B83937 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../../../../.Trash/Images.xcassets; sourceTree = "<group>"; };
 		CA46E10118FDB50700B83937 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,6 +73,7 @@
 		CA49C46518F5EE9B0085E101 /* seagullcentury_iOS_v2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "seagullcentury_iOS_v2Tests-Info.plist"; sourceTree = "<group>"; };
 		CA49C46718F5EE9B0085E101 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA49C46918F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seagullcentury_iOS_v2Tests.m; sourceTree = "<group>"; };
+		CA612AA118FEB4E700D0B0F7 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		CA79DF6618F76D11008637F9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CA79DF6718F76D11008637F9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -145,9 +145,9 @@
 		CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				CA612AA118FEB4E700D0B0F7 /* images.xcassets */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
-				CA46E0FF18FDA4FC00B83937 /* Images.xcassets */,
 				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
 				CA49C45318F5EE9B0085E101 /* MainMenuView.h */,
 				CA49C45418F5EE9B0085E101 /* MainMenuView.m */,
@@ -282,7 +282,7 @@
 				A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */,
 				A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */,
 				A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */,
-				CA46E10018FDA4FC00B83937 /* Images.xcassets in Resources */,
+				CA612AA218FEB4E700D0B0F7 /* images.xcassets in Resources */,
 				A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
