@@ -21,6 +21,7 @@
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
 
+- (void) backgroundSetup;
 - (void) checkLocation;
 
 
