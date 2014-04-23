@@ -234,9 +234,20 @@
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
+        /*
         SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         [facebookSheet setInitialText:@"Seagull Century"];
         [self presentViewController:facebookSheet animated:YES completion:nil];
+         
+         */
+        
+        [FBDialogs presentOSIntegratedShareDialogModallyFrom:self initialText:@"" image:nil url:[NSURL URLWithString:@"http://www.google.com"] handler:^(FBOSIntegratedShareDialogResult result, NSError *error){
+            if(error)
+            {
+                NSLog(@"Error: %@", error.description);
+            }
+        }];
+         
     }
     else
     {
