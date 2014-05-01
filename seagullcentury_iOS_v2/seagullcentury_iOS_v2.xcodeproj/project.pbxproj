@@ -22,7 +22,7 @@
 		CA49C44B18F5EE9B0085E101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44A18F5EE9B0085E101 /* main.m */; };
 		CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44E18F5EE9B0085E101 /* AppDelegate.m */; };
 		CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45018F5EE9B0085E101 /* Main.storyboard */; };
-		CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuView.m */; };
+		CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */; };
 		CA49C45E18F5EE9B0085E101 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C45D18F5EE9B0085E101 /* XCTest.framework */; };
 		CA49C45F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C46018F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
@@ -69,8 +69,8 @@
 		CA49C44D18F5EE9B0085E101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA49C44E18F5EE9B0085E101 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CA49C45118F5EE9B0085E101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CA49C45318F5EE9B0085E101 /* MainMenuView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuView.h; sourceTree = "<group>"; };
-		CA49C45418F5EE9B0085E101 /* MainMenuView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuView.m; sourceTree = "<group>"; };
+		CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seagullcentury_iOS_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C45D18F5EE9B0085E101 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA49C46518F5EE9B0085E101 /* seagullcentury_iOS_v2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "seagullcentury_iOS_v2Tests-Info.plist"; sourceTree = "<group>"; };
@@ -157,13 +157,9 @@
 			isa = PBXGroup;
 			children = (
 				CAD944F218FEC9A900F5BA59 /* images.xcassets */,
-				CAD944ED18FEC59200F5BA59 /* Reachability.h */,
-				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
-				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
-				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
 				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
-				CA49C45318F5EE9B0085E101 /* MainMenuView.h */,
-				CA49C45418F5EE9B0085E101 /* MainMenuView.m */,
+				CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */,
+				CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */,
 				CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */,
 				CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */,
 				CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */,
@@ -179,6 +175,10 @@
 		CA49C44518F5EE9B0085E101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CAD944ED18FEC59200F5BA59 /* Reachability.h */,
+				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
+				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
+				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
 				A7EA07AA18FB07A2006CA49D /* icon-60.png */,
 				A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */,
 				A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */,
@@ -321,7 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
-				CA49C45518F5EE9B0085E101 /* MainMenuView.m in Sources */,
+				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
 				CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */,
 				CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */,
