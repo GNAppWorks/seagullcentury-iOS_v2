@@ -7,7 +7,7 @@
 //
 
 #import "RouteMapViewController.h"
-
+#import "Reachability.h"
 
 @interface RouteMapViewController () <UIWebViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate>
 
@@ -16,6 +16,9 @@
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
+
+@property (nonatomic, strong) Reachability *reach;
+@property NetworkStatus network;
 
 @end
 
@@ -26,33 +29,50 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [[NSNotificationCenter defaultCenter] addObserver: self
+                                             selector: @selector(reachabilityChanged:)
+                                                 name: kReachabilityChangedNotification
+                                               object: nil];
+    
     self.webView.delegate = self;
     [self loadRequestFromString:self.urlRoute];
     
-    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPan)];
-    
-    panGesture.delegate = self;
-    
-    [self.webView addGestureRecognizer:panGesture];
-    
     
 }
 
-- (void)onPan
+- (void) viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     
-    NSLog(@"I got panned");
+    self.reach = [Reachability reachabilityForInternetConnection];
+    [self.reach startNotifier];
+    
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    return YES;
-}
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+- (void) reachabilityChanged:(NSNotification *) notification {
+    
+    if( [self.reach isKindOfClass: [Reachability class]]) {
+        
+        self.network = [self.reach currentReachabilityStatus];
+        
+        NSLog(@"this is what Network Flag it %ld", self.network);
+        
+        if (self.network == 0) {
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity Change"
+                                                            message:@"Connectivity is limited in your area. Some features will not work on this application"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
+        }
+        
+        
+    }
+    
     [self checkLocation];
-    
 }
+
+
 
 - (void) checkLocation{
     

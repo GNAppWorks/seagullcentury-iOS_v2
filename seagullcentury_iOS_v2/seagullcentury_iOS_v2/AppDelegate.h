@@ -14,6 +14,4 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-- (NSString *)stringFromStatus:(NetworkStatus )status;
-
 @end

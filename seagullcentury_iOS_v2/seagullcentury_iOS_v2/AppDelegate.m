@@ -31,18 +31,6 @@
                                                            [UIFont fontWithName:@"Baskerville-SemiBold" size:22.0], NSFontAttributeName, nil]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
-    Reachability *reach = [Reachability reachabilityForInternetConnection];
-    NetworkStatus network = [reach currentReachabilityStatus];
-    
-    if (NotReachable) {
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity"
-                                                        message:[self stringFromStatus:network] delegate:nil
-                                              cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    }
-    
    
     
     return YES;
@@ -77,25 +65,5 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
-- (NSString *)stringFromStatus:(NetworkStatus) status {
-    
-    NSString *string;
-    switch(status) {
-        case NotReachable:
-            string = @"Connectivity is limited in your area. Some features will not work on this application";
-            break;
-        case ReachableViaWiFi:
-            string = @"Reachable via WiFi";
-            break;
-        case ReachableViaWWAN:
-            string = @"Reachable via WWAN";
-            break;
-        default:
-            string = @"Unknown";
-            break;
-    }
-    return string;
-}
 
 @end
