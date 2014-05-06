@@ -7,13 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */; };
-		A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */; };
-		A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */; };
-		A7EA07A118FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07A018FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png */; };
-		A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */; };
-		A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AA18FB07A2006CA49D /* icon-60.png */; };
-		A7EA07AD18FB0841006CA49D /* SGCIcon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */; };
+		CA0D45CB191834DD00026D59 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D45CA191834DD00026D59 /* Route.m */; };
 		CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46E10118FDB50700B83937 /* FacebookSDK.framework */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
@@ -50,13 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 10.57.21 AM.png"; sourceTree = "<group>"; };
-		A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 11.03.38 AM.png"; sourceTree = "<group>"; };
-		A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 11.04.19 AM.png"; sourceTree = "<group>"; };
-		A7EA07A018FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 1.20.39 PM.png"; sourceTree = "<group>"; };
-		A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-04-13 at 1.36.44 PM.png"; sourceTree = "<group>"; };
-		A7EA07AA18FB07A2006CA49D /* icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-60.png"; sourceTree = "<group>"; };
-		A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SGCIcon-120.png"; sourceTree = "<group>"; };
+		CA0D45C9191834DD00026D59 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = Model/Route.h; sourceTree = "<group>"; };
+		CA0D45CA191834DD00026D59 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = Model/Route.m; sourceTree = "<group>"; };
 		CA46E10118FDB50700B83937 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA0D45C8191834B700026D59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA0D45C9191834DD00026D59 /* Route.h */,
+				CA0D45CA191834DD00026D59 /* Route.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CA49C43218F5EE9B0085E101 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +154,7 @@
 		CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				CA0D45C8191834B700026D59 /* Model */,
 				CAD944F218FEC9A900F5BA59 /* images.xcassets */,
 				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
 				CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */,
@@ -179,13 +178,6 @@
 				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
-				A7EA07AA18FB07A2006CA49D /* icon-60.png */,
-				A7EA07AC18FB0841006CA49D /* SGCIcon-120.png */,
-				A7EA07A218FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png */,
-				A7EA07A018FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png */,
-				A7EA079E18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png */,
-				A7EA079C18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png */,
-				A7EA079A18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png */,
 				CA49C44618F5EE9B0085E101 /* seagullcentury_iOS_v2-Info.plist */,
 				CA49C44718F5EE9B0085E101 /* InfoPlist.strings */,
 				CA49C44A18F5EE9B0085E101 /* main.m */,
@@ -291,17 +283,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EA079B18FADE16006CA49D /* Screen Shot 2014-04-13 at 10.57.21 AM.png in Resources */,
-				A7EA079F18FADF26006CA49D /* Screen Shot 2014-04-13 at 11.04.19 AM.png in Resources */,
-				A7EA07A318FB02EC006CA49D /* Screen Shot 2014-04-13 at 1.36.44 PM.png in Resources */,
-				A7EA07AB18FB07A2006CA49D /* icon-60.png in Resources */,
-				A7EA079D18FADF19006CA49D /* Screen Shot 2014-04-13 at 11.03.38 AM.png in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
 				CAD944F318FEC9A900F5BA59 /* images.xcassets in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
-				A7EA07A118FAFF59006CA49D /* Screen Shot 2014-04-13 at 1.20.39 PM.png in Resources */,
-				A7EA07AD18FB0841006CA49D /* SGCIcon-120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
+				CA0D45CB191834DD00026D59 /* Route.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
 				CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */,

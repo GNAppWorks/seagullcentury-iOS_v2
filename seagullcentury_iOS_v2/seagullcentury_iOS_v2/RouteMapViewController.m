@@ -9,7 +9,7 @@
 #import "RouteMapViewController.h"
 
 
-@interface RouteMapViewController () <UIWebViewDelegate>
+@interface RouteMapViewController () <UIWebViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -17,53 +17,73 @@
 - (void)informError:(NSError*)error;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
 
-
 @end
 
 @implementation RouteMapViewController
-@synthesize webView;
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-  
-    
-    
-    
-    
-    
-    
     self.webView.delegate = self;
-    [self loadRequestFromString:_urlRoute];
-   
+    [self loadRequestFromString:self.urlRoute];
+    
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onPan)];
+    
+    panGesture.delegate = self;
+    
+    [self.webView addGestureRecognizer:panGesture];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
+- (void)onPan
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    NSLog(@"I got panned");
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
-*/
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self checkLocation];
+    
+}
+
+- (void) checkLocation{
+    
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
+    {
+        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized)
+        {
+            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
+                                                          message:@"To re-enable, please go to Settings and turn on Location Service for this app."
+                                                         delegate:nil
+                                                cancelButtonTitle:@"Ok"
+                                                otherButtonTitles:nil];
+            [alert show];
+            alert= nil;
+        }
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES]
+                                                  forKey:@"userWasAskedForLocationOnce"];
+        
+        if ([CLLocationManager locationServicesEnabled]) //this will trigger the system prompt
+        {
+            [locationManager startUpdatingLocation];
+        }
+    }
+    
+}
 
 #pragma Design Methods
 - (void)loadRequestFromString:(NSString *)urlString
@@ -78,12 +98,6 @@
     [self.webView loadRequest:urlRequest];
 }
 
-#pragma mark - Updating the UI
--(void)updateTitle:(UIWebView *)aWebView
-{
-    NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    self.title = pageTitle;
-}
 
 #pragma mark - UIWebViewDelegate
 -(void)webViewDidStartLoad:(UIWebView *)webView
@@ -95,7 +109,6 @@
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [self updateTitle:self.webView];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

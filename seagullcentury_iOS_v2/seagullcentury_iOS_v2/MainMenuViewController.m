@@ -21,9 +21,8 @@
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 - (IBAction)callWagon:(UIBarButtonItem *)sender;
 
-- (void) backgroundSetup;
+- (void) initalSetup;
 - (void) checkLocation;
-
 
 @property NSUserDefaults *masterSettings;
 
@@ -32,24 +31,22 @@
 
 @implementation MainMenuViewController
 
-@synthesize mainView;
-@synthesize urlString;
-@synthesize masterSettings;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    [self backgroundSetup];
+    [self initalSetup];
+
     
 }
 
-
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+    [self checkLocation];
+    
+    
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
@@ -58,7 +55,7 @@
 }
 
 #pragma mark - Design Setup
-- (void) backgroundSetup{
+- (void) initalSetup{
     
     //add background
     /*
@@ -69,21 +66,18 @@
     myView.contentMode = UIViewContentModeScaleAspectFit;
     */
     
-    masterSettings = [NSUserDefaults standardUserDefaults];
-    [masterSettings setBool:1 forKey:@"Speed"];
-    [masterSettings setBool:0 forKey:@"Vendors"];
-    [masterSettings setBool:0 forKey:@"Waypoints"];
-    
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
-    [mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     self.title = @"Home";
     
-    
-    [self checkLocation];
+    self.masterSettings = [NSUserDefaults standardUserDefaults];
+    [self.masterSettings setBool:YES forKey:@"Speed"];
+    [self.masterSettings setBool:NO forKey:@"Vendors"];
+    [self.masterSettings setBool:NO forKey:@"Waypoints"];
     
 }
 
@@ -127,12 +121,16 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+   
     if([segue.identifier isEqualToString:@"toMap"]){
+        if ([segue.destinationViewController isKindOfClass:[RouteMapViewController class]]) {
+            self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain
+                                                                                  target:nil action:nil];
+            RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
+            controller.urlRoute = self.urlString;
+        }
         
-        self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain
-                                                                              target:nil action:nil];
-        RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
-        controller.urlRoute = urlString;
+        
     }
     
 }
@@ -140,22 +138,24 @@
 - (IBAction)routeSelectMethod:(UIButton *)sender{
     
     UIButton *button = (UIButton*)sender;
-    masterSettings = [NSUserDefaults standardUserDefaults];
+    int speedSettings, vendorSetting, waypointSetting;
+    speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
+    vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
+    waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
     
     if (button.tag == 1) {
-        urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=0", (int)[masterSettings boolForKey:@"Speed"],(int)[masterSettings boolForKey:@"Vendors"], (int)[masterSettings boolForKey:@"Waypoints"]];
+        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=0", speedSettings, vendorSetting, waypointSetting ];
         
     } else if (button.tag == 2) {
-        urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=1", (int)[masterSettings boolForKey:@"Speed"],(int)[masterSettings boolForKey:@"Vendors"], (int)[masterSettings boolForKey:@"Waypoints"]];
+        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=1", speedSettings, vendorSetting, waypointSetting];
         
     } else if (button.tag == 3){
-        urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=2", (int)[masterSettings boolForKey:@"Speed"],(int)[masterSettings boolForKey:@"Vendors"], (int)[masterSettings boolForKey:@"Waypoints"]];
+        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=2", speedSettings, vendorSetting,waypointSetting];
         
     } else if (button.tag == 4){
-        urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=-1", (int)[masterSettings boolForKey:@"Speed"],(int)[masterSettings boolForKey:@"Vendors"], (int)[masterSettings boolForKey:@"Waypoints"]];
+        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=-1", speedSettings, vendorSetting, waypointSetting];
         
     }
-    //NSLog(@"URL String passed %@", urlString);
     [self performSegueWithIdentifier:@"toMap" sender:self];
     
 }

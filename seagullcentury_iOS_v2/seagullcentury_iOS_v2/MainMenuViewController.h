@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import <Social/Social.h>
-#import <CoreLocation/CoreLocation.h>
+
+
 
 
 @interface MainMenuViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-
 
 
 @end
