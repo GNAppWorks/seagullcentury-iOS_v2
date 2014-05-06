@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CA0D45CB191834DD00026D59 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D45CA191834DD00026D59 /* Route.m */; };
+		CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */ = {isa = PBXBuildFile; fileRef = CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */; };
 		CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46E10118FDB50700B83937 /* FacebookSDK.framework */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		CA0D45C9191834DD00026D59 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = Model/Route.h; sourceTree = "<group>"; };
 		CA0D45CA191834DD00026D59 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = Model/Route.m; sourceTree = "<group>"; };
+		CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "seagullcentury-leaflet"; sourceTree = "<group>"; };
 		CA46E10118FDB50700B83937 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -111,6 +113,7 @@
 		CA0D45C8191834B700026D59 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */,
 				CA0D45C9191834DD00026D59 /* Route.h */,
 				CA0D45CA191834DD00026D59 /* Route.m */,
 			);
@@ -285,6 +288,7 @@
 			files = (
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
+				CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */,
 				CAD944F318FEC9A900F5BA59 /* images.xcassets in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
 			);

@@ -109,13 +109,21 @@
 - (void)loadRequestFromString:(NSString *)urlString
 {
     
-    NSURL *url = [NSURL URLWithString:urlString];
-    if (!url.scheme) {
-        NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",urlString];
-        url = [NSURL URLWithString:modifiedURLString];
-    }
-    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:urlRequest];
+    NSString *path = [[NSBundle mainBundle]
+                      pathForResource:@"index"
+                      ofType:@"html"
+                      inDirectory:@"seagullcentury-leaflet" ];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    
+    NSString *theAbsoluteURLString = [url absoluteString];
+    
+    NSString *absoluteURLwithQueryString = [theAbsoluteURLString stringByAppendingString: urlString];
+    
+    NSURL *finalURL = [NSURL URLWithString: absoluteURLwithQueryString];
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:finalURL cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:(NSTimeInterval)10.0 ];
+    
+    [self.webView loadRequest:request];
 }
 
 

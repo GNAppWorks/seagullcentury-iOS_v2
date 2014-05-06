@@ -144,18 +144,19 @@
     waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
     
     if (button.tag == 1) {
-        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=0", speedSettings, vendorSetting, waypointSetting ];
+        self.urlString = [NSString stringWithFormat:@"?route=0&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting ];
         
     } else if (button.tag == 2) {
-        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=1", speedSettings, vendorSetting, waypointSetting];
+        self.urlString = [NSString stringWithFormat:@"?route=1&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
         
     } else if (button.tag == 3){
-        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=2", speedSettings, vendorSetting,waypointSetting];
+        self.urlString = [NSString stringWithFormat:@"?route=2&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting,waypointSetting];
         
     } else if (button.tag == 4){
-        self.urlString = [NSString stringWithFormat:@"%@&speed=%d&vendors=%d&waypoint=%d", @"http://oxford.esrgc.org/maps/seagullcentury/index.html?route=-1", speedSettings, vendorSetting, waypointSetting];
+        self.urlString = [NSString stringWithFormat:@"?route=-1&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
         
     }
+    
     [self performSegueWithIdentifier:@"toMap" sender:self];
     
 }
