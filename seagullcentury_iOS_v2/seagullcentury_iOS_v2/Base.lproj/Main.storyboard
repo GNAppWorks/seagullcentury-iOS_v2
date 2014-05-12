@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" scrollEnabled="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -50,10 +50,10 @@
                                             <constraint firstAttribute="height" constant="75" id="8R3-cl-blL"/>
                                             <constraint firstAttribute="width" constant="290" id="QDm-t3-RHT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="100K Route Map" backgroundImage="100K Image">
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="22"/>
+                                        <size key="titleShadowOffset" width="5" height="5"/>
+                                        <state key="normal" title="Assateague Century Route" backgroundImage="Assateague">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="skp-P7-lLh"/>
@@ -66,8 +66,8 @@
                                             <constraint firstAttribute="width" constant="290" id="Agg-79-z1r"/>
                                             <constraint firstAttribute="height" constant="75" id="mPr-0m-qE6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="50 Mile Route Map" backgroundImage="50 Mile Image">
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="21"/>
+                                        <state key="normal" title="Pincess Anne Century Route" backgroundImage="Princess Anne">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -82,8 +82,8 @@
                                             <constraint firstAttribute="width" constant="290" id="GsN-gl-JsX"/>
                                             <constraint firstAttribute="height" constant="75" id="j6b-KI-TOQ"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="50K Route Map" backgroundImage="50K Image">
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="25"/>
+                                        <state key="normal" title="Snow Hill Metric Route" backgroundImage="Snow Hill">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -98,7 +98,9 @@
                                             <constraint firstAttribute="width" constant="290" id="gKN-Tp-7Sg"/>
                                             <constraint firstAttribute="height" constant="75" id="t1u-pR-tfl"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="Vendors">
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="24"/>
+                                        <state key="normal" title="Seagull Century Website" backgroundImage="Sea Gull Website">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -117,9 +119,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="0EK-ca-zEt" kind="push" id="sNX-Gg-FHd"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -138,7 +137,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" red="0.95198899872448983" green="0.95198899872448983" blue="0.95198899872448983" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.77254901960784317" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-2" id="8cV-f9-WwW"/>
                             <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="Qfp-Q1-U4o"/>
@@ -147,12 +146,6 @@
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem image="towTruck" id="sDi-br-qyG">
-                            <connections>
-                                <action selector="callWagon:" destination="cDH-Yr-avZ" id="yzi-ia-sYJ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="aRD-53-RJT"/>
                         <barButtonItem image="Facebook 2" id="5c5-NX-XU0">
                             <connections>
                                 <action selector="facebookShare:" destination="cDH-Yr-avZ" id="uOD-OF-iN4"/>
@@ -211,13 +204,7 @@
                             <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="w3W-GP-4Db"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem image="towTruck" id="iH7-uB-v7f">
-                            <connections>
-                                <action selector="callWagon:" destination="IqD-ea-mZf" id="oSg-Pw-WKc"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
                     <connections>
                         <outlet property="webView" destination="E6t-AE-nCi" id="zhA-xP-Rzc"/>
@@ -247,7 +234,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SGCIcon-120.png" translatesAutoresizingMaskIntoConstraints="NO" id="po5-gZ-X8L">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="po5-gZ-X8L">
                                 <rect key="frame" x="39" y="322" width="242" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -258,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l29-AD-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2886" y="821"/>
+            <point key="canvasLocation" x="2414" y="773"/>
         </scene>
         <!--Sidebar Settings Table View Controller - Settings-->
         <scene sceneID="sLP-M3-Dl5">
@@ -335,24 +322,20 @@
         </scene>
     </scenes>
     <resources>
-        <image name="100K Image" width="580" height="150"/>
-        <image name="50 Mile Image" width="578" height="150"/>
-        <image name="50K Image" width="580" height="150"/>
+        <image name="Assateague" width="290" height="75"/>
         <image name="Facebook 2" width="25" height="25"/>
-        <image name="SGCIcon-120.png" width="120" height="120"/>
+        <image name="Princess Anne" width="290" height="75"/>
         <image name="Screen Shot 2014-04-13 at 1.36.44 PM.png" width="290" height="75"/>
+        <image name="Sea Gull Website" width="290" height="75"/>
+        <image name="Snow Hill" width="290" height="75"/>
         <image name="Twitter 2" width="25" height="25"/>
-        <image name="Vendors" width="290" height="75"/>
         <image name="better_info" width="24" height="24"/>
+        <image name="icon-60" width="58" height="58"/>
         <image name="menu-icon" width="33" height="30"/>
-        <image name="towTruck" width="33" height="15"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="sNX-Gg-FHd"/>
-    </inferredMetricsTieBreakers>
 </document>

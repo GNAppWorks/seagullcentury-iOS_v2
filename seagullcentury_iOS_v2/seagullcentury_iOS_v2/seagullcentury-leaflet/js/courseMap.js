@@ -242,7 +242,7 @@ function networkDetected(){
     }
     else{
         console.log("No network change or unknown error");
-    } 
+    }
 }
 
 //Called when we don't have an active internet connection during every callback. Purpose is to figure out whether we need to switch to local mode
@@ -254,7 +254,7 @@ function noNetworkDetected(){
     }
     else{
         console.log("No network change or unknown error");
-    } 
+    }
 }
 
 //First of all, I apologize for how terrible this workaround is. The purpose of this part of the code is to detect network connection so we can
@@ -272,5 +272,7 @@ function checkNetworkMode(){
     counter++;
 }
 
+checkNetworkMode();
+
 //Will call checkNetworkMode ever 8 seconds
-var checkNetworkConnection = window.setInterval(checkNetworkMode, 8000);
+var checkNetworkConnection = window.setInterval(checkNetworkMode, 2000);

@@ -5,6 +5,9 @@
 //  Created by Brandon Altvater on 4/10/14.
 //  Copyright (c) 2014 Seagull Century. All rights reserved.
 //
+
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 static NSString *CellIdentifier = @"SettingsList";
 
 #import "SidebarSettingsTableViewController.h"
@@ -73,7 +76,7 @@ static NSString *CellIdentifier = @"SettingsList";
         
         UISwitch *settingsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
         
-        settingsSwitch.onTintColor = [UIColor colorWithRed:143/255.0f green:17/255.0f blue:17/255.0f alpha:1];
+        settingsSwitch.onTintColor = UIColorFromRGB(0X800000);
         [cell addSubview:settingsSwitch];
         cell.accessoryView = settingsSwitch;
         

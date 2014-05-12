@@ -15,11 +15,11 @@
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) NSString *urlString;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender;
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
 - (IBAction)routeSelectMethod:(UIButton *)sender;
-- (IBAction)callWagon:(UIBarButtonItem *)sender;
 
 - (void) initalSetup;
 - (void) checkLocation;
@@ -35,9 +35,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.revealViewController.delegate = self;
+    
     
     [self initalSetup];
-
     
 }
 
@@ -45,34 +46,45 @@
 {
     [super viewWillAppear:animated];
     [self checkLocation];
+    [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     
 }
 
--(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-
-    return YES;
+- (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
+{
+    NSLog(@"I am in position %u", position);
+    if (position == FrontViewPositionRight) {
+        [self.scrollView setUserInteractionEnabled:NO];
+        [self.navigationController.toolbar setUserInteractionEnabled:NO];
+    } else {
+        [self.scrollView setUserInteractionEnabled:YES];
+        [self.navigationController.toolbar setUserInteractionEnabled:YES];
+        
+    }
+    
 }
+
 
 #pragma mark - Design Setup
 - (void) initalSetup{
     
-    //add background
     /*
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SU_background.png"]];
-    [myView addSubview:background];
-    [myView sendSubviewToBack:background];
-     
-    myView.contentMode = UIViewContentModeScaleAspectFit;
-    */
+    //add background
+    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
+    [self.scrollView addSubview:background];
+    [self.scrollView sendSubviewToBack:background];
+     */
+    self.scrollView.contentMode = UIViewContentModeScaleAspectFit;
+    
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-    _sidebarButton.target = self.revealViewController;
-    _sidebarButton.action = @selector(revealToggle:);
+    self.sidebarButton.target = self.revealViewController;
+    self.sidebarButton.action = @selector(revealToggle:);
     
-    [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.title = @"Home";
+    
+    self.title = @"Seagull Century";
     
     self.masterSettings = [NSUserDefaults standardUserDefaults];
     [self.masterSettings setBool:YES forKey:@"Speed"];
@@ -85,6 +97,7 @@
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
+    NSLog(@"I check location services");
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
     {
@@ -112,7 +125,13 @@
     
 }
 
-
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    NSLog(@"I have dissapeared");
+    
+    
+}
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
     
     // resize the layers based on the view’s new bounds
@@ -128,9 +147,8 @@
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlRoute = self.urlString;
+            
         }
-        
-        
     }
     
 }

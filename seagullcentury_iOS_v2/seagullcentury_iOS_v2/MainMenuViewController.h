@@ -15,7 +15,7 @@
 
 @interface MainMenuViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 
 
 @end
