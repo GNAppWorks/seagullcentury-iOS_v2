@@ -15,7 +15,6 @@
 
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
-- (IBAction)callWagon:(UIBarButtonItem *)sender;
 
 @property (nonatomic, strong) Reachability *reach;
 @property NetworkStatus network;
@@ -39,10 +38,7 @@
     
     [self loadRequestFromString:self.urlRoute];
     
-
-    
-    
-    
+    [self.navigationController.interactivePopGestureRecognizer setEnabled:NO];
     
 }
 
@@ -56,12 +52,9 @@
     self.network = [self.reach currentReachabilityStatus];
     NSLog(@"this is what Network Flag is after viewDidAppear %ld", self.network);
     
-    UIScreenEdgePanGestureRecognizer *leftEdge = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:nil];
-    leftEdge.edges = UIRectEdgeLeft;
-    leftEdge.delegate = self;
-    
-    [self.view removeGestureRecognizer:leftEdge];
     [self setupBottomToolbar];
+    
+    
     
 }
 
@@ -140,21 +133,26 @@
 #pragma Design Methods
 - (void)loadRequestFromString:(NSString *)urlString
 {
-    NSString *path = [[NSBundle mainBundle]
-                      pathForResource:@"index"
-                      ofType:@"html"
-                      inDirectory:@"seagullcentury-leaflet" ];
-    NSURL *url = [NSURL fileURLWithPath:path];
+    if (self.routeBool) {
+        NSString *path = [[NSBundle mainBundle]
+                          pathForResource:@"index"
+                          ofType:@"html"
+                          inDirectory:@"seagullcentury-leaflet"];
+        
+        NSURL *url = [NSURL fileURLWithPath:path];
+        
+        NSString *theAbsoluteURLString = [url absoluteString];
+        
+        NSString *absoluteURLwithQueryString = [theAbsoluteURLString stringByAppendingString: urlString];
+        
+        NSURL *finalURL = [NSURL URLWithString: absoluteURLwithQueryString];
+        
+        self.finalRequest = [NSURLRequest requestWithURL:finalURL];
+        [self.webView loadRequest:self.finalRequest];
+    }
     
-    NSString *theAbsoluteURLString = [url absoluteString];
     
-    NSString *absoluteURLwithQueryString = [theAbsoluteURLString stringByAppendingString: urlString];
     
-    NSURL *finalURL = [NSURL URLWithString: absoluteURLwithQueryString];
-    
-    self.finalRequest = [NSURLRequest requestWithURL:finalURL];
-    
-    [self.webView loadRequest:self.finalRequest];
 }
 
 

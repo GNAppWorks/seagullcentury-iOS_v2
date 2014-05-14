@@ -37,7 +37,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.revealViewController.delegate = self;
     
-    
     [self initalSetup];
     
 }
@@ -48,12 +47,10 @@
     [self checkLocation];
     [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    
 }
 
 - (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
 {
-    NSLog(@"I am in position %u", position);
     if (position == FrontViewPositionRight) {
         [self.scrollView setUserInteractionEnabled:NO];
         [self.navigationController.toolbar setUserInteractionEnabled:NO];
@@ -67,7 +64,8 @@
 
 
 #pragma mark - Design Setup
-- (void) initalSetup{
+- (void) initalSetup
+{
     
     /*
     //add background
@@ -77,12 +75,9 @@
      */
     self.scrollView.contentMode = UIViewContentModeScaleAspectFit;
     
-    
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
-    
-    
     
     self.title = @"Seagull Century";
     
@@ -93,7 +88,8 @@
     
 }
 
-- (void) checkLocation{
+- (void) checkLocation
+{
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
@@ -125,35 +121,30 @@
     
 }
 
--(void)viewDidDisappear:(BOOL)animated
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    [super viewDidDisappear:animated];
-    NSLog(@"I have dissapeared");
-    
-    
-}
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
-    
     // resize the layers based on the view’s new bounds
     [[[self.mainView.layer sublayers] objectAtIndex:0] setFrame:self.mainView.bounds];
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
     
-   
     if([segue.identifier isEqualToString:@"toMap"]){
         if ([segue.destinationViewController isKindOfClass:[RouteMapViewController class]]) {
             self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlRoute = self.urlString;
+            controller.routeBool = YES;
             
         }
     }
     
 }
 
-- (IBAction)routeSelectMethod:(UIButton *)sender{
+- (IBAction)routeSelectMethod:(UIButton *)sender
+{
     
     UIButton *button = (UIButton*)sender;
     int speedSettings, vendorSetting, waypointSetting;
@@ -162,24 +153,23 @@
     waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
     
     if (button.tag == 1) {
-        self.urlString = [NSString stringWithFormat:@"?route=0&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting ];
-        
+        self.urlString = [NSString stringWithFormat:@"?route=0&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
     } else if (button.tag == 2) {
         self.urlString = [NSString stringWithFormat:@"?route=1&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
-        
     } else if (button.tag == 3){
         self.urlString = [NSString stringWithFormat:@"?route=2&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting,waypointSetting];
-        
     } else if (button.tag == 4){
         self.urlString = [NSString stringWithFormat:@"?route=-1&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
-        
     }
-    
     [self performSegueWithIdentifier:@"toMap" sender:self];
+        
+    
+    
     
 }
 
-- (IBAction)facebookShare:(UIBarButtonItem *)sender {
+- (IBAction)facebookShare:(UIBarButtonItem *)sender
+{
     /*
     // Check if the Facebook app is installed and we can present the share dialog
     FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
@@ -283,7 +273,8 @@
     
 }
 
-- (IBAction)twitterShare:(UIBarButtonItem *)sender {
+- (IBAction)twitterShare:(UIBarButtonItem *)sender
+{
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
@@ -318,7 +309,8 @@
     return params;
 }
 
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
     
     BOOL urlWasHandled = [FBAppCall handleOpenURL:url
                                 sourceApplication:sourceApplication
@@ -332,7 +324,8 @@
 }
  
 
-- (IBAction)callWagon:(UIBarButtonItem *)sender {
+- (IBAction)callWagon:(UIBarButtonItem *)sender
+{
     
     UIDevice *device = [UIDevice currentDevice];
     if ([[device model] isEqualToString:@"iPhone"] ){

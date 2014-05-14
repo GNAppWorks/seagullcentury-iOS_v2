@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CA0D45CB191834DD00026D59 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = CA0D45CA191834DD00026D59 /* Route.m */; };
 		CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */ = {isa = PBXBuildFile; fileRef = CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */; };
 		CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46E10118FDB50700B83937 /* FacebookSDK.framework */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
@@ -30,8 +29,9 @@
 		CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA79DF6F18F778C6008637F9 /* SUStart.gpx */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
-		CAD944F318FEC9A900F5BA59 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAD944F218FEC9A900F5BA59 /* images.xcassets */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
+		CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */; };
+		CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAED3CC0192137EC0069BF7F /* images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +45,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CA0D45C9191834DD00026D59 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = Model/Route.h; sourceTree = "<group>"; };
-		CA0D45CA191834DD00026D59 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = Model/Route.m; sourceTree = "<group>"; };
 		CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "seagullcentury-leaflet"; sourceTree = "<group>"; };
 		CA46E10118FDB50700B83937 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,8 +76,10 @@
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		CAD944F218FEC9A900F5BA59 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullCenturyEvent.h; path = Model/SeaGullCenturyEvent.h; sourceTree = "<group>"; };
+		CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullCenturyEvent.m; path = Model/SeaGullCenturyEvent.m; sourceTree = "<group>"; };
+		CAED3CC0192137EC0069BF7F /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */,
-				CA0D45C9191834DD00026D59 /* Route.h */,
-				CA0D45CA191834DD00026D59 /* Route.m */,
+				CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */,
+				CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -157,11 +157,11 @@
 		CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */ = {
 			isa = PBXGroup;
 			children = (
-				CA0D45C8191834B700026D59 /* Model */,
-				CAD944F218FEC9A900F5BA59 /* images.xcassets */,
+				CAED3CC0192137EC0069BF7F /* images.xcassets */,
 				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
 				CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */,
 				CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */,
+				CA0D45C8191834B700026D59 /* Model */,
 				CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */,
 				CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */,
 				CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */,
@@ -289,8 +289,8 @@
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
 				CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */,
-				CAD944F318FEC9A900F5BA59 /* images.xcassets in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
+				CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
-				CA0D45CB191834DD00026D59 /* Route.m in Sources */,
+				CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
 				CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */,
