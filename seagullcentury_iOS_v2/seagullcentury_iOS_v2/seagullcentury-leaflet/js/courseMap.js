@@ -1,6 +1,10 @@
 //the network status. Options are "network" and "local"
 var networkMode = "network";
 
+//We use this so that we zoom to the rider's location the first time he/she is geolocated yet we don't have to zoom to them every time
+//a location is found (that's what locateOptions.setView is for)
+var firstGeolocation = "true";
+
 //IMPORTANT NOTE - these are string values, not numbers or booleans. This is to make URL parsing easier.
 //Default settings, can be overridden by passing values via the URL
 var settings = {
@@ -26,6 +30,7 @@ if(settings.distance == "0"){
 
     //By default we assume the distance bar is going to be there, so we set a top margin on the +/- button group so it looks good. We need to alter it if the distance bar isn't going to be there.
     //It's in #(document).ready() because since Leaflet adds this class dynamically we have to wait for the object to load into the DOM before we can alter it
+    //NOTE - in a later version the +/- was removed, making this code worthless, but this is staying in in case we ever put anything there in the future.
     $(document).ready(function() {
         $(".leaflet-top").css("margin-top", "0px");
     });
@@ -46,14 +51,32 @@ var networkURL = 'http://a.tile.opencyclemap.org/cycle/{z}/{x}/{y}.png';
 //URL of the local tiles. We've only caached zoom level 14.
 var localURL = 'data/tiles/{z}/{x}/{y}.png';
 
-//load base layer. default is network, if there's no network we'll eventually hit the setInterval 8 second timer and load the local tiles.
+//load base layer. default is network, if there's no network we'll eventually hit the setInterval 5 second timer and load the local tiles.
 var baseLayer = L.tileLayer(networkURL, {maxZoom: 19}).addTo(map);
 
 var routeGeoJSON;
 
+var tempE;
+if(settings.route != "-1"){
+    // load route from server
+    $.getScript('http://oxford.esrgc.org/maps/seagullcentury/data/route' + settings.route + '.js', 
+        function(){
+            routeGeoJSON = L.geoJson(route).addTo(map);
+            //This means that we've already fired the geolocation event before we had the route, so we need to fire it again
+            if(tempE != undefined){
+                onLocationFound(tempE);
+                map._onResize();
+            }
+        }
+    );
+}
+else{
+    $('#distance').hide();
+}
+
 var locateOptions = {
     watch: true,
-    setView: true,
+    setView: false,
     maxZoom: 16
 };
 
@@ -63,8 +86,55 @@ var circle;
 var hasGottenSpeed = false;
 
 if(settings.vendors == "1"){
+    var blueIcon = L.icon({
+        iconUrl: 'js/lib/images/blue-icon.png',
+        iconRetinaUrl: 'js/lib/images/blue-icon@2x.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 21],
+        popupAnchor: [12, 0],
+        shadowUrl: 'js/lib/images/marker-shadow.png',
+        shadowRetinaUrl: 'js/lib/images/marker-shadow@2x.png',
+        shadowSize: [41, 41],
+        shadowAnchor: [12, 21]
+    });
+
+    var redIcon = L.icon({
+        iconUrl: 'js/lib/images/red-icon.png',
+        iconRetinaUrl: 'red-icon@2x.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 21],
+        popupAnchor: [12, 0],
+        shadowUrl: 'js/lib/images/marker-shadow.png',
+        shadowRetinaUrl: 'js/lib/images/marker-shadow@2x.png',
+        shadowSize: [41, 41],
+        shadowAnchor: [12, 21]
+    });
+
+    var greenIcon = L.icon({
+        iconUrl: 'js/lib/images/green-icon.png',
+        iconRetinaUrl: 'js/lib/images/green-icon@2x.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 21],
+        popupAnchor: [12, 0],
+        shadowUrl: 'js/lib/images/marker-shadow.png',
+        shadowRetinaUrl: 'js/lib/images/marker-shadow@2x.png',
+        shadowSize: [41, 41],
+        shadowAnchor: [12, 21]
+    });
+
     function onEachFeature(feature, layer) {
+                    console.log("here");
+
         if(feature.properties){
+            if(feature.properties.type == "hotel"){
+                layer.setIcon(blueIcon);
+            }
+            else if(feature.properties.type == "restaurant"){
+                layer.setIcon(redIcon);
+            }
+            else{
+                layer.setIcon(greenIcon);
+            }
             layer.bindPopup("<h1>"+feature.properties.name+"</h1><h3>"+feature.properties.address+"</h3><h4>"+feature.properties.description+"</h4>");
         }
     }
@@ -78,23 +148,21 @@ if(settings.vendors == "1"){
 
 // function for finding Geolocation and adding a marker to the map
 function onLocationFound(e) {
+    tempE = e;
+
     var radius = e.accuracy / 2;
 
     if(circle != undefined){
         map.removeLayer(circle);
     }
 
-    circle = L.circle(e.latlng, radius).addTo(map);
+    circle = L.circle(e.latlng, radius, {color: '#61B329'}).addTo(map);
 
-    //This function will add the route to the nearest rest stop to the map. We're going to want to make this it's own button rather than calling it whenever the location is found.
-    if(settings.route != "-1"){
-        var routeToNearestRestStop = new Route(routeGeoJSON, route, e.latlng.lng, e.latlng.lat);
-        L.geoJson(routeToNearestRestStop.getRoute(), {style: {color: "red"}}).addTo(map);
+    if(firstGeolocation == "true"){
+        map.setView(e.latlng, 16);
+        firstGeolocation = "false";
     }
 
-    //This next line is for testing purposes, but it fires so frequently that it's really annoying so I'm commenting it out.
-    //alert("Distance to nearest rest stop: " + routeToNearestRestStop.getGeoJSONLineDistance() + " Miles");
-    
     var speedText = '';
     //Speed isn't always defined, it depends on the device, connection method, etc. We only add it if we're given a number for it that makes sense.
     //If we get speed back in the e object and the speed setting is marked as true we go into this statement
@@ -115,8 +183,23 @@ function onLocationFound(e) {
         speedText = setSpeedText(null);
     }
     $('.speed-control').html(speedText);
-    if(settings.route != "-1"){
-        $('#distance').html('<h2>Nearest Rest Stop - ' + routeToNearestRestStop.getGeoJSONLineDistance() + ' miles</h2>');
+
+    if(typeof route != 'undefined'){
+        //This function will add the route to the nearest rest stop to the map.
+        if(settings.route != "-1"){
+            var routeToNearestRestStop = new Route(routeGeoJSON, route, e.latlng.lng, e.latlng.lat);
+            L.geoJson(routeToNearestRestStop.getRoute(), {style: {color: "red"}}).addTo(map);
+        }
+
+        //This next line is for testing purposes, but it fires so frequently that it's really annoying so I'm commenting it out.
+        //alert("Distance to nearest rest stop: " + routeToNearestRestStop.getGeoJSONLineDistance() + " Miles");
+        
+        if(settings.route != "-1"){
+            $('#distance').html('<h2>Nearest Rest Stop - ' + routeToNearestRestStop.getGeoJSONLineDistance() + ' miles</h2>');
+        }
+    }
+    else{
+        console.log("route is undefined, meaning that the getScript call to get the route has not succeeded yet.");
     }
 }
 
@@ -134,21 +217,13 @@ map.on('locationfound', onLocationFound);
 
 // Function to display an Error on location fail
 function onLocationError(e) {
-    alert(e.message);
+    console.log(e.message);
+    $('#distance').html('<h2>Geolocation Error</h2>');
 }
 
 map.on('locationerror', onLocationError);
 
 map.locate(locateOptions);
-
-if(settings.route != "-1"){
-    // load route from server
-    $.getScript('http://oxford.esrgc.org/maps/seagullcentury/data/route' + settings.route + '.js', 
-        function(){
-            routeGeoJSON = L.geoJson(route).addTo(map);
-        }
-    );
-}
 
 // Read a page's GET URL variables and return them as an associative array.
 function getUrlVars()
@@ -210,7 +285,7 @@ map.addControl(new (L.Control.extend({
 
         // Set CSS for the control interior
         var controlText = L.DomUtil.create('div', 'center-gps-button-interior', controlUI);
-        controlText.innerHTML = "<button><h2>Location Tracking - On</h2></button>";
+        controlText.innerHTML = "<button><h2>Location Tracking - Off</h2></button>";
 
         return controlDiv;
     }
@@ -242,7 +317,7 @@ function networkDetected(){
     }
     else{
         console.log("No network change or unknown error");
-    }
+    } 
 }
 
 //Called when we don't have an active internet connection during every callback. Purpose is to figure out whether we need to switch to local mode
@@ -254,14 +329,14 @@ function noNetworkDetected(){
     }
     else{
         console.log("No network change or unknown error");
-    }
+    } 
 }
 
 //First of all, I apologize for how terrible this workaround is. The purpose of this part of the code is to detect network connection so we can
-//switch to local tiles if we need to. In short, every 8 seconds we call checkNetworkMode(). This requests an image on
+//switch to local tiles if we need to. In short, every 5 seconds we call checkNetworkMode(). This requests an image on
 //a remote server, sets width/height to 0, makes it so we don't cache the image, and then insert it into the DOM. If there's a network connection
-//we'll hit the onload event in the HTML and, if we were in local mode 8 seconds previously, we'll switch to network mode. Conversely, if there's
-//no network connection and 8 seconds ago we were in network mode then we need to switch the local mode. Local and network modes just change whether
+//we'll hit the onload event in the HTML and, if we were in local mode 5 seconds previously, we'll switch to network mode. Conversely, if there's
+//no network connection and 5 seconds ago we were in network mode then we need to switch the local mode. Local and network modes just change whether
 //we pull the tiles from the internet or from the local file system.
 
 //The counter lets us append ?counter to the end of the src attribute, meaning we won't cache our images. It needs to be this way because
@@ -272,7 +347,6 @@ function checkNetworkMode(){
     counter++;
 }
 
+//Will call checkNetworkMode ever 5 seconds, but call it once immediately so there isn't a 5 second delay on load
 checkNetworkMode();
-
-//Will call checkNetworkMode ever 8 seconds
-var checkNetworkConnection = window.setInterval(checkNetworkMode, 2000);
+var checkNetworkConnection = window.setInterval(checkNetworkMode, 5000);
