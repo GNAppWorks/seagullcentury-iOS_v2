@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */ = {isa = PBXBuildFile; fileRef = CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */; };
-		CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA46E10118FDB50700B83937 /* FacebookSDK.framework */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
 		CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
@@ -29,6 +28,7 @@
 		CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA79DF6F18F778C6008637F9 /* SUStart.gpx */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
+		CAE5CAEA192D01BF00552584 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE5CAE9192D01BF00552584 /* FacebookSDK.framework */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
 		CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */; };
 		CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAED3CC0192137EC0069BF7F /* images.xcassets */; };
@@ -76,6 +76,7 @@
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CAE5CAE9192D01BF00552584 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullCenturyEvent.h; path = Model/SeaGullCenturyEvent.h; sourceTree = "<group>"; };
 		CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullCenturyEvent.m; path = Model/SeaGullCenturyEvent.m; sourceTree = "<group>"; };
@@ -87,10 +88,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAE5CAEA192D01BF00552584 /* FacebookSDK.framework in Frameworks */,
 				CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */,
 				CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */,
 				CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */,
-				CA46E10218FDB50700B83937 /* FacebookSDK.framework in Frameworks */,
 				CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
@@ -142,6 +143,7 @@
 		CA49C43D18F5EE9B0085E101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CAE5CAE9192D01BF00552584 /* FacebookSDK.framework */,
 				CA4F26FC19016B5F008BC69C /* Social.framework */,
 				CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */,
 				CA46E10118FDB50700B83937 /* FacebookSDK.framework */,
@@ -446,6 +448,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Brandon/Documents/FacebookSDK,
+					"/Users/Brandon/Documents/Development/seagullcentury-iOS_v2/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
@@ -466,6 +469,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/Brandon/Documents/FacebookSDK,
+					"/Users/Brandon/Documents/Development/seagullcentury-iOS_v2/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
