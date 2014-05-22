@@ -61,7 +61,6 @@
     
 }
 
-
 -(void) viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -69,7 +68,6 @@
     self.reach = [Reachability reachabilityForInternetConnection];
     [self.reach startNotifier];
     self.network = [self.reach currentReachabilityStatus];
-    NSLog(@"this is what Network Flag is after viewDidAppear %ld", self.network);
     
     if (self.routeBool) {
         [self.navigationController.toolbar setItems:self.routeToolbar];
@@ -77,54 +75,55 @@
         [self.navigationController.toolbar setItems:self.webToolbar];
     }
     
-    
-    
-    
 }
 
 -(void) setupBottomToolbar
 {
-    
-    
     if (self.routeBool) {
-        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"towTruck"] style:UIBarButtonItemStylePlain target:self action:@selector(callWagon:)];
+        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                      target:self action:nil];
+        
+        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"towTruck"]
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:self
+                                                                   action:@selector(callWagon:)];
         
         self.routeToolbar = [NSArray arrayWithObjects:sagWagon, flexiableItem, nil];
-        //[self.navigationController.toolbar setItems:self.routeToolbar];
+        
     }else {
-        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                      target:self
+                                                                                      action:nil];
+        
         UIBarButtonItem *stopButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                    target:self.webView
                                                                                    action:@selector(stopLoading)];
-        UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self.webView action:@selector(reload)];
-        UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self.webView action:@selector(goBack)];
-        UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self.webView action:@selector(goForward)];
+        
+        UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+                                                                                     target:self.webView
+                                                                                     action:@selector(reload)];
+        
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRewind
+                                                                                   target:self.webView
+                                                                                   action:@selector(goBack)];
+        
+        UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
+                                                                                      target:self.webView
+                                                                                      action:@selector(goForward)];
         
         self.webToolbar = [NSArray arrayWithObjects:backButton, flexiableItem, stopButton, flexiableItem, reloadButton, flexiableItem,forwardButton, nil];
-        //[self.navigationController.toolbar setItems:self.webToolbar];
     }
     
 }
 
-- (void) updateButtons
-{
-    if (!self.routeBool)
-    {
-        [[self.webToolbar objectAtIndex:6] setEnabled:self.webView.canGoForward];
-        [[self.webToolbar objectAtIndex:0] setEnabled:self.webView.canGoBack];
-        [[self.webToolbar objectAtIndex:2] setEnabled:self.webView.loading];
-    }
-}
 
 - (void) reachabilityChanged:(NSNotification *) notification {
     
-    if( [self.reach isKindOfClass: [Reachability class]]) {
+    if([self.reach isKindOfClass: [Reachability class]]) {
         
         self.network = [self.reach currentReachabilityStatus];
+
         
-        NSLog(@"this is what Network Flag it %ld", self.network);
-        /*
         if (self.network == 0) {
             
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity Change"
@@ -134,9 +133,8 @@
             [alert show];
             [self.webView loadRequest:self.finalRequest];
         }
-        */
+
     }
-        
     
     [self checkLocation];
 }
@@ -177,8 +175,8 @@
 #pragma Design Methods
 - (void)loadRequestFromString:(NSString *)urlString
 {
-    if (self.routeBool) {
-        
+    if (self.routeBool)
+    {
         NSString *path = [[NSBundle mainBundle]
                           pathForResource:@"index"
                           ofType:@"html"
@@ -194,8 +192,8 @@
         
         self.finalRequest = [NSURLRequest requestWithURL:finalURL];
         [self.webView loadRequest:self.finalRequest];
-    }else {
-       
+    }else
+    {
         NSURL *url = [NSURL URLWithString:self.urlRoute];
         if (!url.scheme) {
             NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",self.urlRoute];
@@ -210,12 +208,21 @@
 
 
 #pragma mark - Updating the UI
+- (void) updateButtons
+{
+    if (!self.routeBool)
+    {
+        [[self.webToolbar objectAtIndex:6] setEnabled:self.webView.canGoForward];
+        [[self.webToolbar objectAtIndex:0] setEnabled:self.webView.canGoBack];
+        [[self.webToolbar objectAtIndex:2] setEnabled:self.webView.loading];
+    }
+}
+
 -(void)updateTitle:(UIWebView *)aWebView
 {
     NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.title = pageTitle;
 }
-
 
 #pragma mark - UIWebViewDelegate
 -(void)webViewDidStartLoad:(UIWebView *)webView
@@ -253,6 +260,15 @@
      
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
+    }
+}
+
+#pragma mark - Special Methods
 - (IBAction)callWagon:(UIBarButtonItem *)sender {
     UIDevice *device = [UIDevice currentDevice];
     if ([[device model] isEqualToString:@"iPhone"] ){
@@ -263,10 +279,10 @@
                                              cancelButtonTitle:@"Cancel"
                                              otherButtonTitles:@"Continue", nil];
         [alert show];
+
         
-        //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
-        
-    }else{
+    }else
+    {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
                                                         message:@" This is not an iPhone and cannot make calls"
@@ -274,16 +290,6 @@
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
-    }
-}
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        NSLog(@"Clicked YESS");
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
-    }else{
-        NSLog(@"Clicked NOOO");
     }
 }
 

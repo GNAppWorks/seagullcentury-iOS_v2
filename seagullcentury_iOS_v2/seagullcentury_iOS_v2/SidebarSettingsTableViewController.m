@@ -45,7 +45,6 @@ static NSString *CellIdentifier = @"SettingsList";
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
