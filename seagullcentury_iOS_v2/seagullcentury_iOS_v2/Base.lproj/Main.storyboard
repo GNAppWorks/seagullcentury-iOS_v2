@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -39,7 +39,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" scrollEnabled="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -67,7 +67,7 @@
                                             <constraint firstAttribute="height" constant="75" id="mPr-0m-qE6"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="21"/>
-                                        <state key="normal" title="Pincess Anne Century Route" backgroundImage="Princess Anne">
+                                        <state key="normal" title="Princess Anne Metric Route" backgroundImage="Princess Anne">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -83,7 +83,7 @@
                                             <constraint firstAttribute="height" constant="75" id="j6b-KI-TOQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="25"/>
-                                        <state key="normal" title="Snow Hill Metric Route" backgroundImage="Snow Hill">
+                                        <state key="normal" title="Snow Hill Century Route" backgroundImage="Snow Hill">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -227,17 +227,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-2f-pev">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="309"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">A century ride is a bicycle ride of 100 miles (160.9 km) or more within 12 hours, usually as a cycling club-sponsored event. Many cycling clubs sponsor an annual century ride as both a social event for cyclists and as a fund-raiser for the club’s other activities. A sanctioned century ride is organized and conducted under the rules and liability protection of a sanctioning organization, such as the League of American Bicyclists. Sanctioned rides typically have rest stops every 25 miles or so, where water, food and toilets are available for cyclists. On a supported century ride, the route is patrolled by a sag wagon to assist riders with bicycle maintenance, or provide transportation back to the starting line for those unable to ride the entire course. Sanctioned rides are almost always supported.</string>
+                                <mutableString key="text">Every fall, an average of 7,000 cyclists participate in Salisbury University’s Sea Gull Century bike ride across the Lower Eastern Shore. Started over 25 years ago, the ride has grown from less than 100 participants in its early years to become “among the largest and now oldest on the East Coast,” said coordinator Amy Waters. The traditional 100-mile Assateague century offers a panoramic view of the Atlantic Ocean and a glimpse of the wild ponies, while the 100-mile Snow Hill century takes cyclists through a quaint Worcester County town, with galleries and beautiful homes. A 64-mile Princess Anne metric route winds through Somerset County.</mutableString>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon-60" translatesAutoresizingMaskIntoConstraints="NO" id="po5-gZ-X8L">
-                                <rect key="frame" x="39" y="322" width="242" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -330,7 +326,6 @@
         <image name="Snow Hill" width="290" height="75"/>
         <image name="Twitter 2" width="25" height="25"/>
         <image name="better_info" width="24" height="24"/>
-        <image name="icon-60" width="58" height="58"/>
         <image name="menu-icon" width="33" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

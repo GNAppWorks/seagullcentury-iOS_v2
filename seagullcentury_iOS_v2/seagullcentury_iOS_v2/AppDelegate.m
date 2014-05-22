@@ -31,6 +31,7 @@
                                                            [UIFont fontWithName:@"Baskerville-SemiBold" size:22.0], NSFontAttributeName, nil]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
    
     
     return YES;

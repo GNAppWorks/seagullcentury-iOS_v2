@@ -12,6 +12,8 @@
 @interface RouteMapViewController () <UIWebViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) NSArray *routeToolbar;
+@property (strong, nonatomic) NSArray *webToolbar;
 
 - (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
@@ -24,6 +26,23 @@
 
 @implementation RouteMapViewController
 
+- (NSArray *) routeToolbar
+{
+    if (!_routeToolbar)
+    {
+        _routeToolbar = [[NSArray alloc]init];
+    }
+    return _routeToolbar;
+}
+
+- (NSArray *) webToolbar
+{
+    if (!_webToolbar)
+    {
+        _webToolbar = [[NSArray alloc]init];
+    }
+    return _webToolbar;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,7 +56,7 @@
     self.webView.delegate = self;
     
     [self loadRequestFromString:self.urlRoute];
-    
+    [self setupBottomToolbar];
     [self.navigationController.interactivePopGestureRecognizer setEnabled:NO];
     
 }
@@ -52,7 +71,12 @@
     self.network = [self.reach currentReachabilityStatus];
     NSLog(@"this is what Network Flag is after viewDidAppear %ld", self.network);
     
-    [self setupBottomToolbar];
+    if (self.routeBool) {
+        [self.navigationController.toolbar setItems:self.routeToolbar];
+    }else{
+        [self.navigationController.toolbar setItems:self.webToolbar];
+    }
+    
     
     
     
@@ -60,17 +84,37 @@
 
 -(void) setupBottomToolbar
 {
-    UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-    UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"towTruck"] style:UIBarButtonItemStylePlain target:self action:@selector(callWagon:)];
     
-    NSArray *toolbarItems = [NSArray arrayWithObjects:sagWagon, flexiableItem, nil];
+    
+    if (self.routeBool) {
+        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"towTruck"] style:UIBarButtonItemStylePlain target:self action:@selector(callWagon:)];
+        
+        self.routeToolbar = [NSArray arrayWithObjects:sagWagon, flexiableItem, nil];
+        //[self.navigationController.toolbar setItems:self.routeToolbar];
+    }else {
+        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+        UIBarButtonItem *stopButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop
+                                                                                   target:self.webView
+                                                                                   action:@selector(stopLoading)];
+        UIBarButtonItem *reloadButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self.webView action:@selector(reload)];
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRewind target:self.webView action:@selector(goBack)];
+        UIBarButtonItem *forwardButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward target:self.webView action:@selector(goForward)];
+        
+        self.webToolbar = [NSArray arrayWithObjects:backButton, flexiableItem, stopButton, flexiableItem, reloadButton, flexiableItem,forwardButton, nil];
+        //[self.navigationController.toolbar setItems:self.webToolbar];
+    }
+    
+}
 
-   
-    [self.navigationController.toolbar setItems:toolbarItems];
-   
-    
-    
-    
+- (void) updateButtons
+{
+    if (!self.routeBool)
+    {
+        [[self.webToolbar objectAtIndex:6] setEnabled:self.webView.canGoForward];
+        [[self.webToolbar objectAtIndex:0] setEnabled:self.webView.canGoBack];
+        [[self.webToolbar objectAtIndex:2] setEnabled:self.webView.loading];
+    }
 }
 
 - (void) reachabilityChanged:(NSNotification *) notification {
@@ -134,6 +178,7 @@
 - (void)loadRequestFromString:(NSString *)urlString
 {
     if (self.routeBool) {
+        
         NSString *path = [[NSBundle mainBundle]
                           pathForResource:@"index"
                           ofType:@"html"
@@ -149,9 +194,17 @@
         
         self.finalRequest = [NSURLRequest requestWithURL:finalURL];
         [self.webView loadRequest:self.finalRequest];
+    }else {
+       
+        NSURL *url = [NSURL URLWithString:self.urlRoute];
+        if (!url.scheme) {
+            NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",self.urlRoute];
+            url = [NSURL URLWithString:modifiedURLString];
+        }
+        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+        
+        [self.webView loadRequest:urlRequest];
     }
-    
-    
     
 }
 
@@ -169,17 +222,20 @@
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.webView.scalesPageToFit = YES;
+    [self updateButtons];
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
     [self updateTitle:self.webView];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
     [self informError:error];
 }
 

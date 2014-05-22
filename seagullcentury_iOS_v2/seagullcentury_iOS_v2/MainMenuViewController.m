@@ -36,7 +36,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.revealViewController.delegate = self;
-    
+
     [self initalSetup];
     
 }
@@ -93,7 +93,6 @@
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
-    NSLog(@"I check location services");
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
     {
@@ -136,7 +135,11 @@
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlRoute = self.urlString;
-            controller.routeBool = YES;
+            if (![self.urlString isEqualToString:@"www.seagullcentury.org"]) {
+                controller.routeBool = YES;
+            }else {
+                controller.routeBool = NO;
+            }
             
         }
     }
@@ -159,11 +162,9 @@
     } else if (button.tag == 3){
         self.urlString = [NSString stringWithFormat:@"?route=2&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting,waypointSetting];
     } else if (button.tag == 4){
-        self.urlString = [NSString stringWithFormat:@"?route=-1&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
+        self.urlString = [NSString stringWithFormat:@"www.seagullcentury.org"];
     }
     [self performSegueWithIdentifier:@"toMap" sender:self];
-        
-    
     
     
 }
