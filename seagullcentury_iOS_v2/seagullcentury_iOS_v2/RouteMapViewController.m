@@ -79,21 +79,19 @@
 
 -(void) setupBottomToolbar
 {
+    UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                  target:self action:nil];
     if (self.routeBool) {
-        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                      target:self action:nil];
         
-        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"towTruck"]
+        
+        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"sagWagon25"]
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:self
                                                                    action:@selector(callWagon:)];
         
-        self.routeToolbar = [NSArray arrayWithObjects:sagWagon, flexiableItem, nil];
+        self.routeToolbar = [NSArray arrayWithObjects:flexiableItem, sagWagon, flexiableItem, nil];
         
     }else {
-        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                      target:self
-                                                                                      action:nil];
         
         UIBarButtonItem *stopButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                    target:self.webView
@@ -264,7 +262,7 @@
 {
     if (buttonIndex == 1) {
 
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://4105436342"]];
     }
 }
 

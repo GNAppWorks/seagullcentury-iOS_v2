@@ -39,35 +39,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
-                                        <rect key="frame" x="15" y="20" width="290" height="75"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SGC_Logo_2x2" translatesAutoresizingMaskIntoConstraints="NO" id="ptG-3K-fOz">
+                                        <rect key="frame" x="20" y="20" width="290" height="226"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="8R3-cl-blL"/>
-                                            <constraint firstAttribute="width" constant="290" id="QDm-t3-RHT"/>
-                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
+                                        <rect key="frame" x="20" y="259" width="290" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="22"/>
                                         <size key="titleShadowOffset" width="5" height="5"/>
-                                        <state key="normal" title="Assateague Century Route" backgroundImage="Assateague">
+                                        <state key="normal" backgroundImage="SGC_AppButtons_V2-01">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="skp-P7-lLh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
-                                        <rect key="frame" x="15" y="120" width="290" height="75"/>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
+                                        <rect key="frame" x="20" y="342" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="Agg-79-z1r"/>
-                                            <constraint firstAttribute="height" constant="75" id="mPr-0m-qE6"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="21"/>
-                                        <state key="normal" title="Princess Anne Metric Route" backgroundImage="Princess Anne">
+                                        <state key="normal" backgroundImage="SGC_AppButtons_V2-02">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -75,15 +71,11 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="7BF-qM-RFm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
-                                        <rect key="frame" x="15" y="220" width="290" height="75"/>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
+                                        <rect key="frame" x="20" y="425" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="GsN-gl-JsX"/>
-                                            <constraint firstAttribute="height" constant="75" id="j6b-KI-TOQ"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="23"/>
-                                        <state key="normal" title="Snow Hill Century Route" backgroundImage="Snow Hill">
+                                        <state key="normal" backgroundImage="SGC_AppButtons_V2-03">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -91,15 +83,11 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="zmO-eQ-ySM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
-                                        <rect key="frame" x="15" y="320" width="290" height="75"/>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
+                                        <rect key="frame" x="20" y="508" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="gKN-Tp-7Sg"/>
-                                            <constraint firstAttribute="height" constant="75" id="t1u-pR-tfl"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="24"/>
-                                        <state key="normal" title="Seagull Century Website" backgroundImage="Sea Gull Website">
+                                        <state key="normal" backgroundImage="SGC_AppButtons_V2-04-04">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -107,43 +95,10 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="S4s-DB-H83"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIJ-m5-TP1">
-                                        <rect key="frame" x="15" y="488" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="LFB-eR-Heo"/>
-                                            <constraint firstAttribute="height" constant="75" id="j7X-Ha-MAZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="About SGC" backgroundImage="Screen Shot 2014-04-13 at 1.36.44 PM.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="VnH-jn-5ck" secondAttribute="top" constant="220" id="0UA-yI-ZQ9"/>
-                                    <constraint firstAttribute="bottom" secondItem="lnC-Pp-i34" secondAttribute="bottom" constant="475" id="1mV-Gz-vG1"/>
-                                    <constraint firstItem="D1n-Ou-zku" firstAttribute="top" secondItem="fPN-GA-h51" secondAttribute="bottom" constant="25" id="3ZP-ay-GaJ"/>
-                                    <constraint firstAttribute="centerX" secondItem="lnC-Pp-i34" secondAttribute="centerX" id="I4k-cJ-ux4"/>
-                                    <constraint firstAttribute="centerX" secondItem="Bx1-HZ-S77" secondAttribute="centerX" id="Q2i-1W-E6G"/>
-                                    <constraint firstAttribute="centerX" secondItem="D1n-Ou-zku" secondAttribute="centerX" id="XTk-YC-GZ3"/>
-                                    <constraint firstAttribute="trailing" secondItem="lnC-Pp-i34" secondAttribute="trailing" constant="15" id="ayv-5y-Sb7"/>
-                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="Bx1-HZ-S77" secondAttribute="bottom" constant="25" id="c7L-Qs-IjG"/>
-                                    <constraint firstAttribute="centerX" secondItem="fPN-GA-h51" secondAttribute="centerX" id="ot1-Uc-TK3"/>
-                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="top" secondItem="lnC-Pp-i34" secondAttribute="bottom" constant="25" id="p8g-rF-H2O"/>
-                                    <constraint firstItem="LIJ-m5-TP1" firstAttribute="top" secondItem="D1n-Ou-zku" secondAttribute="bottom" constant="93" id="wJb-W8-6TO"/>
-                                    <constraint firstAttribute="centerX" secondItem="LIJ-m5-TP1" secondAttribute="centerX" id="y0n-uD-PnT"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.77254901960784317" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-2" id="8cV-f9-WwW"/>
-                            <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="Qfp-Q1-U4o"/>
-                            <constraint firstItem="VnH-jn-5ck" firstAttribute="top" secondItem="V16-9E-BiH" secondAttribute="top" id="pM2-Zb-2Mi"/>
-                            <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="rpB-5d-zWN"/>
-                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem image="Facebook 2" id="5c5-NX-XU0">
@@ -318,12 +273,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Assateague" width="290" height="75"/>
         <image name="Facebook 2" width="25" height="25"/>
-        <image name="Princess Anne" width="290" height="75"/>
-        <image name="Screen Shot 2014-04-13 at 1.36.44 PM.png" width="290" height="75"/>
-        <image name="Sea Gull Website" width="290" height="75"/>
-        <image name="Snow Hill" width="290" height="75"/>
+        <image name="SGC_AppButtons_V2-01" width="1208" height="313"/>
+        <image name="SGC_AppButtons_V2-02" width="1208" height="313"/>
+        <image name="SGC_AppButtons_V2-03" width="1208" height="313"/>
+        <image name="SGC_AppButtons_V2-04-04" width="1208" height="313"/>
+        <image name="SGC_Logo_2x2" width="575" height="510"/>
         <image name="Twitter 2" width="25" height="25"/>
         <image name="better_info" width="24" height="24"/>
         <image name="menu-icon" width="33" height="30"/>
