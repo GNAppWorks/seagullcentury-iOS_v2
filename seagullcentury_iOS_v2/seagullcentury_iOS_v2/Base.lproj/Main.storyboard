@@ -74,8 +74,17 @@
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
                                         <rect key="frame" x="20" y="425" width="290" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<<<<<<< HEAD
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="23"/>
                                         <state key="normal" backgroundImage="SGC_AppButtons_V2-03">
+=======
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="GsN-gl-JsX"/>
+                                            <constraint firstAttribute="height" constant="75" id="j6b-KI-TOQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="25"/>
+                                        <state key="normal" title="Snow Hill Century Route" backgroundImage="Snow Hill">
+>>>>>>> parent of 2a08399... Fixed pins on the map and reduced some code
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -185,7 +194,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Every fall, an average of 7,000 cyclists participate in Salisbury University’s Sea Gull Century bike ride across the Lower Eastern Shore. Started over 25 years ago, the ride has grown from less than 100 participants in its early years to become “among the largest and now oldest on the East Coast,” said coordinator Amy Waters. The traditional 100-mile Assateague century offers a panoramic view of the Atlantic Ocean and a glimpse of the wild ponies, while the 100-mile Snow Hill century takes cyclists through a quaint Worcester County town, with galleries and beautiful homes. A 64-mile Princess Anne metric route winds through Somerset County.</string>
+                                <mutableString key="text">Every fall, an average of 7,000 cyclists participate in Salisbury University’s Sea Gull Century bike ride across the Lower Eastern Shore. Started over 25 years ago, the ride has grown from less than 100 participants in its early years to become “among the largest and now oldest on the East Coast,” said coordinator Amy Waters. The traditional 100-mile Assateague century offers a panoramic view of the Atlantic Ocean and a glimpse of the wild ponies, while the 100-mile Snow Hill century takes cyclists through a quaint Worcester County town, with galleries and beautiful homes. A 64-mile Princess Anne metric route winds through Somerset County.</mutableString>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
