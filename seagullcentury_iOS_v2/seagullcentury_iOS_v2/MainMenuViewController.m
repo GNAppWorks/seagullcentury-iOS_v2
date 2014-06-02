@@ -79,7 +79,7 @@
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
     
-    self.title = @"Sea Gull Century";
+    self.title = @"Seagull Century";
     
     self.masterSettings = [NSUserDefaults standardUserDefaults];
     [self.masterSettings setBool:YES forKey:@"Speed"];
@@ -104,7 +104,7 @@
                                                 cancelButtonTitle:@"Ok"
                                                 otherButtonTitles:nil];
             [alert show];
-            alert= nil;
+            alert = nil;
         }
     }
     else
@@ -135,6 +135,7 @@
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlRoute = self.urlString;
+            
             if (![self.urlString isEqualToString:@"www.seagullcentury.org"]) {
                 controller.routeBool = YES;
             }else {
@@ -164,8 +165,8 @@
     } else if (button.tag == 4){
         self.urlString = [NSString stringWithFormat:@"www.seagullcentury.org"];
     }
-    [self performSegueWithIdentifier:@"toMap" sender:self];
     
+    [self performSegueWithIdentifier:@"toMap" sender:self];
     
 }
 
@@ -252,7 +253,7 @@
          
          */
         
-        [FBDialogs presentOSIntegratedShareDialogModallyFrom:self initialText:@"" image:nil url:[NSURL URLWithString:@"http://www.google.com"] handler:^(FBOSIntegratedShareDialogResult result, NSError *error){
+        [FBDialogs presentOSIntegratedShareDialogModallyFrom:self initialText:@"" image:nil url:[NSURL URLWithString:@"http://www.seagullcentury.org"] handler:^(FBOSIntegratedShareDialogResult result, NSError *error){
             if(error)
             {
                 NSLog(@"Error: %@", error.description);

@@ -45,7 +45,6 @@ static NSString *CellIdentifier = @"SettingsList";
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 
@@ -102,7 +101,7 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (void)buildView
 {
-    self.settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Rest Stops", nil];
+    self.settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Waypoints", nil];
     
     self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 500) style:UITableViewStyleGrouped];
     
