@@ -38,7 +38,7 @@
     self.revealViewController.delegate = self;
 
     [self initalSetup];
-    
+
     
 }
 

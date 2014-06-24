@@ -28,7 +28,7 @@ build/
 
 ####
 # Xcode 4 - semi-personal settings
-xcuserdata
+xcuserdata/
 xcuserdata/**/*
 !xcuserdata/**/xcschemes/*
 
