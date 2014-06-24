@@ -39,6 +39,7 @@
 
     [self initalSetup];
     
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
