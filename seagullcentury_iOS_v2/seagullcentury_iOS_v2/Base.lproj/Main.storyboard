@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -9,8 +10,8 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Twv-Bt-mTU"/>
-                        <viewControllerLayoutGuide type="bottom" id="DbW-uc-AMp"/>
+                        <viewControllerLayoutGuide type="top" id="QPq-zy-hbT"/>
+                        <viewControllerLayoutGuide type="bottom" id="uas-wC-dce"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -32,24 +33,18 @@
             <objects>
                 <viewController id="cDH-Yr-avZ" customClass="MainMenuViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="KC6-BT-dYa"/>
-                        <viewControllerLayoutGuide type="bottom" id="zPj-X2-DoL"/>
+                        <viewControllerLayoutGuide type="top" id="lfd-kx-o48"/>
+                        <viewControllerLayoutGuide type="bottom" id="tsU-L0-b76"/>
                     </layoutGuides>
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="V16-9E-BiH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="570"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1002"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34">
                                         <rect key="frame" x="15" y="20" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="8R3-cl-blL"/>
-                                            <constraint firstAttribute="width" constant="290" id="QDm-t3-RHT"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="22"/>
                                         <size key="titleShadowOffset" width="5" height="5"/>
                                         <state key="normal" title="Assateague Century Route" backgroundImage="Assateague">
@@ -59,13 +54,8 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="skp-P7-lLh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" verticalCompressionResistancePriority="749" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77">
                                         <rect key="frame" x="15" y="120" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="Agg-79-z1r"/>
-                                            <constraint firstAttribute="height" constant="75" id="mPr-0m-qE6"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="21"/>
                                         <state key="normal" title="Princess Anne Metric Route" backgroundImage="Princess Anne">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,13 +65,8 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="7BF-qM-RFm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51">
                                         <rect key="frame" x="15" y="220" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="GsN-gl-JsX"/>
-                                            <constraint firstAttribute="height" constant="75" id="j6b-KI-TOQ"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="23"/>
                                         <state key="normal" title="Snow Hill Century Route" backgroundImage="Snow Hill">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,13 +76,8 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="zmO-eQ-ySM"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku">
                                         <rect key="frame" x="15" y="320" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="gKN-Tp-7Sg"/>
-                                            <constraint firstAttribute="height" constant="75" id="t1u-pR-tfl"/>
-                                        </constraints>
                                         <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="24"/>
                                         <state key="normal" title="Seagull Century Website" backgroundImage="Sea Gull Website">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,43 +87,10 @@
                                             <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="S4s-DB-H83"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIJ-m5-TP1">
-                                        <rect key="frame" x="15" y="488" width="290" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="290" id="LFB-eR-Heo"/>
-                                            <constraint firstAttribute="height" constant="75" id="j7X-Ha-MAZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="32"/>
-                                        <state key="normal" title="About SGC" backgroundImage="Screen Shot 2014-04-13 at 1.36.44 PM.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="VnH-jn-5ck" secondAttribute="top" constant="220" id="0UA-yI-ZQ9"/>
-                                    <constraint firstAttribute="bottom" secondItem="lnC-Pp-i34" secondAttribute="bottom" constant="475" id="1mV-Gz-vG1"/>
-                                    <constraint firstItem="D1n-Ou-zku" firstAttribute="top" secondItem="fPN-GA-h51" secondAttribute="bottom" constant="25" id="3ZP-ay-GaJ"/>
-                                    <constraint firstAttribute="centerX" secondItem="lnC-Pp-i34" secondAttribute="centerX" id="I4k-cJ-ux4"/>
-                                    <constraint firstAttribute="centerX" secondItem="Bx1-HZ-S77" secondAttribute="centerX" id="Q2i-1W-E6G"/>
-                                    <constraint firstAttribute="centerX" secondItem="D1n-Ou-zku" secondAttribute="centerX" id="XTk-YC-GZ3"/>
-                                    <constraint firstAttribute="trailing" secondItem="lnC-Pp-i34" secondAttribute="trailing" constant="15" id="ayv-5y-Sb7"/>
-                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="Bx1-HZ-S77" secondAttribute="bottom" constant="25" id="c7L-Qs-IjG"/>
-                                    <constraint firstAttribute="centerX" secondItem="fPN-GA-h51" secondAttribute="centerX" id="ot1-Uc-TK3"/>
-                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="top" secondItem="lnC-Pp-i34" secondAttribute="bottom" constant="25" id="p8g-rF-H2O"/>
-                                    <constraint firstItem="LIJ-m5-TP1" firstAttribute="top" secondItem="D1n-Ou-zku" secondAttribute="bottom" constant="93" id="wJb-W8-6TO"/>
-                                    <constraint firstAttribute="centerX" secondItem="LIJ-m5-TP1" secondAttribute="centerX" id="y0n-uD-PnT"/>
-                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.77254901960784317" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-2" id="8cV-f9-WwW"/>
-                            <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="Qfp-Q1-U4o"/>
-                            <constraint firstItem="VnH-jn-5ck" firstAttribute="top" secondItem="V16-9E-BiH" secondAttribute="top" id="pM2-Zb-2Mi"/>
-                            <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="rpB-5d-zWN"/>
-                        </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem image="Facebook 2" id="5c5-NX-XU0">
@@ -166,6 +113,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1000"/>
                     <connections>
                         <outlet property="mainView" destination="V16-9E-BiH" id="FLr-aB-8IW"/>
@@ -176,33 +124,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VyG-m3-GAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="32"/>
+            <point key="canvasLocation" x="1710" y="117"/>
         </scene>
         <!--Route Map View Controller-->
         <scene sceneID="N1J-af-G0w">
             <objects>
                 <viewController id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7sm-pb-m98"/>
-                        <viewControllerLayoutGuide type="bottom" id="TLB-Y3-Y7f"/>
+                        <viewControllerLayoutGuide type="top" id="ML7-Z3-V4X"/>
+                        <viewControllerLayoutGuide type="bottom" id="RE0-ve-jIn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2vr-Ou-6qv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="MIO-5S-nMm"/>
-                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="U4X-6H-e2N"/>
-                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="hcZ-xG-7YR"/>
-                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="w3W-GP-4Db"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
@@ -219,16 +160,15 @@
             <objects>
                 <viewController title="About" id="0EK-ca-zEt" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="90Y-Nd-Lec"/>
-                        <viewControllerLayoutGuide type="bottom" id="yUj-SM-gCE"/>
+                        <viewControllerLayoutGuide type="top" id="uhY-3f-dYD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wxr-5c-4sL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nzt-F7-NzW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-2f-pev">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Every fall, an average of 7,000 cyclists participate in Salisbury University’s Sea Gull Century bike ride across the Lower Eastern Shore. Started over 25 years ago, the ride has grown from less than 100 participants in its early years to become “among the largest and now oldest on the East Coast,” said coordinator Amy Waters. The traditional 100-mile Assateague century offers a panoramic view of the Atlantic Ocean and a glimpse of the wild ponies, while the 100-mile Snow Hill century takes cyclists through a quaint Worcester County town, with galleries and beautiful homes. A 64-mile Princess Anne metric route winds through Somerset County.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
@@ -247,12 +187,12 @@
         <scene sceneID="sLP-M3-Dl5">
             <objects>
                 <tableViewController id="TOB-1B-m32" customClass="SidebarSettingsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zPq-hI-DZp">
+                    <tableView key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zPq-hI-DZp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell hidden="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
+                            <tableViewCell hidden="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
                                 <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AA-IF-dGi" id="kWa-0L-5Uu">
@@ -321,7 +261,6 @@
         <image name="Assateague" width="290" height="75"/>
         <image name="Facebook 2" width="25" height="25"/>
         <image name="Princess Anne" width="290" height="75"/>
-        <image name="Screen Shot 2014-04-13 at 1.36.44 PM.png" width="290" height="75"/>
         <image name="Sea Gull Website" width="290" height="75"/>
         <image name="Snow Hill" width="290" height="75"/>
         <image name="Twitter 2" width="25" height="25"/>
