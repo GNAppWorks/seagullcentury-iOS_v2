@@ -47,10 +47,12 @@
     [self checkLocation];
     [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
+    
 }
 
 - (void)revealController:(SWRevealViewController *)revealController willMoveToPosition:(FrontViewPosition)position
 {
+    
     if (position == FrontViewPositionRight) {
         [self.scrollView setUserInteractionEnabled:NO];
         [self.navigationController.toolbar setUserInteractionEnabled:NO];
@@ -118,12 +120,6 @@
         }
     }
     
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    // resize the layers based on the view’s new bounds
-    [[[self.mainView.layer sublayers] objectAtIndex:0] setFrame:self.mainView.bounds];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

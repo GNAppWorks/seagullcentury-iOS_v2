@@ -3,11 +3,12 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Screen Shot 2014-04-13 at 10.57.21 AM.png"
+      "filename" : "sagWagon25.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "sagWagon25@2x.png"
     }
   ],
   "info" : {
