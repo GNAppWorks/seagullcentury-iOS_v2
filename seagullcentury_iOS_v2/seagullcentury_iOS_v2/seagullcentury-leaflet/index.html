@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Seagull Century Route</title>
+
+		<!-- disables scaling -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
+			
+		<!-- css imports -->
+		<!-- loads a local copy of the official leaflet.css file -->
+		<link rel="stylesheet" href="style/leaflet.css" />
+		<!-- tracking css -->
+		<link rel="stylesheet" href="style/leaflet-gps.css" />
+		<!--our local css file -->
+		<link rel="stylesheet" href="style/style.css" />
+		
+		<!--imports a local version of the official Leaflet javascript file -->
+		<script type="text/javascript" src="js/lib/leaflet.js"></script>
+		<!--imports a local version of Jquery and Jquery Mobile-->
+		<script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
+		<!-- Import Leaflet extensions -->
+		<script type="text/javascript" src="js/lib/leaflet-gps.js"></script>
+		<script type="text/javascript" src="js/lib/leaflet-knn.min.js"></script>
+		<script type="text/javascript" src="js/lib/L.polyline.measuredDistance.js"></script>
+	</head>
+	
+	<body>
+		<div id="distance" class="lower-opacity"><h2>Getting Your Location...</h2></div>
+		<div id="map"></div>
+		<div id="networkImageContainer"></div>
+	</body>
+	<!-- imports our local Javascript file to control the map div -->
+	<script type="text/javascript" src="js/routing.js"></script>
+	<script type="text/javascript" src="js/courseMap.js"></script>
+</html>

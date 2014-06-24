@@ -11,14 +11,17 @@
 
 #import "AppDelegate.h"
 
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0X8F1111)];
-    [[UINavigationBar appearance] setTintColor:[UIColor yellowColor]];
-    
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0X800000)];
+    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0XF7C55A)];
+    [[UIToolbar appearance] setBarTintColor:UIColorFromRGB(0X800000)];
+    [[UIToolbar appearance] setTintColor:UIColorFromRGB(0XF7C55A)];
+
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
     shadow.shadowOffset = CGSizeMake(0, 1);
@@ -28,6 +31,8 @@
                                                            [UIFont fontWithName:@"Baskerville-SemiBold" size:22.0], NSFontAttributeName, nil]];
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+   
     
     return YES;
 }
@@ -52,11 +57,14 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 @end

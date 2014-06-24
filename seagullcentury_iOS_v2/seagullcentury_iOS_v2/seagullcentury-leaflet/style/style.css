@@ -1,0 +1,84 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+		
+html, body {
+	height: 100%;
+}
+h1{
+	text-align:center;
+}
+h2{
+	display: table-cell;
+    vertical-align: middle;
+    text-align:center;
+}
+h3{
+	display:inline;
+}
+#networkImageContainer{
+	height:0px;
+}
+.speed{
+	font-size:1.5em;
+}
+.red-text{
+	color:#A00;
+}
+#map{
+	height:100%;
+}
+
+.spacer{
+	display:inline-block;
+	width:10px;
+	height:10px;
+}
+
+#distance{
+	position:absolute;
+	height:50px;
+	width:100%;
+	z-index:1000;
+	display: table;
+	background-color:#E4E4E4;
+}
+
+.speed-control{
+	background: #fff;
+	background: rgba(255, 255, 255, 0.7);
+	font-size: 14px;
+
+	background-color:#E4E4E4;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	/* IE 5-7 */
+	filter: alpha(opacity=80);
+	/* Netscape */
+	-moz-opacity: 0.80;
+	/* Safari 1.x */
+	-khtml-opacity: 0.80;
+	/* Good browsers */
+	opacity: 0.80;
+}
+
+.leaflet-top{
+	margin-top:50px
+}
+
+.lower-opacity {
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+  /* IE 5-7 */
+  filter: alpha(opacity=80);
+
+  /* Netscape */
+  -moz-opacity: 0.80;
+
+  /* Safari 1.x */
+  -khtml-opacity: 0.80;
+
+  /* Good browsers */
+  opacity: 0.80;
+}

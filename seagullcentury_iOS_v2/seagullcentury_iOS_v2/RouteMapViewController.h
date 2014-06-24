@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface RouteMapViewController : UIViewController
+
 @property (weak, nonatomic) NSString *urlRoute;
+@property (nonatomic) BOOL routeBool;
 
 @end
