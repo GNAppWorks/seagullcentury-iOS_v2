@@ -79,19 +79,21 @@
 
 -(void) setupBottomToolbar
 {
-    UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
-                                                                                  target:self action:nil];
     if (self.routeBool) {
+        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                      target:self action:nil];
         
-        
-        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"sagWagon25"]
+        UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"towTruck"]
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:self
                                                                    action:@selector(callWagon:)];
         
-        self.routeToolbar = [NSArray arrayWithObjects: flexiableItem, sagWagon, flexiableItem, nil];
+        self.routeToolbar = [NSArray arrayWithObjects:sagWagon, flexiableItem, nil];
         
     }else {
+        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                                      target:self
+                                                                                      action:nil];
         
         UIBarButtonItem *stopButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemStop
                                                                                    target:self.webView
