@@ -185,19 +185,26 @@
                         <viewControllerLayoutGuide type="top" id="8bO-Fr-uJP"/>
                         <viewControllerLayoutGuide type="bottom" id="SLS-k7-o99"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="2vr-Ou-6qv">
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="2vr-Ou-6qv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="715"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
-                                <rect key="frame" x="0.0" y="-143" width="320" height="1000"/>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="715"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="4Y0-o3-oSZ"/>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="D8r-Ge-e27"/>
+                            <constraint firstAttribute="bottom" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="k3P-ae-IFb"/>
+                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="nGv-fk-aSE"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
+                    <size key="freeformSize" width="320" height="715"/>
                     <connections>
                         <outlet property="webView" destination="E6t-AE-nCi" id="zhA-xP-Rzc"/>
                     </connections>
