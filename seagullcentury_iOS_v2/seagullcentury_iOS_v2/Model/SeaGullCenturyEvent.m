@@ -10,48 +10,74 @@
 
 @interface SeaGullCenturyEvent ()
 
-@property (strong, nonatomic) NSString *baseString;
+@property (strong, nonatomic) NSString *internalPath;
+@property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) NSUInteger routeNumber;
-@property (strong, nonatomic) NSArray *routesInEvent; // Array of route name.
+
+@property (strong, nonatomic) NSUserDefaults *masterSettings;
+
+-(NSString *) getUserSettings;
 
 @end
 
-
 @implementation SeaGullCenturyEvent
 
-- (NSArray *)routesInEvent
-{
-    if (!_routesInEvent) _routesInEvent = @[@"Assateague Century",@"Snow Hill Century", @"Princess Anne Metric"];
-    return _routesInEvent;
-}
-
--(NSString *) baseString
-{
-    if (!_baseString) _baseString = [[NSBundle mainBundle] pathForResource:@"index"
-                                                                    ofType:@"html"
-                                                               inDirectory:@"seagullcentury-leaflet"];
-    return _baseString;
-}
-
--(instancetype) initWithBaseURLString:(NSString *)baseURLString
-{
-    self = [super init];
-    if (self) {
-        self.baseString = baseURLString;
-        
+-(NSUserDefaults *) masterSettings {
+    if (!_masterSettings) {
+        _masterSettings = [NSUserDefaults standardUserDefaults];
     }
-    
-    return self;
+    return _masterSettings;
 }
 
-- (NSString *) contents
+-(NSString *) internalPath
 {
-    NSUserDefaults *masterSettings = [NSUserDefaults standardUserDefaults];
-    int speedSettings = (int)[masterSettings boolForKey:@"Speed"];
-    int vendorSetting = (int)[masterSettings boolForKey:@"Vendors"];
-    int waypointSetting = (int)[masterSettings boolForKey:@"Waypoints"];
+    if (!_internalPath) _internalPath = [[NSBundle mainBundle] pathForResource:@"index"
+                                                                        ofType:@"html"
+                                                                   inDirectory:@"seagullcentury-leaflet"];
+    return _internalPath;
+}
+-(NSMutableArray *) routes {
     
-    return [NSString stringWithFormat:@"%@?route=%lu&speed=%d&vendors=%d&watpoint=%d",self.baseString, (unsigned long)self.routeNumber, speedSettings, vendorSetting, waypointSetting];
+    if(!_routes) _routes = [[NSMutableArray alloc]init];
+    
+    return _routes;
+}
+
+- (NSArray *) selectRoute {
+    
+    NSString *completeString = [[NSString alloc]init];
+    if (!_selectRoute) {
+        
+        for (int i = 0; i < 3; i++) {
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",self.internalPath, i, self.getUserSettings];
+            
+            [self.routes addObject:completeString];
+        }
+        
+    } else {
+        for (int i = 0; i < 3; i++) {
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",self.internalPath, i, self.getUserSettings];
+            
+            [self.routes removeAllObjects];
+            [self.routes addObject:completeString];
+        }
+    }
+    _selectRoute = [NSArray arrayWithArray:self.routes];
+    return _selectRoute;
+}
+
+- (NSString *) getUserSettings {
+    
+    int speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
+    int vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
+    int waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
+    
+    NSString *userSettings = [[NSString alloc]init];
+    
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
+    
+    return userSettings;
+    
 }
 
 

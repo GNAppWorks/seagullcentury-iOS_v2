@@ -10,12 +10,16 @@
 #import "SWRevealViewController.h"
 #import "RouteMapViewController.h"
 
+#import "SeaGullCenturyEvent.h"
+
 @interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) NSString *urlString;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property (strong, nonatomic) SeaGullCenturyEvent *seaGullEvent;
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender;
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
@@ -84,10 +88,9 @@
     
     self.title = @"Seagull Century";
     
-    self.masterSettings = [NSUserDefaults standardUserDefaults];
-    [self.masterSettings setBool:YES forKey:@"Speed"];
-    [self.masterSettings setBool:NO forKey:@"Vendors"];
-    [self.masterSettings setBool:NO forKey:@"Waypoints"];
+    /******************/
+    self.seaGullEvent = [[SeaGullCenturyEvent alloc]init];
+    
     
 }
 
@@ -125,7 +128,7 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+    /*
     if([segue.identifier isEqualToString:@"toMap"]){
         if ([segue.destinationViewController isKindOfClass:[RouteMapViewController class]]) {
             self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain
@@ -140,14 +143,28 @@
             }
             
         }
-    }
+    }*/
     
 }
 
 - (IBAction)routeSelectMethod:(UIButton *)sender
 {
-    
     UIButton *button = (UIButton*)sender;
+    
+    if (button.tag == 1) {
+        NSLog(@"Selected %@", self.seaGullEvent.selectRoute[(button.tag) - 1]);
+    } else if (button.tag == 2) {
+        
+    } else if (button.tag == 3){
+        
+    } else if (button.tag == 4){
+        
+    }
+    
+    
+    
+    /*
+    
     int speedSettings, vendorSetting, waypointSetting;
     speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
     vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
@@ -164,6 +181,7 @@
     }
     
     [self performSegueWithIdentifier:@"toMap" sender:self];
+     */
     
 }
 

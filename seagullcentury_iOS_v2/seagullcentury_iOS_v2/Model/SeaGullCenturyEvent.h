@@ -10,9 +10,8 @@
 
 @interface SeaGullCenturyEvent : NSObject
 
+@property (strong, nonatomic) NSArray *selectRoute;
 
-@property (strong, nonatomic) NSString *contents;
 
-- (instancetype) initWithBaseURLString: (NSString *)baseURLString;
 
 @end
