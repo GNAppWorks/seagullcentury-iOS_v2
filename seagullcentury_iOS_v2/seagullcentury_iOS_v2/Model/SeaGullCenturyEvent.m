@@ -46,23 +46,40 @@
 - (NSArray *) selectRoute {
     
     NSString *completeString = [[NSString alloc]init];
+    
+    NSURL *url = [NSURL fileURLWithPath:self.internalPath];
+    
+    NSString *theAbsoluteURLString = [url absoluteString];
+    
+    
+    
     if (!_selectRoute) {
         
         for (int i = 0; i < 3; i++) {
-            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",self.internalPath, i, self.getUserSettings];
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@", theAbsoluteURLString , i, self.getUserSettings];
             
-            [self.routes addObject:completeString];
+            NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
+            
+            [self.routes addObject:finalURLRequest];
         }
         
     } else {
+        [self.routes removeAllObjects];
         for (int i = 0; i < 3; i++) {
-            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",self.internalPath, i, self.getUserSettings];
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.getUserSettings];
             
-            [self.routes removeAllObjects];
-            [self.routes addObject:completeString];
+           NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
+            
+            [self.routes addObject:finalURLRequest];
         }
     }
+    
+    [self.routes addObject:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.seagullcentury.org"]]];
+    
     _selectRoute = [NSArray arrayWithArray:self.routes];
+    
+    _displayRouteBool = YES;
+    
     return _selectRoute;
 }
 

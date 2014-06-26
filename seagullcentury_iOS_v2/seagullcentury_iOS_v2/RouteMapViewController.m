@@ -55,7 +55,11 @@
     
     self.webView.delegate = self;
     
-    [self loadRequestFromString:self.urlRoute];
+    //[self loadRequestFromString:self.urlRoute];
+    
+    // TODO: Need to load just the request object by just loading the request
+    [self.webView loadRequest:self.urlObject];
+    
     [self setupBottomToolbar];
     [self.navigationController.interactivePopGestureRecognizer setEnabled:NO];
     
@@ -175,8 +179,10 @@
 #pragma Design Methods
 - (void)loadRequestFromString:(NSString *)urlString
 {
+    /*
     if (self.routeBool)
     {
+     
         NSString *path = [[NSBundle mainBundle]
                           pathForResource:@"index"
                           ofType:@"html"
@@ -192,18 +198,25 @@
         
         self.finalRequest = [NSURLRequest requestWithURL:finalURL];
         [self.webView loadRequest:self.finalRequest];
+      
+       // NSLog(@"THE ROUTE URL IS: %@", self.urlObject);
+        //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlObject]]];
+         
+         
+         
+         
     }else
     {
-        NSURL *url = [NSURL URLWithString:self.urlRoute];
+        NSURL *url = [NSURL URLWithString:self.urlObject];
         if (!url.scheme) {
-            NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",self.urlRoute];
+            NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",self.urlObject];
             url = [NSURL URLWithString:modifiedURLString];
         }
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
         
         [self.webView loadRequest:urlRequest];
     }
-    
+    */
 }
 
 

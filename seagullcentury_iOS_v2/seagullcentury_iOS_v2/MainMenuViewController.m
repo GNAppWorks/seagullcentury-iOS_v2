@@ -16,7 +16,7 @@
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) NSString *urlString;
+@property (strong, nonatomic) NSURLRequest *urlObject;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @property (strong, nonatomic) SeaGullCenturyEvent *seaGullEvent;
@@ -90,6 +90,7 @@
     
     /******************/
     self.seaGullEvent = [[SeaGullCenturyEvent alloc]init];
+    self.urlObject = [[NSURLRequest alloc]init];
     
     
 }
@@ -128,22 +129,22 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    /*
+    
     if([segue.identifier isEqualToString:@"toMap"]){
         if ([segue.destinationViewController isKindOfClass:[RouteMapViewController class]]) {
             self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
-            controller.urlRoute = self.urlString;
+            controller.urlObject = self.urlObject;
             
-            if (![self.urlString isEqualToString:@"www.seagullcentury.org"]) {
+            if (self.seaGullEvent.displayRouteBool) {
                 controller.routeBool = YES;
             }else {
                 controller.routeBool = NO;
             }
             
         }
-    }*/
+    }
     
 }
 
@@ -151,17 +152,27 @@
 {
     UIButton *button = (UIButton*)sender;
     
-    if (button.tag == 1) {
-        NSLog(@"Selected %@", self.seaGullEvent.selectRoute[(button.tag) - 1]);
-    } else if (button.tag == 2) {
-        
-    } else if (button.tag == 3){
-        
-    } else if (button.tag == 4){
-        
+    switch (button.tag) {
+        case 1:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            break;
+        case 2:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            break;
+        case 3:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            break;
+        case 4:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            self.seaGullEvent.displayRouteBool = NO;
+            NSLog(@"NSURLRequest Object: %@", self.urlObject);
+            break;
+        default:
+            self.urlObject = [NSURLRequest requestWithURL:[NSURL URLWithString:@"Error"]];
+            break;
     }
     
-    
+    [self performSegueWithIdentifier:@"toMap" sender:self];
     
     /*
     
@@ -180,7 +191,7 @@
         self.urlString = [NSString stringWithFormat:@"www.seagullcentury.org"];
     }
     
-    [self performSegueWithIdentifier:@"toMap" sender:self];
+    
      */
     
 }
