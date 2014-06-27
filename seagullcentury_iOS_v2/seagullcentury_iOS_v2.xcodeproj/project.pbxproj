@@ -26,7 +26,6 @@
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
-		CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA79DF6F18F778C6008637F9 /* SUStart.gpx */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
@@ -47,7 +46,7 @@
 /* Begin PBXFileReference section */
 		CA076AA3192D05DF00335108 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "seagullcentury-leaflet"; sourceTree = "<group>"; };
-		CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = seagullcentury_iOS_v2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA49C43B18F5EE9B0085E101 /* SGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CA49C44218F5EE9B0085E101 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -72,7 +71,6 @@
 		CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarSettingsTableViewController.m; sourceTree = "<group>"; };
 		CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteMapViewController.h; sourceTree = "<group>"; };
 		CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteMapViewController.m; sourceTree = "<group>"; };
-		CA79DF6F18F778C6008637F9 /* SUStart.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SUStart.gpx; path = ../SUStart.gpx; sourceTree = "<group>"; };
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -133,7 +131,7 @@
 		CA49C43C18F5EE9B0085E101 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */,
+				CA49C43B18F5EE9B0085E101 /* SGC.app */,
 				CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */,
 			);
 			name = Products;
@@ -167,9 +165,6 @@
 				CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */,
 				CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */,
 				CA49C44518F5EE9B0085E101 /* Supporting Files */,
-				CA79DF6F18F778C6008637F9 /* SUStart.gpx */,
-				CA79DF6618F76D11008637F9 /* SWRevealViewController.h */,
-				CA79DF6718F76D11008637F9 /* SWRevealViewController.m */,
 			);
 			path = seagullcentury_iOS_v2;
 			sourceTree = "<group>";
@@ -177,6 +172,8 @@
 		CA49C44518F5EE9B0085E101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CA79DF6618F76D11008637F9 /* SWRevealViewController.h */,
+				CA79DF6718F76D11008637F9 /* SWRevealViewController.m */,
 				CAD944ED18FEC59200F5BA59 /* Reachability.h */,
 				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
@@ -224,7 +221,7 @@
 			);
 			name = seagullcentury_iOS_v2;
 			productName = seagullcentury_iOS_v2;
-			productReference = CA49C43B18F5EE9B0085E101 /* seagullcentury_iOS_v2.app */;
+			productReference = CA49C43B18F5EE9B0085E101 /* SGC.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CA49C45B18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests */ = {
@@ -287,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
-				CA79DF7018F778C6008637F9 /* SUStart.gpx in Resources */,
 				CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */,
 				CA49C45218F5EE9B0085E101 /* Main.storyboard in Resources */,
 				CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */,
@@ -450,7 +446,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SGC;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,7 +466,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SGC;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};

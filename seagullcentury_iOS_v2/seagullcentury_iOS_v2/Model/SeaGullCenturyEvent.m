@@ -23,9 +23,8 @@
 @implementation SeaGullCenturyEvent
 
 -(NSUserDefaults *) masterSettings {
-    if (!_masterSettings) {
-        _masterSettings = [NSUserDefaults standardUserDefaults];
-    }
+    if (!_masterSettings) _masterSettings = [NSUserDefaults standardUserDefaults];
+    
     return _masterSettings;
 }
 
@@ -46,12 +45,8 @@
 - (NSArray *) selectRoute {
     
     NSString *completeString = [[NSString alloc]init];
-    
     NSURL *url = [NSURL fileURLWithPath:self.internalPath];
-    
     NSString *theAbsoluteURLString = [url absoluteString];
-    
-    
     
     if (!_selectRoute) {
         
@@ -65,6 +60,7 @@
         
     } else {
         [self.routes removeAllObjects];
+        
         for (int i = 0; i < 3; i++) {
             completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.getUserSettings];
             
@@ -77,7 +73,6 @@
     [self.routes addObject:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.seagullcentury.org"]]];
     
     _selectRoute = [NSArray arrayWithArray:self.routes];
-    
     _displayRouteBool = YES;
     
     return _selectRoute;
@@ -91,7 +86,7 @@
     
     NSString *userSettings = [[NSString alloc]init];
     
-    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d&output=embed", speedSettings, vendorSetting, waypointSetting];
     
     return userSettings;
     

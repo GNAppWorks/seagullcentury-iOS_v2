@@ -9,13 +9,15 @@
 #import "RouteMapViewController.h"
 #import "Reachability.h"
 
+#import "SeaGullCenturyEvent.h"
+
+
 @interface RouteMapViewController () <UIWebViewDelegate, CLLocationManagerDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) NSArray *routeToolbar;
 @property (strong, nonatomic) NSArray *webToolbar;
 
-- (void)loadRequestFromString:(NSString*)urlString;
 - (void)informError:(NSError*)error;
 
 @property (nonatomic, strong) Reachability *reach;
@@ -55,9 +57,6 @@
     
     self.webView.delegate = self;
     
-    //[self loadRequestFromString:self.urlRoute];
-    
-    // TODO: Need to load just the request object by just loading the request
     [self.webView loadRequest:self.urlObject];
     
     [self setupBottomToolbar];
@@ -71,7 +70,7 @@
     
     self.reach = [Reachability reachabilityForInternetConnection];
     [self.reach startNotifier];
-    self.network = [self.reach currentReachabilityStatus];
+    //self.network = [self.reach currentReachabilityStatus];
     
     if (self.routeBool) {
         [self.navigationController.toolbar setItems:self.routeToolbar];
@@ -143,8 +142,6 @@
     [self checkLocation];
 }
 
-
-
 - (void) checkLocation{
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
@@ -175,50 +172,6 @@
     }
     
 }
-
-#pragma Design Methods
-- (void)loadRequestFromString:(NSString *)urlString
-{
-    /*
-    if (self.routeBool)
-    {
-     
-        NSString *path = [[NSBundle mainBundle]
-                          pathForResource:@"index"
-                          ofType:@"html"
-                          inDirectory:@"seagullcentury-leaflet"];
-        
-        NSURL *url = [NSURL fileURLWithPath:path];
-        
-        NSString *theAbsoluteURLString = [url absoluteString];
-        
-        NSString *absoluteURLwithQueryString = [theAbsoluteURLString stringByAppendingString: urlString];
-        
-        NSURL *finalURL = [NSURL URLWithString: absoluteURLwithQueryString];
-        
-        self.finalRequest = [NSURLRequest requestWithURL:finalURL];
-        [self.webView loadRequest:self.finalRequest];
-      
-       // NSLog(@"THE ROUTE URL IS: %@", self.urlObject);
-        //[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.urlObject]]];
-         
-         
-         
-         
-    }else
-    {
-        NSURL *url = [NSURL URLWithString:self.urlObject];
-        if (!url.scheme) {
-            NSString* modifiedURLString = [NSString stringWithFormat:@"http://%@",self.urlObject];
-            url = [NSURL URLWithString:modifiedURLString];
-        }
-        NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-        
-        [self.webView loadRequest:urlRequest];
-    }
-    */
-}
-
 
 #pragma mark - Updating the UI
 - (void) updateButtons
