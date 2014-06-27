@@ -11,7 +11,7 @@
 
 @interface RouteMapViewController : UIViewController
 
-@property (weak, nonatomic) NSString *urlRoute;
+@property (weak, nonatomic) NSURLRequest *urlObject;
 @property (nonatomic) BOOL routeBool;
 
 @end

@@ -10,47 +10,86 @@
 
 @interface SeaGullCenturyEvent ()
 
-@property (strong, nonatomic) NSString *baseString;
+@property (strong, nonatomic) NSString *internalPath;
+@property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) NSUInteger routeNumber;
-@property (strong, nonatomic) NSArray *routesInEvent; // Array of route name.
+
+@property (strong, nonatomic) NSUserDefaults *masterSettings;
+
+-(NSString *) getUserSettings;
 
 @end
 
 @implementation SeaGullCenturyEvent
 
-- (NSArray *)routesInEvent
-{
-    if (!_routesInEvent) _routesInEvent = @[@"Assateague Century",@"Snow Hill Century", @"Princess Anne Metric"];
-    return _routesInEvent;
+-(NSUserDefaults *) masterSettings {
+    if (!_masterSettings) _masterSettings = [NSUserDefaults standardUserDefaults];
+    
+    return _masterSettings;
 }
 
--(NSString *) baseString
+-(NSString *) internalPath
 {
-    if (!_baseString) _baseString = [[NSBundle mainBundle] pathForResource:@"index"
-                                                                    ofType:@"html"
-                                                               inDirectory:@"seagullcentury-leaflet"];
-    return _baseString;
+    if (!_internalPath) _internalPath = [[NSBundle mainBundle] pathForResource:@"index"
+                                                                        ofType:@"html"
+                                                                   inDirectory:@"seagullcentury-leaflet"];
+    return _internalPath;
+}
+-(NSMutableArray *) routes {
+    
+    if(!_routes) _routes = [[NSMutableArray alloc]init];
+    
+    return _routes;
 }
 
--(instancetype) initWithBaseURLString:(NSString *)baseURLString
-{
-    self = [super init];
-    if (self) {
-        self.baseString = baseURLString;
+- (NSArray *) selectRoute {
+    
+    NSString *completeString = [[NSString alloc]init];
+    NSURL *url = [NSURL fileURLWithPath:self.internalPath];
+    NSString *theAbsoluteURLString = [url absoluteString];
+    
+    if (!_selectRoute) {
         
+        for (int i = 0; i < 3; i++) {
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@", theAbsoluteURLString , i, self.getUserSettings];
+            
+            NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
+            
+            [self.routes addObject:finalURLRequest];
+        }
+        
+    } else {
+        [self.routes removeAllObjects];
+        
+        for (int i = 0; i < 3; i++) {
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.getUserSettings];
+            
+           NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
+            
+            [self.routes addObject:finalURLRequest];
+        }
     }
     
-    return self;
+    [self.routes addObject:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.seagullcentury.org"]]];
+    
+    _selectRoute = [NSArray arrayWithArray:self.routes];
+    _displayRouteBool = YES;
+    
+    return _selectRoute;
 }
 
-- (NSString *) contents
-{
-    NSUserDefaults *masterSettings = [NSUserDefaults standardUserDefaults];
-    int speedSettings = (int)[masterSettings boolForKey:@"Speed"];
-    int vendorSetting = (int)[masterSettings boolForKey:@"Vendors"];
-    int waypointSetting = (int)[masterSettings boolForKey:@"Waypoints"];
+- (NSString *) getUserSettings {
     
-    return [NSString stringWithFormat:@"%@?route=%lu&speed=%d&vendors=%d&watpoint=%d",self.baseString, (unsigned long)self.routeNumber, speedSettings, vendorSetting, waypointSetting];
+    int speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
+    int vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
+    int waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
+    
+    NSString *userSettings = [[NSString alloc]init];
+    
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d&output=embed", speedSettings, vendorSetting, waypointSetting];
+    
+    return userSettings;
+    
 }
 
 

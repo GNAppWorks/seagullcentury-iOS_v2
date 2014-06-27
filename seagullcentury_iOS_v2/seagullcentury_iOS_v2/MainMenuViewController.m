@@ -10,12 +10,16 @@
 #import "SWRevealViewController.h"
 #import "RouteMapViewController.h"
 
+#import "SeaGullCenturyEvent.h"
+
 @interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) NSString *urlString;
+@property (strong, nonatomic) NSURLRequest *urlObject;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
+@property (strong, nonatomic) SeaGullCenturyEvent *seaGullEvent;
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender;
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
@@ -69,13 +73,6 @@
 #pragma mark - Design Setup
 - (void) initalSetup
 {
-    
-    /*
-    //add background
-    UIImageView *background = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Background.png"]];
-    [self.scrollView addSubview:background];
-    [self.scrollView sendSubviewToBack:background];
-     */
     self.scrollView.contentMode = UIViewContentModeScaleAspectFit;
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
@@ -84,10 +81,9 @@
     
     self.title = @"Seagull Century";
     
-    self.masterSettings = [NSUserDefaults standardUserDefaults];
-    [self.masterSettings setBool:YES forKey:@"Speed"];
-    [self.masterSettings setBool:NO forKey:@"Vendors"];
-    [self.masterSettings setBool:NO forKey:@"Waypoints"];
+    self.seaGullEvent = [[SeaGullCenturyEvent alloc]init];
+    self.urlObject = [[NSURLRequest alloc]init];
+    
     
 }
 
@@ -96,6 +92,7 @@
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
+    
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
     {
@@ -110,17 +107,6 @@
             alert = nil;
         }
     }
-    else
-    {
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES]
-                                                  forKey:@"userWasAskedForLocationOnce"];
-        
-        if ([CLLocationManager locationServicesEnabled]) //this will trigger the system prompt
-        {
-            [locationManager startUpdatingLocation];
-        }
-    }
-    
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -131,9 +117,9 @@
             self.navigationItem.backBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
-            controller.urlRoute = self.urlString;
+            controller.urlObject = self.urlObject;
             
-            if (![self.urlString isEqualToString:@"www.seagullcentury.org"]) {
+            if (self.seaGullEvent.displayRouteBool) {
                 controller.routeBool = YES;
             }else {
                 controller.routeBool = NO;
@@ -146,109 +132,38 @@
 
 - (IBAction)routeSelectMethod:(UIButton *)sender
 {
-    
     UIButton *button = (UIButton*)sender;
-    int speedSettings, vendorSetting, waypointSetting;
-    speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
-    vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
-    waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
     
-    if (button.tag == 1) {
-        self.urlString = [NSString stringWithFormat:@"?route=0&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
-    } else if (button.tag == 2) {
-        self.urlString = [NSString stringWithFormat:@"?route=1&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
-    } else if (button.tag == 3){
-        self.urlString = [NSString stringWithFormat:@"?route=2&speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting,waypointSetting];
-    } else if (button.tag == 4){
-        self.urlString = [NSString stringWithFormat:@"www.seagullcentury.org"];
+    switch (button.tag) {
+        case 1:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            break;
+        case 2:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            break;
+        case 3:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            break;
+        case 4:
+            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
+            self.seaGullEvent.displayRouteBool = NO;
+            NSLog(@"NSURLRequest Object: %@", self.urlObject);
+            break;
+        default:
+            break;
     }
     
     [self performSegueWithIdentifier:@"toMap" sender:self];
+    
     
 }
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender
 {
-    /*
-    // Check if the Facebook app is installed and we can present the share dialog
-    FBShareDialogParams *params = [[FBShareDialogParams alloc] init];
-    params.link = [NSURL URLWithString:@"http://www.seagullcentury.org"];
-    params.name = @"Seagull Century";
-    params.caption = @"100 mile bike ride held in Salisbury, MD.";
-    params.picture = [NSURL URLWithString:@"http://www.seagullcentury.org/template/images/sgc-logo08.jpg"];
-    params.description = @"100 mile bike ride.";
     
-    // If the Facebook app is installed and we can present the share dialog
-    if ([FBDialogs canPresentShareDialogWithParams:params]) {
-        
-        // Present share dialog
-        [FBDialogs presentShareDialogWithLink:params.link
-                                         name:params.name
-                                      caption:params.caption
-                                  description:params.description
-                                      picture:params.picture
-                                  clientState:nil
-                                      handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-                                          if(error) {
-                                              // An error occurred, we need to handle the error
-                                              NSLog(@"Error publishing story: %@", error.description);
-                                          } else {
-                                              // Success
-                                              NSLog(@"result %@", results);
-                                          }
-                                      }];
-        
-        // If the Facebook app is NOT installed and we can't present the share dialog
-    } else {
-        // FALLBACK: publish just a link using the Feed dialog
-        
-        // Put together the dialog parameters
-        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                       @"Seagull Century", @"name",
-                                       @"100 mile bike ride held in Salisbury, MD.", @"caption",
-                                       @"100 mile bike ride.", @"description",
-                                       @"http://www.seagullcentury.org", @"link",
-                                       @"http://www.seagullcentury.org/template/images/sgc-logo08.jpg", @"picture",
-                                       nil];
-        // Show the feed dialog
-        [FBWebDialogs presentFeedDialogModallyWithSession:nil
-                                               parameters:params
-                                                  handler:^(FBWebDialogResult result, NSURL *resultURL, NSError *error) {
-                                                      if (error) {
-                                                          // An error occurred, we need to handle the error
-                                                          NSLog(@"Error publishing story: %@", error.description);
-                                                      } else {
-                                                          if (result == FBWebDialogResultDialogNotCompleted) {
-                                                              // User canceled.
-                                                              NSLog(@"User cancelled.");
-                                                          } else {
-                                                              // Handle the publish feed callback
-                                                              NSDictionary *urlParams = [self parseURLParams:[resultURL query]];
-                                                              
-                                                              if (![urlParams valueForKey:@"post_id"]) {
-                                                                  // User canceled.
-                                                                  NSLog(@"User cancelled.");
-                                                                  
-                                                              } else {
-                                                                  // User clicked the Share button
-                                                                  NSString *result = [NSString stringWithFormat: @"Posted story, id: %@", [urlParams valueForKey:@"post_id"]];
-                                                                  NSLog(@"result %@", result);
-                                                              }
-                                                          }
-                                                      }
-                                                  }];
-    }
-
-*/
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
-        /*
-        SLComposeViewController *facebookSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [facebookSheet setInitialText:@"Seagull Century"];
-        [self presentViewController:facebookSheet animated:YES completion:nil];
-         
-         */
         
         [FBDialogs presentOSIntegratedShareDialogModallyFrom:self initialText:@"" image:nil url:[NSURL URLWithString:@"http://www.seagullcentury.org"] handler:^(FBOSIntegratedShareDialogResult result, NSError *error){
             if(error)
@@ -293,49 +208,4 @@
     }
     
 }
-
-// A function for parsing URL parameters returned by the Feed Dialog.
-- (NSDictionary*)parseURLParams:(NSString *)query {
-    
-    NSArray *pairs = [query componentsSeparatedByString:@"&"];
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    for (NSString *pair in pairs) {
-        NSArray *kv = [pair componentsSeparatedByString:@"="];
-        NSString *val =
-        [kv[1] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        params[kv[0]] = val;
-    }
-    return params;
-}
-
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-    
-    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
-                                sourceApplication:sourceApplication
-                                  fallbackHandler:^(FBAppCall *call) {
-                                      NSLog(@"Unhandled deep link: %@", url);
-                                      // Here goes the code to handle the links
-                                      // Use the links to show a relevant view of your app to the user
-                                  }];
-    
-    return urlWasHandled;
-}
- 
-
-- (IBAction)callWagon:(UIBarButtonItem *)sender
-{
-    
-    UIDevice *device = [UIDevice currentDevice];
-    if ([[device model] isEqualToString:@"iPhone"] ){
-        
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
-        
-    }else{
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@" This is not an iPhone and cannot make calls" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
 @end
