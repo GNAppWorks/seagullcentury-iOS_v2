@@ -196,6 +196,11 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.webView.scalesPageToFit = YES;
     [self updateButtons];
+    
+   
+    
+   
+    
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
@@ -203,6 +208,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
     [self updateTitle:self.webView];
+     NSLog(@"This is the string %@", webView.request.mainDocumentURL);
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error

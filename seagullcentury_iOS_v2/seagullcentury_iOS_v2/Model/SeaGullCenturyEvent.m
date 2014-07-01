@@ -86,7 +86,7 @@
     
     NSString *userSettings = [[NSString alloc]init];
     
-    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d&output=embed", speedSettings, vendorSetting, waypointSetting];
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
     
     return userSettings;
     
