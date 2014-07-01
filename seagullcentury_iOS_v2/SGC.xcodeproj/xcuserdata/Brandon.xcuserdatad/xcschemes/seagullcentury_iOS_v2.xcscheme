@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA49C45B18F5EE9B0085E101"
-               BuildableName = "seagullcentury_iOS_v2Tests.xctest"
+               BuildableName = "SGCTests.xctest"
                BlueprintName = "SGCTests"
                ReferencedContainer = "container:SGC.xcodeproj">
             </BuildableReference>
