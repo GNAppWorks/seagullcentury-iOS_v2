@@ -252,7 +252,7 @@
 				ORGANIZATIONNAME = "Seagull Century";
 				TargetAttributes = {
 					CA49C43A18F5EE9B0085E101 = {
-						DevelopmentTeam = 95NGJEZZY8;
+						DevelopmentTeam = J346UW3Q3Y;
 					};
 					CA49C45B18F5EE9B0085E101 = {
 						TestTargetID = CA49C43A18F5EE9B0085E101;
@@ -446,6 +446,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/SGC-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/SGC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGC;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -457,8 +458,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Amy Waters (J346UW3Q3Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amy Waters (J346UW3Q3Y)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Brandon/Documents/Development/seagullcentury-iOS_v2/FacebookSDK",
@@ -466,6 +467,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/SGC-Prefix.pch";
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/SGC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGC;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

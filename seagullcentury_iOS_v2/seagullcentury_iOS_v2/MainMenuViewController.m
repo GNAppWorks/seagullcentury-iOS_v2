@@ -79,7 +79,7 @@
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
     
-    self.title = @"Seagull Century";
+    self.title = @"Sea Gull Century";
     
     self.seaGullEvent = [[SeaGullCenturyEvent alloc]init];
     self.urlObject = [[NSURLRequest alloc]init];
