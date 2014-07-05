@@ -101,7 +101,7 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (void)buildView
 {
-    self.settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Waypoints", nil];
+    self.settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Checkpoints", nil];
     
     self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 500) style:UITableViewStyleGrouped];
     

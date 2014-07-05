@@ -26,6 +26,8 @@
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
+		CA8FA3CE1968822C00FB16DE /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CD1968822C00FB16DE /* GameKit.framework */; };
+		CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CF1968822F00FB16DE /* StoreKit.framework */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
@@ -50,18 +52,18 @@
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CA49C44218F5EE9B0085E101 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CA49C44618F5EE9B0085E101 /* seagullcentury_iOS_v2-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "seagullcentury_iOS_v2-Info.plist"; sourceTree = "<group>"; };
+		CA49C44618F5EE9B0085E101 /* SGC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SGC-Info.plist"; sourceTree = "<group>"; };
 		CA49C44818F5EE9B0085E101 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA49C44A18F5EE9B0085E101 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CA49C44C18F5EE9B0085E101 /* seagullcentury_iOS_v2-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "seagullcentury_iOS_v2-Prefix.pch"; sourceTree = "<group>"; };
+		CA49C44C18F5EE9B0085E101 /* SGC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SGC-Prefix.pch"; sourceTree = "<group>"; };
 		CA49C44D18F5EE9B0085E101 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CA49C44E18F5EE9B0085E101 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CA49C45118F5EE9B0085E101 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
-		CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = seagullcentury_iOS_v2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA49C45C18F5EE9B0085E101 /* SGCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C45D18F5EE9B0085E101 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CA49C46518F5EE9B0085E101 /* seagullcentury_iOS_v2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "seagullcentury_iOS_v2Tests-Info.plist"; sourceTree = "<group>"; };
+		CA49C46518F5EE9B0085E101 /* SGCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SGCTests-Info.plist"; sourceTree = "<group>"; };
 		CA49C46718F5EE9B0085E101 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA49C46918F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = seagullcentury_iOS_v2Tests.m; sourceTree = "<group>"; };
 		CA4F26FC19016B5F008BC69C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -71,6 +73,8 @@
 		CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarSettingsTableViewController.m; sourceTree = "<group>"; };
 		CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteMapViewController.h; sourceTree = "<group>"; };
 		CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteMapViewController.m; sourceTree = "<group>"; };
+		CA8FA3CD1968822C00FB16DE /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		CA8FA3CF1968822F00FB16DE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */,
 				CA076AA4192D05DF00335108 /* FacebookSDK.framework in Frameworks */,
 				CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */,
 				CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */,
@@ -92,6 +97,7 @@
 				CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
+				CA8FA3CE1968822C00FB16DE /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				CA49C43B18F5EE9B0085E101 /* SGC.app */,
-				CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */,
+				CA49C45C18F5EE9B0085E101 /* SGCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +146,8 @@
 		CA49C43D18F5EE9B0085E101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA8FA3CF1968822F00FB16DE /* StoreKit.framework */,
+				CA8FA3CD1968822C00FB16DE /* GameKit.framework */,
 				CA076AA3192D05DF00335108 /* FacebookSDK.framework */,
 				CA4F26FC19016B5F008BC69C /* Social.framework */,
 				CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */,
@@ -178,10 +186,10 @@
 				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
-				CA49C44618F5EE9B0085E101 /* seagullcentury_iOS_v2-Info.plist */,
+				CA49C44618F5EE9B0085E101 /* SGC-Info.plist */,
 				CA49C44718F5EE9B0085E101 /* InfoPlist.strings */,
 				CA49C44A18F5EE9B0085E101 /* main.m */,
-				CA49C44C18F5EE9B0085E101 /* seagullcentury_iOS_v2-Prefix.pch */,
+				CA49C44C18F5EE9B0085E101 /* SGC-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -198,7 +206,7 @@
 		CA49C46418F5EE9B0085E101 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CA49C46518F5EE9B0085E101 /* seagullcentury_iOS_v2Tests-Info.plist */,
+				CA49C46518F5EE9B0085E101 /* SGCTests-Info.plist */,
 				CA49C46618F5EE9B0085E101 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -207,9 +215,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CA49C43A18F5EE9B0085E101 /* seagullcentury_iOS_v2 */ = {
+		CA49C43A18F5EE9B0085E101 /* SGC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA49C46D18F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "seagullcentury_iOS_v2" */;
+			buildConfigurationList = CA49C46D18F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "SGC" */;
 			buildPhases = (
 				CA49C43718F5EE9B0085E101 /* Sources */,
 				CA49C43918F5EE9B0085E101 /* Resources */,
@@ -219,14 +227,14 @@
 			);
 			dependencies = (
 			);
-			name = seagullcentury_iOS_v2;
+			name = SGC;
 			productName = seagullcentury_iOS_v2;
 			productReference = CA49C43B18F5EE9B0085E101 /* SGC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		CA49C45B18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests */ = {
+		CA49C45B18F5EE9B0085E101 /* SGCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CA49C47018F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "seagullcentury_iOS_v2Tests" */;
+			buildConfigurationList = CA49C47018F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "SGCTests" */;
 			buildPhases = (
 				CA49C45818F5EE9B0085E101 /* Sources */,
 				CA49C45918F5EE9B0085E101 /* Frameworks */,
@@ -237,9 +245,9 @@
 			dependencies = (
 				CA49C46218F5EE9B0085E101 /* PBXTargetDependency */,
 			);
-			name = seagullcentury_iOS_v2Tests;
+			name = SGCTests;
 			productName = seagullcentury_iOS_v2Tests;
-			productReference = CA49C45C18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests.xctest */;
+			productReference = CA49C45C18F5EE9B0085E101 /* SGCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -252,14 +260,22 @@
 				ORGANIZATIONNAME = "Seagull Century";
 				TargetAttributes = {
 					CA49C43A18F5EE9B0085E101 = {
-						DevelopmentTeam = 95NGJEZZY8;
+						DevelopmentTeam = J346UW3Q3Y;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					CA49C45B18F5EE9B0085E101 = {
 						TestTargetID = CA49C43A18F5EE9B0085E101;
 					};
 				};
 			};
-			buildConfigurationList = CA49C43618F5EE9B0085E101 /* Build configuration list for PBXProject "seagullcentury_iOS_v2" */;
+			buildConfigurationList = CA49C43618F5EE9B0085E101 /* Build configuration list for PBXProject "SGC" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -272,8 +288,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CA49C43A18F5EE9B0085E101 /* seagullcentury_iOS_v2 */,
-				CA49C45B18F5EE9B0085E101 /* seagullcentury_iOS_v2Tests */,
+				CA49C43A18F5EE9B0085E101 /* SGC */,
+				CA49C45B18F5EE9B0085E101 /* SGCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,7 +345,7 @@
 /* Begin PBXTargetDependency section */
 		CA49C46218F5EE9B0085E101 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = CA49C43A18F5EE9B0085E101 /* seagullcentury_iOS_v2 */;
+			target = CA49C43A18F5EE9B0085E101 /* SGC */;
 			targetProxy = CA49C46118F5EE9B0085E101 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -444,10 +460,11 @@
 					"/Users/Brandon/Documents/Development/seagullcentury-iOS_v2/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
-				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
+				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/SGC-Prefix.pch";
+				INFOPLIST_FILE = "seagullcentury_iOS_v2/SGC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGC;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "E5D91515-645D-42CD-BD0A-3A9598E20D79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -457,17 +474,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Amy Waters (J346UW3Q3Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Brandon/Documents/Development/seagullcentury-iOS_v2/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
-				INFOPLIST_FILE = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Info.plist";
+				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/SGC-Prefix.pch";
+				INFOPLIST_FILE = "seagullcentury_iOS_v2/SGC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGC;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "E5D91515-645D-42CD-BD0A-3A9598E20D79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -487,8 +505,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "seagullcentury_iOS_v2Tests/seagullcentury_iOS_v2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "seagullcentury_iOS_v2Tests/SGCTests-Info.plist";
+				PRODUCT_NAME = SGCTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -505,8 +523,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "seagullcentury_iOS_v2/seagullcentury_iOS_v2-Prefix.pch";
-				INFOPLIST_FILE = "seagullcentury_iOS_v2Tests/seagullcentury_iOS_v2Tests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "seagullcentury_iOS_v2Tests/SGCTests-Info.plist";
+				PRODUCT_NAME = SGCTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -515,7 +533,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CA49C43618F5EE9B0085E101 /* Build configuration list for PBXProject "seagullcentury_iOS_v2" */ = {
+		CA49C43618F5EE9B0085E101 /* Build configuration list for PBXProject "SGC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA49C46B18F5EE9B0085E101 /* Debug */,
@@ -524,7 +542,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA49C46D18F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "seagullcentury_iOS_v2" */ = {
+		CA49C46D18F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "SGC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA49C46E18F5EE9B0085E101 /* Debug */,
@@ -533,7 +551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CA49C47018F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "seagullcentury_iOS_v2Tests" */ = {
+		CA49C47018F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "SGCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CA49C47118F5EE9B0085E101 /* Debug */,

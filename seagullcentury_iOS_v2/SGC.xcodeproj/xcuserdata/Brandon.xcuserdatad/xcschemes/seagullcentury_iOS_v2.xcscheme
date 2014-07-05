@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA49C43A18F5EE9B0085E101"
                BuildableName = "SGC.app"
-               BlueprintName = "seagullcentury_iOS_v2"
-               ReferencedContainer = "container:seagullcentury_iOS_v2.xcodeproj">
+               BlueprintName = "SGC"
+               ReferencedContainer = "container:SGC.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CA49C45B18F5EE9B0085E101"
-               BuildableName = "seagullcentury_iOS_v2Tests.xctest"
-               BlueprintName = "seagullcentury_iOS_v2Tests"
-               ReferencedContainer = "container:seagullcentury_iOS_v2.xcodeproj">
+               BuildableName = "SGCTests.xctest"
+               BlueprintName = "SGCTests"
+               ReferencedContainer = "container:SGC.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA49C43A18F5EE9B0085E101"
             BuildableName = "SGC.app"
-            BlueprintName = "seagullcentury_iOS_v2"
-            ReferencedContainer = "container:seagullcentury_iOS_v2.xcodeproj">
+            BlueprintName = "SGC"
+            ReferencedContainer = "container:SGC.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA49C43A18F5EE9B0085E101"
             BuildableName = "SGC.app"
-            BlueprintName = "seagullcentury_iOS_v2"
-            ReferencedContainer = "container:seagullcentury_iOS_v2.xcodeproj">
+            BlueprintName = "SGC"
+            ReferencedContainer = "container:SGC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CA49C43A18F5EE9B0085E101"
             BuildableName = "SGC.app"
-            BlueprintName = "seagullcentury_iOS_v2"
-            ReferencedContainer = "container:seagullcentury_iOS_v2.xcodeproj">
+            BlueprintName = "SGC"
+            ReferencedContainer = "container:SGC.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
