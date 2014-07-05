@@ -26,6 +26,8 @@
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
+		CA8FA3CE1968822C00FB16DE /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CD1968822C00FB16DE /* GameKit.framework */; };
+		CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CF1968822F00FB16DE /* StoreKit.framework */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
@@ -71,6 +73,8 @@
 		CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarSettingsTableViewController.m; sourceTree = "<group>"; };
 		CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteMapViewController.h; sourceTree = "<group>"; };
 		CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteMapViewController.m; sourceTree = "<group>"; };
+		CA8FA3CD1968822C00FB16DE /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		CA8FA3CF1968822F00FB16DE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -85,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */,
 				CA076AA4192D05DF00335108 /* FacebookSDK.framework in Frameworks */,
 				CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */,
 				CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */,
@@ -92,6 +97,7 @@
 				CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
+				CA8FA3CE1968822C00FB16DE /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +146,8 @@
 		CA49C43D18F5EE9B0085E101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA8FA3CF1968822F00FB16DE /* StoreKit.framework */,
+				CA8FA3CD1968822C00FB16DE /* GameKit.framework */,
 				CA076AA3192D05DF00335108 /* FacebookSDK.framework */,
 				CA4F26FC19016B5F008BC69C /* Social.framework */,
 				CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */,
@@ -253,6 +261,14 @@
 				TargetAttributes = {
 					CA49C43A18F5EE9B0085E101 = {
 						DevelopmentTeam = J346UW3Q3Y;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					CA49C45B18F5EE9B0085E101 = {
 						TestTargetID = CA49C43A18F5EE9B0085E101;
@@ -448,7 +464,7 @@
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/SGC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGC;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "E5D91515-645D-42CD-BD0A-3A9598E20D79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -459,7 +475,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Amy Waters (J346UW3Q3Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Amy Waters (J346UW3Q3Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Brandon/Documents/Development/seagullcentury-iOS_v2/FacebookSDK",
@@ -469,7 +485,7 @@
 				INFOPLIST_FILE = "seagullcentury_iOS_v2/SGC-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = SGC;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "E5D91515-645D-42CD-BD0A-3A9598E20D79";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

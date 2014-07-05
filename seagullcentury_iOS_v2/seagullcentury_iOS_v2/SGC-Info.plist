@@ -45,6 +45,7 @@
 		<string>telephony</string>
 		<string>armv7</string>
 		<string>location-services</string>
+		<string>gamekit</string>
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
