@@ -30,6 +30,8 @@
 		CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CF1968822F00FB16DE /* StoreKit.framework */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
+		CADB30FC1974C72000B41A17 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADB30FB1974C72000B41A17 /* CoreLocation.framework */; };
+		CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
 		CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */; };
 		CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAED3CC0192137EC0069BF7F /* images.xcassets */; };
@@ -78,6 +80,9 @@
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CADB30FB1974C72000B41A17 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullRouteManager.h; path = Model/SeaGullRouteManager.h; sourceTree = "<group>"; };
+		CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullRouteManager.m; path = Model/SeaGullRouteManager.m; sourceTree = "<group>"; };
 		CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullCenturyEvent.h; path = Model/SeaGullCenturyEvent.h; sourceTree = "<group>"; };
 		CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullCenturyEvent.m; path = Model/SeaGullCenturyEvent.m; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CADB30FC1974C72000B41A17 /* CoreLocation.framework in Frameworks */,
 				CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */,
 				CA076AA4192D05DF00335108 /* FacebookSDK.framework in Frameworks */,
 				CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */,
@@ -120,6 +126,8 @@
 				CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */,
 				CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */,
 				CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */,
+				CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */,
+				CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 		CA49C43D18F5EE9B0085E101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CADB30FB1974C72000B41A17 /* CoreLocation.framework */,
 				CA8FA3CF1968822F00FB16DE /* StoreKit.framework */,
 				CA8FA3CD1968822C00FB16DE /* GameKit.framework */,
 				CA076AA3192D05DF00335108 /* FacebookSDK.framework */,
@@ -322,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
+				CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */,
 				CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,

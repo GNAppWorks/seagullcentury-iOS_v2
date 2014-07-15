@@ -30,7 +30,6 @@
 
 @property NSUserDefaults *masterSettings;
 
-
 @end
 
 @implementation MainMenuViewController
@@ -147,7 +146,7 @@
         case 4:
             self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
             self.seaGullEvent.displayRouteBool = NO;
-            NSLog(@"NSURLRequest Object: %@", self.urlObject);
+            //NSLog(@"NSURLRequest Object: %@", self.urlObject);
             break;
         default:
             break;

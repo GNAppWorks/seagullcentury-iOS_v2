@@ -8,6 +8,7 @@
 
 #import "RouteMapViewController.h"
 #import "Reachability.h"
+#import "SeaGullRouteManager.h"
 
 #import "SeaGullCenturyEvent.h"
 
@@ -23,6 +24,7 @@
 @property (nonatomic, strong) Reachability *reach;
 @property NetworkStatus network;
 @property (nonatomic, strong) NSURLRequest *finalRequest;
+@property ( nonatomic, strong) SeaGullRouteManager* gullRoutes;
 
 @end
 
@@ -45,10 +47,19 @@
     }
     return _webToolbar;
 }
+
+-(SeaGullRouteManager*) gullRoutes {
+    if (!_gullRoutes) {
+        _gullRoutes = [[SeaGullRouteManager alloc]init];
+    }
+    return _gullRoutes;
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
     
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(reachabilityChanged:)
@@ -79,11 +90,14 @@
     }
     
 }
-
+//TODO: Move this over to Singleton
 -(void) setupBottomToolbar
 {
     if (self.routeBool) {
-        UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+        
+        self.routeBool = self.gullRoutes.showRouteBottomToolBar;
+        
+        /*UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                       target:self action:nil];
         
         UIBarButtonItem *sagWagon = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"sagWagon25"]
@@ -92,6 +106,7 @@
                                                                    action:@selector(callWagon:)];
         
         self.routeToolbar = [NSArray arrayWithObjects: flexiableItem, sagWagon, flexiableItem, nil];
+         */
         
     }else {
         UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
@@ -233,7 +248,7 @@
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://2489908484"]];
     }
 }
-
+//TODO: Remove this method
 #pragma mark - Special Methods
 - (IBAction)callWagon:(UIBarButtonItem *)sender {
     UIDevice *device = [UIDevice currentDevice];

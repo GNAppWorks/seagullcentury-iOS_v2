@@ -13,7 +13,4 @@
 @property (strong, nonatomic) NSArray *selectRoute;
 @property (nonatomic) BOOL displayRouteBool;
 
-
-
-
 @end
