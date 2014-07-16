@@ -11,8 +11,9 @@
 #import "RouteMapViewController.h"
 
 #import "SeaGullCenturyEvent.h"
+#import "SeaGullRouteManager.h"
 
-@interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate>
+@interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -26,7 +27,7 @@
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 
 - (void) initalSetup;
-- (void) checkLocation;
+//- (void) checkLocation;
 
 @property NSUserDefaults *masterSettings;
 
@@ -48,7 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self checkLocation];
+    [[SeaGullRouteManager sharedInstance]checkLocation];
     [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     
@@ -84,28 +85,6 @@
     self.urlObject = [[NSURLRequest alloc]init];
     
     
-}
-
-- (void) checkLocation
-{
-    
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
-    {
-        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized)
-        {
-            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
-                                                          message:@"To re-enable, please go to Settings and turn on Location Service for this app."
-                                                         delegate:nil
-                                                cancelButtonTitle:@"Ok"
-                                                otherButtonTitles:nil];
-            [alert show];
-            alert = nil;
-        }
-    }
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

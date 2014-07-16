@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
 
 @interface SeaGullRouteManager : NSObject
 
 + (SeaGullRouteManager*) sharedInstance;
 
--(NSArray *)showRouteBottomToolBar;
+-(NSArray *) showRouteBottomToolBar;
+-(NSArray *) showWebBottomToolBar:(UIWebView*)webView;
+-(void) checkLocation;
 
 @end
