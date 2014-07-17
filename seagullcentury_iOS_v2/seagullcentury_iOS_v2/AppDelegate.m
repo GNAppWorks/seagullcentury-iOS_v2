@@ -33,8 +33,10 @@
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    
     [self.window makeKeyAndVisible];
     [[Harpy sharedInstance] setAppID:@"<#896362043#>"];
+    [[Harpy sharedInstance] setAppName:@"sea-gull-century"];
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
     
     return YES;
