@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) NSUInteger routeNumber;
 
+
 @property (strong, nonatomic) NSUserDefaults *masterSettings;
 
 -(NSString *) getUserSettings;
@@ -73,7 +74,6 @@
     [self.routes addObject:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.seagullcentury.org"]]];
     
     _selectRoute = [NSArray arrayWithArray:self.routes];
-    _displayRouteBool = YES;
     
     return _selectRoute;
 }

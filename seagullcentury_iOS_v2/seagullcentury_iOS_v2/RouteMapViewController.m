@@ -62,10 +62,11 @@
     self.webView.delegate = self;
     
     [self.webView loadRequest:self.urlObject];
-    
     [self setupBottomToolbar];
     [self.navigationController.interactivePopGestureRecognizer setEnabled:NO];
     [[SeaGullRouteManager sharedInstance]checkLocation];
+    
+    
     
 }
 
@@ -81,23 +82,15 @@
     }else{
         [self.navigationController.toolbar setItems:self.webToolbar];
     }
-    
 }
 
 -(void) setupBottomToolbar {
     if (self.routeBool) {
-        
         self.routeToolbar = [[SeaGullRouteManager sharedInstance]showRouteBottomToolBar];
-       
-        
     }else {
-        
         self.webToolbar = [[SeaGullRouteManager sharedInstance] showWebBottomToolBar:self.webView];
-
     }
-    
 }
-
 
 - (void) reachabilityChanged:(NSNotification *) notification {
     

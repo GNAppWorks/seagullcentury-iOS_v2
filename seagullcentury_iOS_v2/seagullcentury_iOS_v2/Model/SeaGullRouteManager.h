@@ -10,12 +10,19 @@
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 
+
 @interface SeaGullRouteManager : NSObject
 
 + (SeaGullRouteManager*) sharedInstance;
 
 -(NSArray *) showRouteBottomToolBar;
 -(NSArray *) showWebBottomToolBar:(UIWebView*)webView;
+-(NSURLRequest*) determineCorrectRoute:(NSInteger)number;
+-(BOOL)showCorrectToolbar:(NSInteger)number;
+
 -(void) checkLocation;
+
+
+
 
 @end

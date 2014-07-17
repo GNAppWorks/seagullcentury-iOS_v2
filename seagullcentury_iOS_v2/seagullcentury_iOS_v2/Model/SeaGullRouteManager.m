@@ -7,9 +7,11 @@
 //
 
 #import "SeaGullRouteManager.h"
+#import "SeaGullCenturyEvent.h"
 
-@interface SeaGullRouteManager () <UIWebViewDelegate, CLLocationManagerDelegate>
+@interface SeaGullRouteManager () <CLLocationManagerDelegate>
 
+@property (strong, nonatomic) SeaGullCenturyEvent *seaGullEvent;
 
 @end
 
@@ -25,12 +27,28 @@
     
 }
 
-
-
 -(id)init {
     self = [super init];
     
     return self;
+}
+
+-(SeaGullCenturyEvent *)seaGullEvent {
+    if (!_seaGullEvent) {
+        _seaGullEvent = [[SeaGullCenturyEvent alloc]init];
+    }
+    return _seaGullEvent;
+}
+
+
+-(NSURLRequest*) determineCorrectRoute:(NSInteger)number{
+    
+    return self.seaGullEvent.selectRoute[number - 1];
+}
+
+-(BOOL) showCorrectToolbar:(NSInteger)number {
+  
+    return number != 4 ? YES : NO;
 }
 
 - (NSArray*)showRouteBottomToolBar {
