@@ -36,7 +36,7 @@
     
     [self.window makeKeyAndVisible];
     [[Harpy sharedInstance] setAppID:@"<#896362043#>"];
-    [[Harpy sharedInstance] setAppName:@"sea-gull-century"];
+    [[Harpy sharedInstance] setAppName:@"Sea Gull Century"];
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
     
     return YES;
