@@ -11,25 +11,25 @@
 #import "RouteMapViewController.h"
 
 #import "SeaGullCenturyEvent.h"
+#import "SeaGullRouteManager.h"
 
-@interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate, CLLocationManagerDelegate>
+@interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIView *mainView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) NSURLRequest *urlObject;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
-@property (strong, nonatomic) SeaGullCenturyEvent *seaGullEvent;
+@property (nonatomic) NSInteger selectedRouteNumber;
+@property (strong, nonatomic) NSURLRequest *urlObject;
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender;
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 
 - (void) initalSetup;
-- (void) checkLocation;
+//- (void) checkLocation;
 
 @property NSUserDefaults *masterSettings;
-
 
 @end
 
@@ -49,7 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self checkLocation];
+    [[SeaGullRouteManager sharedInstance]checkLocation];
     [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     
@@ -81,32 +81,9 @@
     
     self.title = @"Sea Gull Century";
     
-    self.seaGullEvent = [[SeaGullCenturyEvent alloc]init];
     self.urlObject = [[NSURLRequest alloc]init];
     
     
-}
-
-- (void) checkLocation
-{
-    
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
-    {
-        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized)
-        {
-            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
-                                                          message:@"To re-enable, please go to Settings and turn on Location Service for this app."
-                                                         delegate:nil
-                                                cancelButtonTitle:@"Ok"
-                                                otherButtonTitles:nil];
-            [alert show];
-            alert = nil;
-        }
-    }
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -119,11 +96,7 @@
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlObject = self.urlObject;
             
-            if (self.seaGullEvent.displayRouteBool) {
-                controller.routeBool = YES;
-            }else {
-                controller.routeBool = NO;
-            }
+            controller.routeBool = [[SeaGullRouteManager sharedInstance]showCorrectToolbar:self.selectedRouteNumber];
             
         }
     }
@@ -133,28 +106,11 @@
 - (IBAction)routeSelectMethod:(UIButton *)sender
 {
     UIButton *button = (UIButton*)sender;
+    self.selectedRouteNumber = button.tag;
     
-    switch (button.tag) {
-        case 1:
-            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
-            break;
-        case 2:
-            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
-            break;
-        case 3:
-            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
-            break;
-        case 4:
-            self.urlObject = self.seaGullEvent.selectRoute[(button.tag - 1)];
-            self.seaGullEvent.displayRouteBool = NO;
-            NSLog(@"NSURLRequest Object: %@", self.urlObject);
-            break;
-        default:
-            break;
-    }
-    
+    self.urlObject = [[SeaGullRouteManager sharedInstance]determineCorrectRoute:(button.tag)];
+   
     [self performSegueWithIdentifier:@"toMap" sender:self];
-    
     
 }
 

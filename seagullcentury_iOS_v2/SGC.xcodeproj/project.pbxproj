@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C063202C42D4496FA1E229A2 /* libPods-SGC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */; };
 		CA076AA4192D05DF00335108 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA076AA3192D05DF00335108 /* FacebookSDK.framework */; };
 		CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */ = {isa = PBXBuildFile; fileRef = CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
@@ -26,10 +27,10 @@
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
-		CA8FA3CE1968822C00FB16DE /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CD1968822C00FB16DE /* GameKit.framework */; };
-		CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CF1968822F00FB16DE /* StoreKit.framework */; };
 		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
+		CADB30FC1974C72000B41A17 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADB30FB1974C72000B41A17 /* CoreLocation.framework */; };
+		CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
 		CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */; };
 		CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAED3CC0192137EC0069BF7F /* images.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC.xcconfig"; path = "Pods/Pods-SGC.xcconfig"; sourceTree = "<group>"; };
 		CA076AA3192D05DF00335108 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "seagullcentury-leaflet"; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* SGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,10 +80,14 @@
 		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		CADB30FB1974C72000B41A17 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullRouteManager.h; path = Model/SeaGullRouteManager.h; sourceTree = "<group>"; };
+		CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullRouteManager.m; path = Model/SeaGullRouteManager.m; sourceTree = "<group>"; };
 		CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullCenturyEvent.h; path = Model/SeaGullCenturyEvent.h; sourceTree = "<group>"; };
 		CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullCenturyEvent.m; path = Model/SeaGullCenturyEvent.m; sourceTree = "<group>"; };
 		CAED3CC0192137EC0069BF7F /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
+		FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA8FA3D01968822F00FB16DE /* StoreKit.framework in Frameworks */,
+				CADB30FC1974C72000B41A17 /* CoreLocation.framework in Frameworks */,
 				CA076AA4192D05DF00335108 /* FacebookSDK.framework in Frameworks */,
 				CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */,
 				CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */,
@@ -97,7 +103,7 @@
 				CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
-				CA8FA3CE1968822C00FB16DE /* GameKit.framework in Frameworks */,
+				C063202C42D4496FA1E229A2 /* libPods-SGC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +126,8 @@
 				CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */,
 				CAED3CBD19212B140069BF7F /* SeaGullCenturyEvent.h */,
 				CAED3CBE19212B140069BF7F /* SeaGullCenturyEvent.m */,
+				CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */,
+				CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 				CA49C43C18F5EE9B0085E101 /* Products */,
 				CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */,
 				CA49C46318F5EE9B0085E101 /* seagullcentury_iOS_v2Tests */,
+				62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +155,7 @@
 		CA49C43D18F5EE9B0085E101 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CADB30FB1974C72000B41A17 /* CoreLocation.framework */,
 				CA8FA3CF1968822F00FB16DE /* StoreKit.framework */,
 				CA8FA3CD1968822C00FB16DE /* GameKit.framework */,
 				CA076AA3192D05DF00335108 /* FacebookSDK.framework */,
@@ -156,6 +166,7 @@
 				CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */,
 				CA49C44218F5EE9B0085E101 /* UIKit.framework */,
 				CA49C45D18F5EE9B0085E101 /* XCTest.framework */,
+				FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -163,16 +174,12 @@
 		CA49C44418F5EE9B0085E101 /* seagullcentury_iOS_v2 */ = {
 			isa = PBXGroup;
 			children = (
+				CA7E2CF7197750670099CAD8 /* Controller */,
 				CAED3CC0192137EC0069BF7F /* images.xcassets */,
 				CA49C45018F5EE9B0085E101 /* Main.storyboard */,
-				CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */,
-				CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */,
 				CA0D45C8191834B700026D59 /* Model */,
-				CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */,
-				CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */,
-				CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */,
-				CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */,
 				CA49C44518F5EE9B0085E101 /* Supporting Files */,
+				CA7E2CF8197750700099CAD8 /* View */,
 			);
 			path = seagullcentury_iOS_v2;
 			sourceTree = "<group>";
@@ -212,6 +219,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		CA7E2CF7197750670099CAD8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA79DF6C18F7762F008637F9 /* RouteMapViewController.h */,
+				CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */,
+				CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */,
+				CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */,
+				CA49C45318F5EE9B0085E101 /* MainMenuViewController.h */,
+				CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CA7E2CF8197750700099CAD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -219,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA49C46D18F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "SGC" */;
 			buildPhases = (
+				5825FE4A2FFC479AA30F5152 /* Check Pods Manifest.lock */,
 				CA49C43718F5EE9B0085E101 /* Sources */,
 				CA49C43918F5EE9B0085E101 /* Resources */,
 				CA49C43818F5EE9B0085E101 /* Frameworks */,
+				F6344B7D06E64560AB7580AF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -316,12 +345,46 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5825FE4A2FFC479AA30F5152 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6344B7D06E64560AB7580AF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-SGC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CA49C43718F5EE9B0085E101 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
+				CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */,
 				CAED3CBF19212B150069BF7F /* SeaGullCenturyEvent.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
@@ -450,6 +513,7 @@
 		};
 		CA49C46E18F5EE9B0085E101 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -471,6 +535,7 @@
 		};
 		CA49C46F18F5EE9B0085E101 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

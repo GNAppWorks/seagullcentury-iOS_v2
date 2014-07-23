@@ -1,0 +1,10 @@
+# Uncomment this line to define a global platform for your project
+platform :ios, "7.1"
+
+target "SGC" do
+pod 'Harpy'
+end
+
+target "SGCTests" do
+
+end

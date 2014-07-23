@@ -10,6 +10,7 @@
 
 
 #import "AppDelegate.h"
+#import "Harpy.h"
 
 
 @implementation AppDelegate
@@ -32,7 +33,11 @@
 
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-   
+    
+    [self.window makeKeyAndVisible];
+    [[Harpy sharedInstance] setAppID:@"<#896362043#>"];
+    [[Harpy sharedInstance] setAppName:@"Sea Gull Century"];
+    [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
     
     return YES;
 }
@@ -58,6 +63,7 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
+    [[Harpy sharedInstance] checkVersionDaily];
     
 }
 
