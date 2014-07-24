@@ -38,6 +38,26 @@
                ReferencedContainer = "container:SGC.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CAC91B441980A2C2006C02DC"
+               BuildableName = "SGC Tests.xctest"
+               BlueprintName = "SGC Tests"
+               ReferencedContainer = "container:SGC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CAA04D851980A408003D108F"
+               BuildableName = "SGC_Tests.xctest"
+               BlueprintName = "SGC_Tests"
+               ReferencedContainer = "container:SGC.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

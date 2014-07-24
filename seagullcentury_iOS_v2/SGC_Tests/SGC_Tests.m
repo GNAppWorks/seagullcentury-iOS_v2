@@ -1,18 +1,19 @@
 //
-//  seagullcentury_iOS_v2Tests.m
-//  seagullcentury_iOS_v2Tests
+//  SGC_Tests.m
+//  SGC_Tests
 //
-//  Created by Brandon Altvater on 4/9/14.
+//  Created by Brandon Altvater on 7/23/14.
 //  Copyright (c) 2014 Seagull Century. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
+#import "SeaGullRouteManager.h"
 
-@interface seagullcentury_iOS_v2Tests : XCTestCase
+@interface SGC_Tests : XCTestCase
 
 @end
 
-@implementation seagullcentury_iOS_v2Tests
+@implementation SGC_Tests
 
 - (void)setUp
 {
@@ -26,9 +27,11 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+- (void)testRouteManagerCreation{
+    
+    SeaGullRouteManager *route = [SeaGullRouteManager sharedInstance];
+    XCTAssertNotNil(route, @"Should NOT be nil");
+
 }
 
 @end

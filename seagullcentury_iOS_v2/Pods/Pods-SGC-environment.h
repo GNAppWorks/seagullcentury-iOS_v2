@@ -9,8 +9,8 @@
 // Harpy
 #define COCOAPODS_POD_AVAILABLE_Harpy
 #define COCOAPODS_VERSION_MAJOR_Harpy 2
-#define COCOAPODS_VERSION_MINOR_Harpy 5
-#define COCOAPODS_VERSION_PATCH_Harpy 4
+#define COCOAPODS_VERSION_MINOR_Harpy 6
+#define COCOAPODS_VERSION_PATCH_Harpy 0
 
 // UIDevice-SupportedDevices
 #define COCOAPODS_POD_AVAILABLE_UIDevice_SupportedDevices
