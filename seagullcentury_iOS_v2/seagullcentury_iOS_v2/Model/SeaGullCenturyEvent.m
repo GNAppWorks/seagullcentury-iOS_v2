@@ -29,8 +29,7 @@
     return _masterSettings;
 }
 
--(NSString *) internalPath
-{
+-(NSString *) internalPath {
     if (!_internalPath) _internalPath = [[NSBundle mainBundle] pathForResource:@"index"
                                                                         ofType:@"html"
                                                                    inDirectory:@"seagullcentury-leaflet"];

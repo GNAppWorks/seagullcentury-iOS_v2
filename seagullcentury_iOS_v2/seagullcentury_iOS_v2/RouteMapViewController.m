@@ -29,8 +29,7 @@
 
 @implementation RouteMapViewController
 
-- (NSArray *) routeToolbar
-{
+- (NSArray *) routeToolbar {
     if (!_routeToolbar)
     {
         _routeToolbar = [[NSArray alloc]init];
@@ -38,8 +37,7 @@
     return _routeToolbar;
 }
 
-- (NSArray *) webToolbar
-{
+- (NSArray *) webToolbar {
     if (!_webToolbar)
     {
         _webToolbar = [[NSArray alloc]init];
@@ -47,12 +45,9 @@
     return _webToolbar;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
     
     [[NSNotificationCenter defaultCenter] addObserver: self
                                              selector: @selector(reachabilityChanged:)
@@ -66,8 +61,6 @@
     [self.navigationController.interactivePopGestureRecognizer setEnabled:NO];
     [[SeaGullRouteManager sharedInstance]checkLocation];
     
-    
-    
 }
 
 -(void) viewDidLayoutSubviews {
@@ -75,19 +68,18 @@
     
     self.reach = [Reachability reachabilityForInternetConnection];
     [self.reach startNotifier];
-    //self.network = [self.reach currentReachabilityStatus];
     
     if (self.routeBool) {
         [self.navigationController.toolbar setItems:self.routeToolbar];
-    }else{
+    } else {
         [self.navigationController.toolbar setItems:self.webToolbar];
     }
 }
 
 -(void) setupBottomToolbar {
     if (self.routeBool) {
-        self.routeToolbar = [[SeaGullRouteManager sharedInstance]showRouteBottomToolBar];
-    }else {
+        self.routeToolbar = [[SeaGullRouteManager sharedInstance] showRouteBottomToolBar];
+    } else {
         self.webToolbar = [[SeaGullRouteManager sharedInstance] showWebBottomToolBar:self.webView];
     }
 }
@@ -113,47 +105,45 @@
 }
 
 #pragma mark - Updating the UI
-- (void) updateButtons
-{
-    if (!self.routeBool)
-    {
+- (void) updateButtons {
+    if (!self.routeBool) {
+        
         [[self.webToolbar objectAtIndex:6] setEnabled:self.webView.canGoForward];
         [[self.webToolbar objectAtIndex:0] setEnabled:self.webView.canGoBack];
         [[self.webToolbar objectAtIndex:2] setEnabled:self.webView.loading];
     }
 }
 
--(void)updateTitle:(UIWebView *)aWebView
-{
+-(void)updateTitle:(UIWebView *)aWebView {
+    
     NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.title = pageTitle;
 }
 
 #pragma mark - UIWebViewDelegate
--(void)webViewDidStartLoad:(UIWebView *)webView
-{
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.webView.scalesPageToFit = YES;
     [self updateButtons];
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView
-{
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
     [self updateTitle:self.webView];
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
     [self informError:error];
 }
 
 #pragma mark - Error Handling
-- (void)informError:(NSError *)error
-{
+- (void)informError:(NSError *)error {
     
     NSString* localizedDescription = [error localizedDescription];
     UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"Title for error alert.")

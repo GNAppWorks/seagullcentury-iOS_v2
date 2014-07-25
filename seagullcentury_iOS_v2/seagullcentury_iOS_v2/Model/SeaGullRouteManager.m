@@ -41,7 +41,7 @@
 }
 
 
--(NSURLRequest*) determineCorrectRoute:(NSInteger)number{
+-(NSURLRequest*) determineCorrectRoute:(NSInteger)number {
     
     return self.seaGullEvent.selectRoute[number - 1];
 }
@@ -68,7 +68,7 @@
 }
 
 - (NSArray *)showWebBottomToolBar:(UIWebView*)webView {
-   
+    
     UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                   target:self
                                                                                   action:nil];
@@ -93,25 +93,21 @@
     
     return [NSArray arrayWithObjects:backButton, flexiableItem, stopButton, flexiableItem, reloadButton, flexiableItem,forwardButton, nil];}
 
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://4105436342"]];
     }
 }
 
-- (void) checkLocation
-{
+- (void) checkLocation {
     
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"])
-    {
-        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized)
-        {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"]) {
+        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
             UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
                                                           message:@"To re-enable, please go to Settings and turn on Location Service for this app."
                                                          delegate:nil
@@ -126,7 +122,7 @@
 #pragma mark - Special Methods
 - (IBAction)callWagon:(UIBarButtonItem *)sender {
     UIDevice *device = [UIDevice currentDevice];
-    if ([[device model] isEqualToString:@"iPhone"] ){
+    if ([[device model] isEqualToString:@"iPhone"] ) {
         
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Notice"
                                                        message:@"Please take note of how close you are to the nearest rest stop.\n\nIf you are having a medical emergency, please call 911.\nIf you have an urgent need and cannot continue, please contact SAG services by clicking continue.\n\nPLEASE NOTE: Due to the size of the course, it may take a SAG vehicle over an hour to reach you. Your patience is appreciated."
@@ -136,8 +132,7 @@
         [alert show];
         
         
-    }else
-        {
+    }else {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
                                                         message:@" This is not an iPhone and cannot make calls"

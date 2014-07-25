@@ -7,9 +7,14 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SeaGullRouteManager.h"
+#import "SeaGullCenturyEvent.h"
 
 @interface SGC_Tests : XCTestCase
+{
+    SeaGullCenturyEvent *route;
+    
+    
+}
 
 @end
 
@@ -19,6 +24,8 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    route = [[SeaGullCenturyEvent alloc]init];
+    
 }
 
 - (void)tearDown
@@ -27,10 +34,11 @@
     [super tearDown];
 }
 
-- (void)testRouteManagerCreation{
+- (void)testGettingInternalHTMLPath {
     
-    SeaGullRouteManager *route = [SeaGullRouteManager sharedInstance];
-    XCTAssertNotNil(route, @"Should NOT be nil");
+
+    
+    
 
 }
 
