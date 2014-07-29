@@ -7,11 +7,11 @@
 //
 
 #import "SeaGullRouteManager.h"
-#import "SeaGullCenturyEvent.h"
+#import "SeaGullRouteModel.h"
 
 @interface SeaGullRouteManager () <CLLocationManagerDelegate>
 
-@property (strong, nonatomic) SeaGullCenturyEvent *seaGullEvent;
+@property (strong, nonatomic) SeaGullRouteModel *seaGullEvent;
 
 @end
 
@@ -33,9 +33,9 @@
     return self;
 }
 
--(SeaGullCenturyEvent *)seaGullEvent {
+-(SeaGullRouteModel *)seaGullEvent {
     if (!_seaGullEvent) {
-        _seaGullEvent = [[SeaGullCenturyEvent alloc]init];
+        _seaGullEvent = [[SeaGullRouteModel alloc]init];
     }
     return _seaGullEvent;
 }

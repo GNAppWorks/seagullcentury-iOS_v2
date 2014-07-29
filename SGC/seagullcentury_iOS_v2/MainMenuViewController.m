@@ -10,7 +10,7 @@
 #import "SWRevealViewController.h"
 #import "RouteMapViewController.h"
 
-#import "SeaGullCenturyEvent.h"
+#import "SeaGullRouteModel.h"
 #import "SeaGullRouteManager.h"
 
 @interface MainMenuViewController () <SWRevealViewControllerDelegate, UIGestureRecognizerDelegate>

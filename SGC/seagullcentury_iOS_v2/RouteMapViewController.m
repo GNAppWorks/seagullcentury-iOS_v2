@@ -10,7 +10,7 @@
 #import "Reachability.h"
 #import "SeaGullRouteManager.h"
 
-#import "SeaGullCenturyEvent.h"
+#import "SeaGullRouteModel.h"
 
 
 @interface RouteMapViewController () <UIWebViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
@@ -125,6 +125,7 @@
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     self.webView.scalesPageToFit = YES;
+    
     [self updateButtons];
 }
 
@@ -138,8 +139,13 @@
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    if([error code] == NSURLErrorCancelled) {
+        return;
+    } else {
+        [self informError:error];
+    }
     [self updateButtons];
-    [self informError:error];
+    
 }
 
 #pragma mark - Error Handling

@@ -18,3 +18,9 @@
 #define COCOAPODS_VERSION_MINOR_UIDevice_SupportedDevices 0
 #define COCOAPODS_VERSION_PATCH_UIDevice_SupportedDevices 1
 
+// iRate
+#define COCOAPODS_POD_AVAILABLE_iRate
+#define COCOAPODS_VERSION_MAJOR_iRate 1
+#define COCOAPODS_VERSION_MINOR_iRate 10
+#define COCOAPODS_VERSION_PATCH_iRate 3
+

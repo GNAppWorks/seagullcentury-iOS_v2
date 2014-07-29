@@ -11,9 +11,17 @@
 
 #import "AppDelegate.h"
 #import "Harpy.h"
-
+#import "iRate.h"
 
 @implementation AppDelegate
+
++ (void)initialize
+{
+    //configure iRate
+    [iRate sharedInstance].daysUntilPrompt = 5;
+    [iRate sharedInstance].usesUntilPrompt = 15;
+}
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -35,9 +43,10 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     [self.window makeKeyAndVisible];
-    [[Harpy sharedInstance] setAppID:@"<#896362043#>"];
+    [[Harpy sharedInstance] setAppID:@"896362043"];
     [[Harpy sharedInstance] setAppName:@"Sea Gull Century"];
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
+    
     
     return YES;
 }

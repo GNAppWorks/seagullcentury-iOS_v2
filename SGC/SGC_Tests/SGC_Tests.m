@@ -7,11 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "SeaGullCenturyEvent.h"
+#import "SeaGullRouteModel.h"
 
 @interface SGC_Tests : XCTestCase
 {
-    SeaGullCenturyEvent *route;
+    SeaGullRouteModel *route;
     
     
 }
@@ -24,7 +24,7 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    route = [[SeaGullCenturyEvent alloc]init];
+    route = [[SeaGullRouteModel alloc]init];
     
 }
 
