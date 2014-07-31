@@ -7,7 +7,7 @@ SGC - Sea Gull Century iOS App
 
 [Sea Gull Century's Website](http://www.seagullcentury.org "Sea Gull Century's Homepage")
 
-
+* Make the classes more abstract to follow MVC pattern
 
 Bug Tracker
 -----------
@@ -19,4 +19,3 @@ Ver. 1.0.2
 * ~~Fixed Error message if user cancelled URL request~~
 * ~~Incorporate iRate in to the app~~
 * ~~Correct the typo of the "Seagull Century Route" in the WebView~~
-* Make the classes more abstract to follow MVC pattern
