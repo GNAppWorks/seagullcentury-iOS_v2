@@ -4,11 +4,13 @@ platform :ios, "7.1"
 target "SGC" do
     pod 'Harpy'
     pod 'iRate'
+    pod 'Mapbox-iOS-SDK'
 
 end
 
 target "SGC_Tests" do
     pod 'Harpy'
     pod 'iRate'
+    pod 'Mapbox-iOS-SDK'
 
 end
