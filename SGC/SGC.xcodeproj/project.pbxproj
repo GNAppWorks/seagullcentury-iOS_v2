@@ -26,7 +26,6 @@
 		CAA04D891980A409003D108F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
 		CAA04D8F1980A409003D108F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAA04D8D1980A409003D108F /* InfoPlist.strings */; };
 		CAA04D911980A409003D108F /* SGC_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA04D901980A409003D108F /* SGC_Tests.m */; };
-		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
 		CADB30FC1974C72000B41A17 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADB30FB1974C72000B41A17 /* CoreLocation.framework */; };
 		CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */; };
@@ -82,8 +81,6 @@
 		CAA04D8E1980A409003D108F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAA04D901980A409003D108F /* SGC_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGC_Tests.m; sourceTree = "<group>"; };
 		CAA04D921980A409003D108F /* SGC_Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SGC_Tests-Prefix.pch"; sourceTree = "<group>"; };
-		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CADB30FB1974C72000B41A17 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullRouteManager.h; path = Model/SeaGullRouteManager.h; sourceTree = "<group>"; };
@@ -201,8 +198,6 @@
 			children = (
 				CA79DF6618F76D11008637F9 /* SWRevealViewController.h */,
 				CA79DF6718F76D11008637F9 /* SWRevealViewController.m */,
-				CAD944ED18FEC59200F5BA59 /* Reachability.h */,
-				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
 				CA49C44618F5EE9B0085E101 /* SGC-Info.plist */,
@@ -434,7 +429,6 @@
 				CAED3CBF19212B150069BF7F /* SeaGullRouteModel.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
-				CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */,
 				CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */,
 				CA49C44B18F5EE9B0085E101 /* main.m in Sources */,
 				CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */,

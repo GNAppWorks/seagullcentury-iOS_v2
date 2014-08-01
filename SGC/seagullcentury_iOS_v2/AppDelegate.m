@@ -48,6 +48,7 @@
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
     
     
+    
     return YES;
 }
 							
