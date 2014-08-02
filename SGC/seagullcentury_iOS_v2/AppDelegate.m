@@ -20,8 +20,22 @@
     //configure iRate
     [iRate sharedInstance].daysUntilPrompt = 5;
     [iRate sharedInstance].usesUntilPrompt = 15;
+    [iRate sharedInstance].verboseLogging = NO;
+    
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
+                                sourceApplication:sourceApplication
+                                  fallbackHandler:^(FBAppCall *call) {
+                                      //NSLog(@"Unhandled deep link: %@", url);
+                                      // Here goes the code to handle the links
+                                      // Use the links to show a relevant view of your app to the user
+                                  }];
+    
+    return urlWasHandled;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -46,6 +60,7 @@
     [[Harpy sharedInstance] setAppID:@"896362043"];
     [[Harpy sharedInstance] setAppName:@"Sea Gull Century"];
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
+    
     
     
     

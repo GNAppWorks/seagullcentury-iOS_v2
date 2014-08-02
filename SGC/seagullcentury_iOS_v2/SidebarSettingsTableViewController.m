@@ -19,7 +19,6 @@ static NSString *CellIdentifier = @"SettingsList";
 @property NSUserDefaults *masterSettings;
 @property NSArray *settingsList;
 
--(void)buildView;
 @end
 
 @implementation SidebarSettingsTableViewController
@@ -90,11 +89,9 @@ static NSString *CellIdentifier = @"SettingsList";
         
         cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[self.settingsList objectAtIndex:indexPath.row + 3]];
         
-        
     }
     
     return cell;
-    
     
 }
 
@@ -176,7 +173,7 @@ static NSString *CellIdentifier = @"SettingsList";
             [self.masterSettings setBool:theSwitch.isOn forKey:@"Vendors"];
             break;
         case 2:
-            [self.masterSettings setBool:theSwitch.isOn forKey:@"Waypoints"];
+            [self.masterSettings setBool:theSwitch.isOn forKey:@"Checkpoints"];
             break;
         default:
             break;

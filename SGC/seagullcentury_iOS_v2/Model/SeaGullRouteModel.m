@@ -79,13 +79,13 @@
 
 - (NSString *) getUserSettings {
     
-    int speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
+    int speedSetting = (int)[self.masterSettings boolForKey:@"Speed"];
     int vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
-    int waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
+    int checkpointSetting = (int)[self.masterSettings boolForKey:@"Checkpoints"];
     
     NSString *userSettings = [[NSString alloc]init];
     
-    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSetting, vendorSetting, checkpointSetting];
     
     return userSettings;
     

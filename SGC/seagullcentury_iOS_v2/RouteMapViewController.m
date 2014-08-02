@@ -10,9 +10,6 @@
 #import "SeaGullRouteManager.h"
 #import "AFNetworking.h"
 
-#import "SeaGullRouteModel.h"
-
-
 @interface RouteMapViewController () <UIWebViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;

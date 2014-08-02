@@ -105,7 +105,6 @@
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     
-    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"]) {
         if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
             UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
