@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  SGC
+
+  Created by Brandon Altvater on 8/3/14.
+  Copyright (c) 2014 Seagull Century. All rights reserved.
+*/
+
+"SAG Number" = "telprompt://4105436342";
+
+"Sea Gull Century" = "Sea Gull Century";
+
+"Sorry" = "Sorry";
+"OK" = "OK";
+"Notice" = "Notice";
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+
+"Can't Tweet" = "You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup";
+
+ "Network Change" = "Network Connectivity Change";
+
+"Limited Connection" = "Connectivity is limited in your area. Some features will not work on this application";
+
+"Location Denied" = "Location Services Denied";
+
+"re-enable" = "To re-enable, please go to Settings and turn on Location Service for this app.";
+
+"SAG Button" = "Please take note of how close you are to the nearest rest stop.\n\nIf you are having a medical emergency, please call 911.\nIf you have an urgent need and cannot continue, please contact SAG services by clicking continue.\n\nPLEASE NOTE: Due to the size of the course, it may take a SAG vehicle over an hour to reach you. Your patience is appreciated.";
+
+"Not an iPhone" = "This is not an iPhone and cannot make calls";

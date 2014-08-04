@@ -13,8 +13,8 @@
 @interface RouteMapViewController () <UIWebViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (strong, nonatomic) NSArray *routeToolbar;
-@property (strong, nonatomic) NSArray *webToolbar;
+@property (copy, nonatomic) NSArray *routeToolbar;
+@property (copy, nonatomic) NSArray *webToolbar;
 
 @end
 
@@ -49,10 +49,10 @@
         [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status){
             if (![AFNetworkReachabilityManager sharedManager].isReachable) {
                
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity Change"
-                                                                message:@"Connectivity is limited in your area. Some features will not work on this application"
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Network Change", nil)
+                                                                message:NSLocalizedString(@"Limited Connection", nil)
                                                                delegate:nil
-                                                      cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
                 [alert show];
             }
         }];

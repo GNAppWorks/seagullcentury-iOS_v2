@@ -19,3 +19,4 @@ Ver. 1.0.2
 * ~~Fixed Error message if user cancelled URL request~~
 * ~~Incorporate iRate in to the app~~
 * ~~Correct the typo of the "Seagull Century Route" in the WebView~~
+* ~~Incorporated Faux Pas checking and fixed most errors~~

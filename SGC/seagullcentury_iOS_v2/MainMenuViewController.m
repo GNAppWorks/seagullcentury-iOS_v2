@@ -20,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @property (nonatomic) NSInteger selectedRouteNumber;
-@property (strong, nonatomic) NSURLRequest *urlObject;
+@property (copy, nonatomic) NSURLRequest *urlObject;
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender;
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
@@ -37,10 +37,10 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.revealViewController.delegate = self;
-
-    [self initalSetup];
+    
+   [self initalSetup];
 }
-
+ 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -68,7 +68,7 @@
     self.sidebarButton.target = self.revealViewController;
     self.sidebarButton.action = @selector(revealToggle:);
     
-    self.title = @"Sea Gull Century";
+    self.title = NSLocalizedString(@"Sea Gull Century", nil);
     self.urlObject = [[NSURLRequest alloc]init];
 }
 
@@ -114,11 +114,10 @@
     else
     {
         UIAlertView *alertView = [[UIAlertView alloc]
-                                  initWithTitle:@"Sorry"
-                                  message:@"You can't send a tweet right now, make sure your device has an internet connection and you have at least one Twitter account setup"
+                                  initWithTitle:NSLocalizedString(@"Sorry", nil)
+                                  message:NSLocalizedString(@"Can't Tweet", nil)
                                   delegate:self
-                                  cancelButtonTitle:@"OK"
-                                  otherButtonTitles:nil];
+                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)                                  otherButtonTitles:nil];
         [alertView show];
     }
     
