@@ -3,7 +3,7 @@ SGC - Sea Gull Century iOS App
 
 | Release Version | Build Version |
 |-----------------|---------------|
-| 1.0.1           | 1.0.2         |
+| 1.0.2           | 1.0.3         |
 
 [Sea Gull Century's Website](http://www.seagullcentury.org "Sea Gull Century's Homepage")
 
@@ -20,3 +20,6 @@ Ver. 1.0.2
 * ~~Incorporate iRate in to the app~~
 * ~~Correct the typo of the "Seagull Century Route" in the WebView~~
 * ~~Incorporated Faux Pas checking and fixed most errors~~
+
+Ver. 1.0.3
+* Nothing as of yet
