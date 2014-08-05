@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--Reveal View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="udt-il-vlE"/>
+                        <viewControllerLayoutGuide type="bottom" id="qFZ-EG-Sbq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4Lk-aW-YbZ"/>
+                    <connections>
+                        <segue destination="79B-wp-oci" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="uAQ-Dl-hJr"/>
+                        <segue destination="qfl-Kq-J1G" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="rl1-b0-lrE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="507" y="32"/>
+        </scene>
+        <!--Main Menu View Controller-->
+        <scene sceneID="XHy-nz-110">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="cDH-Yr-avZ" customClass="MainMenuViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o08-Lb-UNF"/>
+                        <viewControllerLayoutGuide type="bottom" id="nKa-XL-TTL"/>
+                    </layoutGuides>
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="V16-9E-BiH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="715"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="905" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-jn-5ck">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="905"/>
+                                <subviews>
+                                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVM-zf-tg1" userLabel="SGC_Logo">
+                                        <rect key="frame" x="15" y="73" width="290" height="256"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="4Kf-6M-h9t"/>
+                                            <constraint firstAttribute="height" constant="256" id="Zsz-ge-gqK"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="SGC_Logo">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnC-Pp-i34" userLabel="SGC_Assateague_Ride">
+                                        <rect key="frame" x="15" y="344" width="290" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Scs-8M-Sp6"/>
+                                            <constraint firstAttribute="width" constant="290" id="cRZ-Mk-GIS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="22"/>
+                                        <size key="titleShadowOffset" width="5" height="5"/>
+                                        <state key="normal" backgroundImage="SGC_Assateague">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="skp-P7-lLh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPN-GA-h51" userLabel="SGC_Snow_Hill">
+                                        <rect key="frame" x="15" y="427" width="290" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="290" id="Dc3-7Y-Rre"/>
+                                            <constraint firstAttribute="height" constant="75" id="yq6-Il-Gwn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="23"/>
+                                        <state key="normal" backgroundImage="SGC_Snow_Hill">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="zmO-eQ-ySM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx1-HZ-S77" userLabel="SGC_Princess_Anne">
+                                        <rect key="frame" x="15" y="510" width="290" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="5aj-yE-PUR"/>
+                                            <constraint firstAttribute="width" constant="290" id="jl6-ep-91b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="21"/>
+                                        <state key="normal" backgroundImage="SGC_Princess_Anne">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="7BF-qM-RFm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1n-Ou-zku" userLabel="SGC_Website">
+                                        <rect key="frame" x="15" y="593" width="290" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="MSF-hG-LAQ"/>
+                                            <constraint firstAttribute="width" constant="290" id="qoH-Cb-7j7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Baskerville-SemiBold" family="Baskerville" pointSize="24"/>
+                                        <state key="normal" backgroundImage="SGC_Website">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="routeSelectMethod:" destination="cDH-Yr-avZ" eventType="touchUpInside" id="S4s-DB-H83"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="D1n-Ou-zku" secondAttribute="bottom" constant="237" id="AjO-bv-bNQ"/>
+                                    <constraint firstItem="D1n-Ou-zku" firstAttribute="top" secondItem="Bx1-HZ-S77" secondAttribute="bottom" constant="8" id="CTz-ya-8Tp"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="top" secondItem="fPN-GA-h51" secondAttribute="bottom" constant="8" id="CrP-h3-lc4"/>
+                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="lnC-Pp-i34" secondAttribute="bottom" constant="8" id="DeP-fd-cU3"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="top" secondItem="fPN-GA-h51" secondAttribute="bottom" constant="8" id="Oyd-Rs-Zu3"/>
+                                    <constraint firstItem="lnC-Pp-i34" firstAttribute="top" secondItem="vVM-zf-tg1" secondAttribute="bottom" constant="15" id="Rbs-Hp-pvl"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="leading" secondItem="lnC-Pp-i34" secondAttribute="leading" id="TTR-8T-gRb"/>
+                                    <constraint firstItem="fPN-GA-h51" firstAttribute="top" secondItem="lnC-Pp-i34" secondAttribute="bottom" constant="8" id="VbY-yj-jHl"/>
+                                    <constraint firstItem="lnC-Pp-i34" firstAttribute="top" secondItem="vVM-zf-tg1" secondAttribute="bottom" constant="15" id="VmP-08-vin"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bx1-HZ-S77" secondAttribute="trailing" constant="15" id="bXx-Cp-xx7"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="leading" secondItem="vVM-zf-tg1" secondAttribute="leading" id="hje-Cf-Nns"/>
+                                    <constraint firstItem="D1n-Ou-zku" firstAttribute="top" secondItem="Bx1-HZ-S77" secondAttribute="bottom" constant="8" id="mm3-IR-4Hp"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="centerX" secondItem="VnH-jn-5ck" secondAttribute="centerX" id="oBQ-iI-aYG"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="leading" secondItem="fPN-GA-h51" secondAttribute="leading" id="oh9-oj-nRq"/>
+                                    <constraint firstItem="vVM-zf-tg1" firstAttribute="top" secondItem="VnH-jn-5ck" secondAttribute="top" constant="73" id="plc-S9-V36"/>
+                                    <constraint firstItem="Bx1-HZ-S77" firstAttribute="leading" secondItem="D1n-Ou-zku" secondAttribute="leading" id="x2H-In-KdU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.77254901960784317" blue="0.3529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VnH-jn-5ck" firstAttribute="top" secondItem="V16-9E-BiH" secondAttribute="top" id="Hnk-Fu-eGu"/>
+                            <constraint firstAttribute="bottom" secondItem="VnH-jn-5ck" secondAttribute="bottom" constant="-190" id="NyJ-tx-JaB"/>
+                            <constraint firstItem="VnH-jn-5ck" firstAttribute="leading" secondItem="V16-9E-BiH" secondAttribute="leading" id="S6d-UY-EwG"/>
+                            <constraint firstAttribute="trailing" secondItem="VnH-jn-5ck" secondAttribute="trailing" id="kvd-jN-o7r"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem image="Facebook 2" id="5c5-NX-XU0">
+                            <connections>
+                                <action selector="facebookShare:" destination="cDH-Yr-avZ" id="uOD-OF-iN4"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="T12-57-eaH"/>
+                        <barButtonItem image="Twitter 2" id="vkx-nH-UAX">
+                            <connections>
+                                <action selector="twitterShare:" destination="cDH-Yr-avZ" id="mFB-GT-SD8"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="PzE-ei-9po">
+                        <barButtonItem key="leftBarButtonItem" image="menu-icon" id="Xbk-WG-WV7"/>
+                        <barButtonItem key="rightBarButtonItem" image="better_info" id="RHZ-Y0-6dm">
+                            <connections>
+                                <segue destination="0EK-ca-zEt" kind="push" id="5jl-T5-fJD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="715"/>
+                    <connections>
+                        <outlet property="mainView" destination="V16-9E-BiH" id="FLr-aB-8IW"/>
+                        <outlet property="scrollView" destination="VnH-jn-5ck" id="HSJ-5N-7be"/>
+                        <outlet property="sidebarButton" destination="Xbk-WG-WV7" id="eTG-mf-dF4"/>
+                        <segue destination="IqD-ea-mZf" kind="push" identifier="toMap" id="PDs-g8-B8m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VyG-m3-GAi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="117"/>
+        </scene>
+        <!--Route Map View Controller-->
+        <scene sceneID="N1J-af-G0w">
+            <objects>
+                <viewController id="IqD-ea-mZf" customClass="RouteMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8bO-Fr-uJP"/>
+                        <viewControllerLayoutGuide type="bottom" id="SLS-k7-o99"/>
+                    </layoutGuides>
+                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="2vr-Ou-6qv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="715"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6t-AE-nCi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="715"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="leading" secondItem="2vr-Ou-6qv" secondAttribute="leading" id="4Y0-o3-oSZ"/>
+                            <constraint firstItem="E6t-AE-nCi" firstAttribute="top" secondItem="2vr-Ou-6qv" secondAttribute="top" id="D8r-Ge-e27"/>
+                            <constraint firstAttribute="bottom" secondItem="E6t-AE-nCi" secondAttribute="bottom" id="k3P-ae-IFb"/>
+                            <constraint firstAttribute="trailing" secondItem="E6t-AE-nCi" secondAttribute="trailing" id="nGv-fk-aSE"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="6HZ-mD-GHs"/>
+                    <size key="freeformSize" width="320" height="715"/>
+                    <connections>
+                        <outlet property="webView" destination="E6t-AE-nCi" id="zhA-xP-Rzc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uki-lP-BV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2414" y="32"/>
+        </scene>
+        <!--View Controller - About-->
+        <scene sceneID="uBO-Mg-hVM">
+            <objects>
+                <viewController title="About" id="0EK-ca-zEt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rmv-My-JS7"/>
+                        <viewControllerLayoutGuide type="bottom" id="xaO-OK-H3e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nzt-F7-NzW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="715"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxh-2f-pev">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="525"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Every fall, an average of 7,000 cyclists participate in Salisbury University’s Sea Gull Century bike ride across the Lower Eastern Shore. Started over 25 years ago, the ride has grown from less than 100 participants in its early years to become “among the largest and now oldest on the East Coast,” said coordinator Amy Waters. The traditional 100-mile Assateague century offers a panoramic view of the Atlantic Ocean and a glimpse of the wild ponies, while the 100-mile Snow Hill century takes cyclists through a quaint Worcester County town, with galleries and beautiful homes. A 62-mile Princess Anne metric route winds through Somerset County.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="h6C-Wt-zD1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l29-AD-XSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2414" y="773"/>
+        </scene>
+        <!--Sidebar Settings Table View Controller - Settings-->
+        <scene sceneID="sLP-M3-Dl5">
+            <objects>
+                <tableViewController id="TOB-1B-m32" customClass="SidebarSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="zPq-hI-DZp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell hidden="YES" tag="1" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SettingsList" id="8AA-IF-dGi">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8AA-IF-dGi" id="kWa-0L-5Uu">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="TOB-1B-m32" id="Nyy-45-y4P"/>
+                            <outlet property="delegate" destination="TOB-1B-m32" id="qE8-tU-YDb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="8Di-Pf-pWg"/>
+                    <connections>
+                        <outlet property="myTableView" destination="zPq-hI-DZp" id="wMI-qN-izJ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Ga-F7-Rdl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1710" y="-757"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KVr-YY-DDG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="qfl-Kq-J1G" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MmE-yI-Qm5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="CS6-Qm-M5S">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="cDH-Yr-avZ" kind="relationship" relationship="rootViewController" id="5b1-mo-rx0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNw-0z-Noo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yC6-V4-BJ9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="79B-wp-oci" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pxs-lV-fDm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TOB-1B-m32" kind="relationship" relationship="rootViewController" id="CuM-CE-kKr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JS6-gi-ny0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1157" y="-757"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Facebook 2" width="25" height="25"/>
+        <image name="SGC_Assateague" width="1208" height="313"/>
+        <image name="SGC_Logo" width="575" height="510"/>
+        <image name="SGC_Princess_Anne" width="1208" height="313"/>
+        <image name="SGC_Snow_Hill" width="1208" height="313"/>
+        <image name="SGC_Website" width="1208" height="313"/>
+        <image name="Twitter 2" width="25" height="25"/>
+        <image name="better_info" width="24" height="24"/>
+        <image name="menu-icon" width="33" height="30"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,5 @@
+#include "Pods-SGC_Tests-Harpy.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/Harpy" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/Harpy" "${PODS_ROOT}/Headers/UIDevice-SupportedDevices" "${PODS_ROOT}/Headers/iRate"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
