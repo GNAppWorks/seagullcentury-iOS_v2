@@ -18,6 +18,10 @@
 *.lock
 profile
 
+##### CocoaPods, AppCode and others
+Pods/
+.idea/
+*.tm_build_errors
 
 ####
 # Xcode temporary files that should never be committed

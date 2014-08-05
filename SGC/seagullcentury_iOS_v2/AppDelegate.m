@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Seagull Century. All rights reserved.
 //
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define ColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 
 #import "AppDelegate.h"
@@ -20,16 +20,31 @@
     //configure iRate
     [iRate sharedInstance].daysUntilPrompt = 5;
     [iRate sharedInstance].usesUntilPrompt = 15;
+    [iRate sharedInstance].verboseLogging = NO;
+    
+    
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    
+    BOOL urlWasHandled = [FBAppCall handleOpenURL:url
+                                sourceApplication:sourceApplication
+                                  fallbackHandler:^(FBAppCall *call) {
+                                      //NSLog(@"Unhandled deep link: %@", url);
+                                      // Here goes the code to handle the links
+                                      // Use the links to show a relevant view of your app to the user
+                                  }];
+    
+    return urlWasHandled;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0X800000)];
-    [[UINavigationBar appearance] setTintColor:UIColorFromRGB(0XF7C55A)];
-    [[UIToolbar appearance] setBarTintColor:UIColorFromRGB(0X800000)];
-    [[UIToolbar appearance] setTintColor:UIColorFromRGB(0XF7C55A)];
+    [[UINavigationBar appearance] setBarTintColor:ColorFromRGB(0X800000)];
+    [[UINavigationBar appearance] setTintColor:ColorFromRGB(0XF7C55A)];
+    [[UIToolbar appearance] setBarTintColor:ColorFromRGB(0X800000)];
+    [[UIToolbar appearance] setTintColor:ColorFromRGB(0XF7C55A)];
 
     NSShadow *shadow = [[NSShadow alloc] init];
     shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
@@ -46,6 +61,8 @@
     [[Harpy sharedInstance] setAppID:@"896362043"];
     [[Harpy sharedInstance] setAppName:@"Sea Gull Century"];
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
+    
+    
     
     
     return YES;

@@ -10,14 +10,12 @@
 
 @interface SeaGullRouteModel ()
 
-@property (strong, nonatomic) NSString *internalPath;
+@property (copy, nonatomic) NSString *internalPath;
 @property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) NSUInteger routeNumber;
 
 
 @property (strong, nonatomic) NSUserDefaults *masterSettings;
-
--(NSString *) getUserSettings;
 
 @end
 
@@ -51,7 +49,7 @@
     if (!_selectRoute) {
         
         for (int i = 0; i < 3; i++) {
-            completeString = [NSString stringWithFormat:@"%@?route=%d&%@", theAbsoluteURLString , i, self.getUserSettings];
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@", theAbsoluteURLString , i, self.retrieveSettings];
             
             NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
             
@@ -62,7 +60,7 @@
         [self.routes removeAllObjects];
         
         for (int i = 0; i < 3; i++) {
-            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.getUserSettings];
+            completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.retrieveSettings];
             
            NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
             
@@ -77,15 +75,15 @@
     return _selectRoute;
 }
 
-- (NSString *) getUserSettings {
+- (NSString *) retrieveSettings {
     
-    int speedSettings = (int)[self.masterSettings boolForKey:@"Speed"];
+    int speedSetting = (int)[self.masterSettings boolForKey:@"Speed"];
     int vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
-    int waypointSetting = (int)[self.masterSettings boolForKey:@"Waypoints"];
+    int checkpointSetting = (int)[self.masterSettings boolForKey:@"Checkpoints"];
     
     NSString *userSettings = [[NSString alloc]init];
     
-    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSettings, vendorSetting, waypointSetting];
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSetting, vendorSetting, checkpointSetting];
     
     return userSettings;
     

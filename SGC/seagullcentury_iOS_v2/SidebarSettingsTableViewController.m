@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Seagull Century. All rights reserved.
 //
 
-#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+#define ColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 static NSString *CellIdentifier = @"SettingsList";
 
@@ -17,9 +17,8 @@ static NSString *CellIdentifier = @"SettingsList";
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
 
 @property NSUserDefaults *masterSettings;
-@property NSArray *settingsList;
+@property (copy, nonatomic)NSArray *settingsList;
 
--(void)buildView;
 @end
 
 @implementation SidebarSettingsTableViewController
@@ -75,7 +74,7 @@ static NSString *CellIdentifier = @"SettingsList";
         
         UISwitch *settingsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
         
-        settingsSwitch.onTintColor = UIColorFromRGB(0X800000);
+        settingsSwitch.onTintColor = ColorFromRGB(0X800000);
         [cell addSubview:settingsSwitch];
         cell.accessoryView = settingsSwitch;
         
@@ -90,18 +89,16 @@ static NSString *CellIdentifier = @"SettingsList";
         
         cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[self.settingsList objectAtIndex:indexPath.row + 3]];
         
-        
     }
     
     return cell;
-    
     
 }
 
 
 - (void)buildView
 {
-    self.settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Checkpoints", nil];
+    self.settingsList = [NSArray arrayWithObjects:NSLocalizedString(@"Speed", nil), NSLocalizedString(@"Vendors", nil), NSLocalizedString(@"Rest Stops", nil), nil];
     
     self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 500) style:UITableViewStyleGrouped];
     
@@ -143,9 +140,7 @@ static NSString *CellIdentifier = @"SettingsList";
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
         if (section == 0){
-            return @"Map View Options";
-        }if (section == 1) {
-            return @"Social Media";
+            return NSLocalizedString(@"Map Options", nil);
         }
     
     return nil;
@@ -155,9 +150,7 @@ static NSString *CellIdentifier = @"SettingsList";
 - (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
     
     if (section == 0){
-        return @"Select which default items you\nwish to see on the map";
-    } if (section == 1){
-        return @"Select which social media site\nyou wish to post to";
+        return NSLocalizedString(@"Default Options", nil);
     }
 
     return nil;
@@ -176,7 +169,7 @@ static NSString *CellIdentifier = @"SettingsList";
             [self.masterSettings setBool:theSwitch.isOn forKey:@"Vendors"];
             break;
         case 2:
-            [self.masterSettings setBool:theSwitch.isOn forKey:@"Waypoints"];
+            [self.masterSettings setBool:theSwitch.isOn forKey:@"Checkpoints"];
             break;
         default:
             break;

@@ -8,33 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		6FD0214DC7114CC7B104E364 /* libPods-SGC_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BAF5D4A85F43609DC5300A /* libPods-SGC_Tests.a */; };
+		7E1A7D7E7C3749ED87CDC18F /* libPods-SGC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */; };
+		CA04A429198C572600349EE5 /* FacebookTwitterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA04A428198C572600349EE5 /* FacebookTwitterHelper.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
+		CA09E344198F193600FCBA53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA09E343198F193600FCBA53 /* Localizable.strings */; };
 		CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */ = {isa = PBXBuildFile; fileRef = CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CA49C44118F5EE9B0085E101 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */; };
 		CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
 		CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA49C44718F5EE9B0085E101 /* InfoPlist.strings */; };
-		CA49C44B18F5EE9B0085E101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44A18F5EE9B0085E101 /* main.m */; };
-		CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44E18F5EE9B0085E101 /* AppDelegate.m */; };
-		CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */; };
+		CA49C44B18F5EE9B0085E101 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44A18F5EE9B0085E101 /* main.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
+		CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C44E18F5EE9B0085E101 /* AppDelegate.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
+		CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4F26FC19016B5F008BC69C /* Social.framework */; };
 		CA5CC8151982731C004C1D3D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5CC8141982731C004C1D3D /* FacebookSDK.framework */; };
-		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; };
-		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; };
-		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; };
+		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
+		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
+		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CAA04D871980A409003D108F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C45D18F5EE9B0085E101 /* XCTest.framework */; };
 		CAA04D881980A409003D108F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CAA04D891980A409003D108F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };
 		CAA04D8F1980A409003D108F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CAA04D8D1980A409003D108F /* InfoPlist.strings */; };
 		CAA04D911980A409003D108F /* SGC_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA04D901980A409003D108F /* SGC_Tests.m */; };
-		CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = CAD944EE18FEC59200F5BA59 /* Reachability.m */; };
 		CAD944F118FEC5DF00F5BA59 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */; };
 		CADB30FC1974C72000B41A17 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADB30FB1974C72000B41A17 /* CoreLocation.framework */; };
-		CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */; };
+		CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CAE71E1018FB44AD0034B23E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAE71E0F18FB44AD0034B23E /* QuartzCore.framework */; };
-		CAED3CBF19212B150069BF7F /* SeaGullRouteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullRouteModel.m */; };
+		CAED3CBF19212B150069BF7F /* SeaGullRouteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullRouteModel.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAED3CC0192137EC0069BF7F /* images.xcassets */; };
 		CAFEDE8F198583440070FEEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45018F5EE9B0085E101 /* Main.storyboard */; };
-		ED2AE3F3241A44C1A786DF2C /* libPods-SGC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,9 @@
 		41F34FA0038249D5B9AA2C5F /* Pods-SGC_Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC_Tests.xcconfig"; path = "Pods/Pods-SGC_Tests.xcconfig"; sourceTree = "<group>"; };
 		62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC.xcconfig"; path = "Pods/Pods-SGC.xcconfig"; sourceTree = "<group>"; };
 		6C7A14B569584F9FAB0B3B2E /* Pods-SGCTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGCTests.xcconfig"; path = "Pods/Pods-SGCTests.xcconfig"; sourceTree = "<group>"; };
+		CA04A427198C572600349EE5 /* FacebookTwitterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookTwitterHelper.h; path = Model/FacebookTwitterHelper.h; sourceTree = "<group>"; };
+		CA04A428198C572600349EE5 /* FacebookTwitterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookTwitterHelper.m; path = Model/FacebookTwitterHelper.m; sourceTree = "<group>"; };
+		CA09E343198F193600FCBA53 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Model/Localizable.strings; sourceTree = "<group>"; };
 		CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "seagullcentury-leaflet"; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* SGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA49C43E18F5EE9B0085E101 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -82,8 +86,6 @@
 		CAA04D8E1980A409003D108F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CAA04D901980A409003D108F /* SGC_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGC_Tests.m; sourceTree = "<group>"; };
 		CAA04D921980A409003D108F /* SGC_Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SGC_Tests-Prefix.pch"; sourceTree = "<group>"; };
-		CAD944ED18FEC59200F5BA59 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		CAD944EE18FEC59200F5BA59 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		CAD944F018FEC5DF00F5BA59 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		CADB30FB1974C72000B41A17 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullRouteManager.h; path = Model/SeaGullRouteManager.h; sourceTree = "<group>"; };
@@ -109,7 +111,7 @@
 				CA5CC8151982731C004C1D3D /* FacebookSDK.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
-				ED2AE3F3241A44C1A786DF2C /* libPods-SGC.a in Frameworks */,
+				7E1A7D7E7C3749ED87CDC18F /* libPods-SGC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +137,9 @@
 				CAED3CBE19212B140069BF7F /* SeaGullRouteModel.m */,
 				CADB30FD1974C9C800B41A17 /* SeaGullRouteManager.h */,
 				CADB30FE1974C9C800B41A17 /* SeaGullRouteManager.m */,
+				CA04A427198C572600349EE5 /* FacebookTwitterHelper.h */,
+				CA04A428198C572600349EE5 /* FacebookTwitterHelper.m */,
+				CA09E343198F193600FCBA53 /* Localizable.strings */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,8 +206,6 @@
 			children = (
 				CA79DF6618F76D11008637F9 /* SWRevealViewController.h */,
 				CA79DF6718F76D11008637F9 /* SWRevealViewController.m */,
-				CAD944ED18FEC59200F5BA59 /* Reachability.h */,
-				CAD944EE18FEC59200F5BA59 /* Reachability.m */,
 				CA49C44D18F5EE9B0085E101 /* AppDelegate.h */,
 				CA49C44E18F5EE9B0085E101 /* AppDelegate.m */,
 				CA49C44618F5EE9B0085E101 /* SGC-Info.plist */,
@@ -344,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA09E344198F193600FCBA53 /* Localizable.strings in Resources */,
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */,
 				CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */,
@@ -430,11 +434,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */,
+				CA04A429198C572600349EE5 /* FacebookTwitterHelper.m in Sources */,
 				CADB30FF1974C9C800B41A17 /* SeaGullRouteManager.m in Sources */,
 				CAED3CBF19212B150069BF7F /* SeaGullRouteModel.m in Sources */,
 				CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */,
 				CA49C44F18F5EE9B0085E101 /* AppDelegate.m in Sources */,
-				CAD944EF18FEC59200F5BA59 /* Reachability.m in Sources */,
 				CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */,
 				CA49C44B18F5EE9B0085E101 /* main.m in Sources */,
 				CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */,
@@ -505,6 +509,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SDKROOT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -544,6 +549,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(SDKROOT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -567,7 +573,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Brandon/Documents/Development/SGC/FacebookSDK,
+					"$(SDKROOT)",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -590,7 +596,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/Brandon/Documents/Development/SGC/FacebookSDK,
+					"$(SDKROOT)",
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

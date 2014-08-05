@@ -96,7 +96,7 @@
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == 1) {
         
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"telprompt://4105436342"]];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:NSLocalizedString(@"SAG Number", nil)]];
     }
 }
 
@@ -105,13 +105,12 @@
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     
-    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"]) {
         if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:@"Location Services Denied"
-                                                          message:@"To re-enable, please go to Settings and turn on Location Service for this app."
+            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Location Denied", nil)
+                                                          message:NSLocalizedString(@"re-enable", nil)
                                                          delegate:nil
-                                                cancelButtonTitle:@"Ok"
+                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                 otherButtonTitles:nil];
             [alert show];
             alert = nil;
@@ -124,20 +123,20 @@
     UIDevice *device = [UIDevice currentDevice];
     if ([[device model] isEqualToString:@"iPhone"] ) {
         
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Notice"
-                                                       message:@"Please take note of how close you are to the nearest rest stop.\n\nIf you are having a medical emergency, please call 911.\nIf you have an urgent need and cannot continue, please contact SAG services by clicking continue.\n\nPLEASE NOTE: Due to the size of the course, it may take a SAG vehicle over an hour to reach you. Your patience is appreciated."
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Notice", nil)
+                                                       message:NSLocalizedString(@"SAG Button", nil)
                                                       delegate:self
-                                             cancelButtonTitle:@"Cancel"
-                                             otherButtonTitles:@"Continue", nil];
+                                             cancelButtonTitle:NSLocalizedString(@"Cancel", nil)
+                                             otherButtonTitles:NSLocalizedString(@"Continue", nil), nil];
         [alert show];
         
         
     }else {
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
-                                                        message:@" This is not an iPhone and cannot make calls"
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Sorry", nil)
+                                                        message:NSLocalizedString(@"Not an iPhone", nil)
                                                        delegate:self
-                                              cancelButtonTitle:@"OK"
+                                              cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                               otherButtonTitles:nil];
         [alert show];
     }

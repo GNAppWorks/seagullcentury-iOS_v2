@@ -7,54 +7,25 @@
 //
 
 #import "RouteMapViewController.h"
-#import "Reachability.h"
 #import "SeaGullRouteManager.h"
-
-#import "SeaGullRouteModel.h"
-
+#import "AFNetworking.h"
 
 @interface RouteMapViewController () <UIWebViewDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
-@property (strong, nonatomic) NSArray *routeToolbar;
-@property (strong, nonatomic) NSArray *webToolbar;
-
-- (void)informError:(NSError*)error;
-
-@property (nonatomic, strong) Reachability *reach;
-@property NetworkStatus network;
-@property (nonatomic, strong) NSURLRequest *finalRequest;
+@property (copy, nonatomic) NSArray *routeToolbar;
+@property (copy, nonatomic) NSArray *webToolbar;
 
 @end
 
 @implementation RouteMapViewController
 
-- (NSArray *) routeToolbar {
-    if (!_routeToolbar)
-    {
-        _routeToolbar = [[NSArray alloc]init];
-    }
-    return _routeToolbar;
-}
-
-- (NSArray *) webToolbar {
-    if (!_webToolbar)
-    {
-        _webToolbar = [[NSArray alloc]init];
-    }
-    return _webToolbar;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    [[NSNotificationCenter defaultCenter] addObserver: self
-                                             selector: @selector(reachabilityChanged:)
-                                                 name: kReachabilityChangedNotification
-                                               object: nil];
-    
     self.webView.delegate = self;
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [self isReachable];
     
     [self.webView loadRequest:self.urlObject];
     [self setupBottomToolbar];
@@ -66,14 +37,33 @@
 -(void) viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    self.reach = [Reachability reachabilityForInternetConnection];
-    [self.reach startNotifier];
-    
     if (self.routeBool) {
         [self.navigationController.toolbar setItems:self.routeToolbar];
     } else {
         [self.navigationController.toolbar setItems:self.webToolbar];
     }
+}
+
+-(void)isReachable {
+    
+        [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status){
+            if (![AFNetworkReachabilityManager sharedManager].isReachable) {
+               
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Network Change", nil)
+                                                                message:NSLocalizedString(@"Limited Connection", nil)
+                                                               delegate:nil
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+                [alert show];
+            }
+        }];
+    
+}
+
+-(void)viewDidDisappear:(BOOL)animated {
+    
+    [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    
 }
 
 -(void) setupBottomToolbar {
@@ -84,30 +74,9 @@
     }
 }
 
-- (void) reachabilityChanged:(NSNotification *) notification {
-    
-    if([self.reach isKindOfClass: [Reachability class]]) {
-        
-        self.network = [self.reach currentReachabilityStatus];
-
-        
-        if (self.network == 0) {
-            
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Connectivity Change"
-                                                            message:@"Connectivity is limited in your area. Some features will not work on this application"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            [alert show];
-            [self.webView loadRequest:self.finalRequest];
-        }
-
-    }
-}
-
 #pragma mark - Updating the UI
 - (void) updateButtons {
     if (!self.routeBool) {
-        
         [[self.webToolbar objectAtIndex:6] setEnabled:self.webView.canGoForward];
         [[self.webToolbar objectAtIndex:0] setEnabled:self.webView.canGoBack];
         [[self.webToolbar objectAtIndex:2] setEnabled:self.webView.loading];
