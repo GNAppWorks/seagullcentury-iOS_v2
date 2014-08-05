@@ -98,7 +98,7 @@ static NSString *CellIdentifier = @"SettingsList";
 
 - (void)buildView
 {
-    self.settingsList = [NSArray arrayWithObjects:@"Speed", @"Vendors", @"Checkpoints", nil];
+    self.settingsList = [NSArray arrayWithObjects:NSLocalizedString(@"Speed", nil), NSLocalizedString(@"Vendors", nil), NSLocalizedString(@"Rest Stops", nil), nil];
     
     self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 500) style:UITableViewStyleGrouped];
     
@@ -140,9 +140,7 @@ static NSString *CellIdentifier = @"SettingsList";
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     
         if (section == 0){
-            return @"Map View Options";
-        }if (section == 1) {
-            return @"Social Media";
+            return NSLocalizedString(@"Map Options", nil);
         }
     
     return nil;
@@ -152,9 +150,7 @@ static NSString *CellIdentifier = @"SettingsList";
 - (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
     
     if (section == 0){
-        return @"Select which default items you\nwish to see on the map";
-    } if (section == 1){
-        return @"Select which social media site\nyou wish to post to";
+        return NSLocalizedString(@"Default Options", nil);
     }
 
     return nil;

@@ -62,6 +62,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     
     [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     
 }
 
