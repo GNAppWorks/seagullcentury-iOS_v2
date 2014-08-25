@@ -99,7 +99,7 @@
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender
 {
-    [[FacebookTwitterHelper sharedInstance] facebookShare:@"http://www.seagullcentury.org"];
+    [[FacebookTwitterHelper sharedInstance] facebookEasyShare:@"http://www.seagullcentury.org"];
 }
 
 - (IBAction)twitterShare:(UIBarButtonItem *)sender {

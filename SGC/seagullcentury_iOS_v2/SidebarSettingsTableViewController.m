@@ -27,6 +27,9 @@ static NSString *CellIdentifier = @"SettingsList";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.masterSettings = [NSUserDefaults standardUserDefaults];
+    [self.masterSettings setBool:YES forKey:@"Speed"];
+    [self.masterSettings setBool:YES forKey:@"Rest Stops"];
     
 }
 
@@ -169,7 +172,7 @@ static NSString *CellIdentifier = @"SettingsList";
             [self.masterSettings setBool:theSwitch.isOn forKey:@"Vendors"];
             break;
         case 2:
-            [self.masterSettings setBool:theSwitch.isOn forKey:@"Checkpoints"];
+            [self.masterSettings setBool:theSwitch.isOn forKey:@"Rest Stops"];
             break;
         default:
             break;
