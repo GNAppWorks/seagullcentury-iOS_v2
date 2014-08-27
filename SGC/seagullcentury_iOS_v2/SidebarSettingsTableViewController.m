@@ -27,9 +27,11 @@ static NSString *CellIdentifier = @"SettingsList";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    /*
     self.masterSettings = [NSUserDefaults standardUserDefaults];
     [self.masterSettings setBool:YES forKey:@"Speed"];
     [self.masterSettings setBool:YES forKey:@"Rest Stops"];
+     */
     
 }
 

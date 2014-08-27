@@ -7,9 +7,7 @@ SGC - Sea Gull Century iOS App
 
 [Sea Gull Century's Website](http://www.seagullcentury.org "Sea Gull Century's Homepage")
 
-* Make the classes more abstract to follow MVC pattern
-
-Bug Tracker
+Version / Bug Tracker
 -----------
 Ver. 1.0.1
 * ~~Fix Phone Number of SAG Wagon~~
@@ -22,7 +20,8 @@ Ver. 1.0.2
 * ~~Incorporated Faux Pas checking and fixed most errors~~
 
 Ver. 1.0.3
-* ~~Fix "Rest Stop" button from being turned off on route selection~~ 
+* ~~Fix "Rest Stop" button from being turned off on route selection~~
 * Fix the front page size so user do not have to scroll down
 * Set default buttons to "on" when loaded
+ * Need to move to [NSUserDefaults] to SeaGullRouteModel.h and .m Singleton
 * Notify user about the use of the app only when stopped
