@@ -22,6 +22,6 @@ Ver. 1.0.2
 Ver. 1.0.3
 * ~~Fix "Rest Stop" button from being turned off on route selection~~
 * Fix the front page size so user do not have to scroll down
-* Set default buttons to "on" when loaded
- * Need to move to [NSUserDefaults] to SeaGullRouteModel.h and .m Singleton
+* ~~Set default buttons to "on" when loaded~~
+ * ~~Need to move to [NSUserDefaults] to Singleton~~
 * Notify user about the use of the app only when stopped

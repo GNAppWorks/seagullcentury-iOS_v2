@@ -15,14 +15,13 @@
 
 + (SeaGullRouteManager*) sharedInstance;
 
+@property (strong, nonatomic) NSUserDefaults *masterSettings;
+
 -(NSArray *) showRouteBottomToolBar;
 -(NSArray *) showWebBottomToolBar:(UIWebView*)webView;
 -(NSURLRequest*) determineCorrectRoute:(NSInteger)number;
 -(BOOL)showCorrectToolbar:(NSInteger)number;
 
--(void) checkLocation;
-
-
-
+-(void)checkLocation;
 
 @end

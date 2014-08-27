@@ -14,7 +14,6 @@
 @property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) NSUInteger routeNumber;
 
-
 @property (strong, nonatomic) NSUserDefaults *masterSettings;
 
 @end
@@ -23,7 +22,7 @@
 
 -(NSUserDefaults *) masterSettings {
     if (!_masterSettings) _masterSettings = [NSUserDefaults standardUserDefaults];
-    
+
     return _masterSettings;
 }
 
@@ -40,7 +39,7 @@
     return _routes;
 }
 
-- (NSArray *) selectRoute {
+-(NSArray *) selectRoute {
     
     NSString *completeString = [[NSString alloc]init];
     NSURL *url = [NSURL fileURLWithPath:self.internalPath];
@@ -75,7 +74,7 @@
     return _selectRoute;
 }
 
-- (NSString *) retrieveSettings {
+-(NSString *) retrieveSettings {
     
     int speedSetting = (int)[self.masterSettings boolForKey:@"Speed"];
     int vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
@@ -84,7 +83,6 @@
     NSString *userSettings = [[NSString alloc]init];
     
     userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSetting, vendorSetting, restStopSettings];
-    
     return userSettings;
     
 }

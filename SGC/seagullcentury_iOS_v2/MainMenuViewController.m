@@ -81,7 +81,6 @@
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlObject = self.urlObject;
-            
             controller.routeBool = [[SeaGullRouteManager sharedInstance]showCorrectToolbar:self.selectedRouteNumber];
             
         }

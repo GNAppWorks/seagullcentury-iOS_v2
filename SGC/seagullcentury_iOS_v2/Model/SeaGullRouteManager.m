@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) SeaGullRouteModel *seaGullEvent;
 
+
 @end
 
 @implementation SeaGullRouteManager
@@ -25,6 +26,16 @@
     });
     return _sharedInstance;
     
+}
+
+-(NSUserDefaults*)masterSettings{
+    if (!_masterSettings){
+        _masterSettings = [NSUserDefaults standardUserDefaults];
+        [_masterSettings setBool:YES forKey:@"Speed"];
+        [_masterSettings setBool:NO forKey:@"Vendors"];
+        [_masterSettings setBool:YES forKey:@"Rest Stops"];
+    }
+    return _masterSettings;
 }
 
 -(id)init {
