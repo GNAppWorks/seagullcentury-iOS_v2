@@ -13,7 +13,7 @@
 
 @interface SeaGullRouteManager : NSObject
 
-+ (SeaGullRouteManager*) sharedInstance;
++(SeaGullRouteManager*) sharedInstance;
 
 @property (strong, nonatomic) NSUserDefaults *masterSettings;
 

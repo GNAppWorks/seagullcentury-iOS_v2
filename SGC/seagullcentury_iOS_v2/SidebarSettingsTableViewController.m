@@ -127,9 +127,7 @@ static NSString *CellIdentifier = @"SettingsList";
 - (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
 
     if (section == 0){
-        return 45.0f;
-    }if (section == 1) {
-        return 45.0f;
+        return 60.0f;
     }
 
     return 0.0f;

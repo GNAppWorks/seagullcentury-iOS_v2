@@ -13,12 +13,12 @@
 
 @property (strong, nonatomic) SeaGullRouteModel *seaGullEvent;
 
-
 @end
 
 @implementation SeaGullRouteManager
 
-+ (SeaGullRouteManager*) sharedInstance {
++(SeaGullRouteManager*) sharedInstance {
+    
     static SeaGullRouteManager *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -30,10 +30,16 @@
 
 -(NSUserDefaults*)masterSettings{
     if (!_masterSettings){
+        
         _masterSettings = [NSUserDefaults standardUserDefaults];
-        [_masterSettings setBool:YES forKey:@"Speed"];
-        [_masterSettings setBool:NO forKey:@"Vendors"];
-        [_masterSettings setBool:YES forKey:@"Rest Stops"];
+        
+        if ([_masterSettings boolForKey:@"Save"] == YES){
+        
+        }else{
+            [_masterSettings setBool:YES forKey:@"Speed"];
+            [_masterSettings setBool:NO forKey:@"Vendors"];
+            [_masterSettings setBool:YES forKey:@"Rest Stops"];
+        }
     }
     return _masterSettings;
 }
@@ -78,7 +84,7 @@
     return toolbar;
 }
 
-- (NSArray *)showWebBottomToolBar:(UIWebView*)webView {
+-(NSArray *)showWebBottomToolBar:(UIWebView*)webView {
     
     UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                   target:self

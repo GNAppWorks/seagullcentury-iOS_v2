@@ -34,7 +34,7 @@
 
 // Sidebar Settings Table View Controller Localized Strings
 "Map Options" = "Map View Options";
-"Default Options" = "Select which items you wish to see\non the map";
+"Default Options" = "Select which items you wish to see\non the map.  Be default Speed and\nRest Stops are on at start up.";
 "Speed" = "Speed";
 "Vendors" = "Vendors";
 "Rest Stops" = "Rest Stops";

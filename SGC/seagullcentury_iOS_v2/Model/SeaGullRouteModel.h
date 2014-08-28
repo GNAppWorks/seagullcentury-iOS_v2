@@ -10,6 +10,6 @@
 
 @interface SeaGullRouteModel : NSObject
 
-@property(copy, nonatomic) NSArray *selectRoute;
+@property (copy, nonatomic) NSArray *selectRoute;
 
 @end

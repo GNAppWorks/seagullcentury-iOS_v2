@@ -106,7 +106,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@" #SGC14"];
+        [tweetSheet setInitialText:@" #SGC"];
         [tweetSheet addImage:[UIImage imageNamed:@"SGC_Logo.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
