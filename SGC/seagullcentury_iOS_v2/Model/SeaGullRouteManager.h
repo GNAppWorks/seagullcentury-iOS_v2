@@ -23,5 +23,6 @@
 -(BOOL)showCorrectToolbar:(NSInteger)number;
 
 -(void)checkLocation;
+-(void)stopLocation;
 
 @end

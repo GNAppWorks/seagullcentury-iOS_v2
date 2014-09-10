@@ -119,20 +119,20 @@
 
 - (void) checkLocation {
     
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"]) {
-        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Location Denied", nil)
-                                                          message:NSLocalizedString(@"re-enable", nil)
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                otherButtonTitles:nil];
-            [alert show];
-            alert = nil;
-        }
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied || ![CLLocationManager locationServicesEnabled]) {
+        UIAlertView *alert= [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Location Denied", nil)
+                                                      message:NSLocalizedString(@"re-enable", nil)
+                                                     delegate:nil
+                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                            otherButtonTitles:nil];
+        [alert show];
+        alert = nil;
     }
+}
+
+-(void)stopLocation{
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    [locationManager stopUpdatingLocation];
 }
 
 #pragma mark - Special Methods
@@ -158,4 +158,7 @@
         [alert show];
     }
 }
+
+
+
 @end

@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "Harpy.h"
 #import "iRate.h"
+#import "SeaGullRouteManager.h"
 
 @implementation AppDelegate
 
@@ -81,6 +82,7 @@
     
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Save"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[SeaGullRouteManager sharedInstance] stopLocation];
     
 }
 

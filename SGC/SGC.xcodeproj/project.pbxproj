@@ -20,6 +20,9 @@
 		CA49C45518F5EE9B0085E101 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA49C45418F5EE9B0085E101 /* MainMenuViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CA4F26FD19016B5F008BC69C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA4F26FC19016B5F008BC69C /* Social.framework */; };
 		CA5CC8151982731C004C1D3D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA5CC8141982731C004C1D3D /* FacebookSDK.framework */; };
+		CA6A29B819C0964B00DA98FB /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = CA6A29B719C0964B00DA98FB /* Location.gpx */; };
+		CA6A29B919C0BC4000DA98FB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CD1968822C00FB16DE /* GameKit.framework */; };
+		CA6A29BA19C0BC4100DA98FB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA8FA3CF1968822F00FB16DE /* StoreKit.framework */; };
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
@@ -71,6 +74,7 @@
 		CA49C45D18F5EE9B0085E101 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA4F26FC19016B5F008BC69C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CA5CC8141982731C004C1D3D /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		CA6A29B719C0964B00DA98FB /* Location.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		CA79DF6618F76D11008637F9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		CA79DF6718F76D11008637F9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		CA79DF6918F773FA008637F9 /* SidebarSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
 				7E1A7D7E7C3749ED87CDC18F /* libPods-SGC.a in Frameworks */,
+				CA6A29B919C0BC4000DA98FB /* GameKit.framework in Frameworks */,
+				CA6A29BA19C0BC4100DA98FB /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +218,7 @@
 				CA49C44718F5EE9B0085E101 /* InfoPlist.strings */,
 				CA49C44A18F5EE9B0085E101 /* main.m */,
 				CA49C44C18F5EE9B0085E101 /* SGC-Prefix.pch */,
+				CA6A29B719C0964B00DA98FB /* Location.gpx */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,7 +312,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Seagull Century";
+				ORGANIZATIONNAME = "Sea Gull Century";
 				TargetAttributes = {
 					CA49C43A18F5EE9B0085E101 = {
 						DevelopmentTeam = J346UW3Q3Y;
@@ -351,6 +358,7 @@
 				CA49C44918F5EE9B0085E101 /* InfoPlist.strings in Resources */,
 				CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */,
 				CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */,
+				CA6A29B819C0964B00DA98FB /* Location.gpx in Resources */,
 				CAFEDE8F198583440070FEEF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,7 +600,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Amy Waters (J346UW3Q3Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -44,7 +44,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[SeaGullRouteManager sharedInstance]checkLocation];
     [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 

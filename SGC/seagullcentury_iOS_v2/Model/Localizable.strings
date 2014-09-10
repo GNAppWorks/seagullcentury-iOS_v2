@@ -30,7 +30,7 @@
 
 "SAG Button" = "Please take note of how close you are to the nearest rest stop.\n\nIf you are having a medical emergency, please call 911.\nIf you have an urgent need and cannot continue, please contact SAG services by clicking continue.\n\nPLEASE NOTE: Due to the size of the course, it may take a SAG vehicle over an hour to reach you. Your patience is appreciated.";
 
-"Not an iPhone" = "This is not an iPhone and cannot make calls";
+"Not an iPhone" = "This is not a device that can make calls";
 
 // Sidebar Settings Table View Controller Localized Strings
 "Map Options" = "Map View Options";

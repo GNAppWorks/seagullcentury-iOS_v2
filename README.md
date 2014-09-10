@@ -24,5 +24,7 @@ Ver. 1.0.3
 * ~~Set default buttons to "on" when loaded~~
  * ~~Need to move to [NSUserDefaults] to Singleton~~
 * ~~Fixed sizing issue for the "About" section~~
+* ~~Update to fix location issue with iOS 8.0 users~~
+* ~~Updated depreciated values~~
 * Notify user about the use of the app only when stopped
 * Fix the front page size so user do not have to scroll down

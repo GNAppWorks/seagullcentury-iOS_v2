@@ -34,11 +34,9 @@
 	<key>FacebookAppID</key>
 	<string>699291063442883</string>
 	<key>FacebookDisplayName</key>
-	<string>Seagull Century</string>
+	<string>Sea Gull Century</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSLocationUsageDescription</key>
-	<string></string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -59,5 +57,7 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We&apos;ll use your location to find you on the route</string>
 </dict>
 </plist>

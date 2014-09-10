@@ -30,8 +30,8 @@
     [self.webView loadRequest:self.urlObject];
     [self setupBottomToolbar];
     [self.navigationController.interactivePopGestureRecognizer setEnabled:NO];
-    [[SeaGullRouteManager sharedInstance]checkLocation];
     
+    [[SeaGullRouteManager sharedInstance]checkLocation];
 }
 
 -(void) viewDidLayoutSubviews {
