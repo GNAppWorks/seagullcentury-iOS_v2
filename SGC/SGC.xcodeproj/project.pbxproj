@@ -26,7 +26,7 @@
 		CA79DF6818F76D11008637F9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6718F76D11008637F9 /* SWRevealViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CA79DF6B18F773FA008637F9 /* SidebarSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6A18F773FA008637F9 /* SidebarSettingsTableViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CA79DF6E18F7762F008637F9 /* RouteMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA79DF6D18F7762F008637F9 /* RouteMapViewController.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
-		CA81FA59199989B10044D670 /* FacebookTwitterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA81FA58199989B10044D670 /* FacebookTwitterHelper.m */; };
+		CA81FA59199989B10044D670 /* FacebookTwitterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA81FA58199989B10044D670 /* FacebookTwitterHelper.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CAA04D871980A409003D108F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C45D18F5EE9B0085E101 /* XCTest.framework */; };
 		CAA04D881980A409003D108F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
 		CAA04D891980A409003D108F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C44218F5EE9B0085E101 /* UIKit.framework */; };

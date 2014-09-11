@@ -59,5 +59,7 @@
 	<false/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>We&apos;ll use your location to find you on the route</string>
+	<key>NSLocationUsageDescription</key>
+	<string>We&apos;ll use your location to find you on the route</string>
 </dict>
 </plist>
