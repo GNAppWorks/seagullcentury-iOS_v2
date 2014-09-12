@@ -26,8 +26,6 @@
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 
-@property NSUserDefaults *masterSettings;
-
 @end
 
 @implementation MainMenuViewController

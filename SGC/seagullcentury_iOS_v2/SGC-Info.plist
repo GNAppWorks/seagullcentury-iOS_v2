@@ -30,13 +30,17 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.3</string>
+	<string>1.0.4</string>
 	<key>FacebookAppID</key>
 	<string>699291063442883</string>
 	<key>FacebookDisplayName</key>
 	<string>Sea Gull Century</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationUsageDescription</key>
+	<string>We'll use your location to find you on the route</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We'll use your location to find you on the route</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -57,9 +61,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We&apos;ll use your location to find you on the route</string>
-	<key>NSLocationUsageDescription</key>
-	<string>We&apos;ll use your location to find you on the route</string>
 </dict>
 </plist>
