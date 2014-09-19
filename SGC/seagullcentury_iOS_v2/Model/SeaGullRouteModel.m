@@ -7,6 +7,7 @@
 //
 
 #import "SeaGullRouteModel.h"
+#import "SeaGullRouteManager.h"
 
 @interface SeaGullRouteModel ()
 
@@ -21,8 +22,11 @@
 @implementation SeaGullRouteModel
 
 -(NSUserDefaults *) masterSettings {
-    if (!_masterSettings) _masterSettings = [NSUserDefaults standardUserDefaults];
+    if (!_masterSettings){
 
+        _masterSettings = [[SeaGullRouteManager sharedInstance] masterSettings];
+    }
+         
     return _masterSettings;
 }
 
@@ -49,7 +53,7 @@
         
         for (int i = 0; i < 3; i++) {
             completeString = [NSString stringWithFormat:@"%@?route=%d&%@", theAbsoluteURLString , i, self.retrieveSettings];
-            
+
             NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
             
             [self.routes addObject:finalURLRequest];
@@ -60,9 +64,8 @@
         
         for (int i = 0; i < 3; i++) {
             completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.retrieveSettings];
-            
-           NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
-            
+            NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
+
             [self.routes addObject:finalURLRequest];
         }
     }
