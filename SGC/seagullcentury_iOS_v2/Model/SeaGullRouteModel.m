@@ -7,13 +7,13 @@
 //
 
 #import "SeaGullRouteModel.h"
+#import "SeaGullRouteManager.h"
 
 @interface SeaGullRouteModel ()
 
 @property (copy, nonatomic) NSString *internalPath;
 @property (strong, nonatomic) NSMutableArray *routes;
 @property (nonatomic) NSUInteger routeNumber;
-
 
 @property (strong, nonatomic) NSUserDefaults *masterSettings;
 
@@ -22,8 +22,11 @@
 @implementation SeaGullRouteModel
 
 -(NSUserDefaults *) masterSettings {
-    if (!_masterSettings) _masterSettings = [NSUserDefaults standardUserDefaults];
-    
+    if (!_masterSettings){
+
+        _masterSettings = [[SeaGullRouteManager sharedInstance] masterSettings];
+    }
+         
     return _masterSettings;
 }
 
@@ -40,7 +43,7 @@
     return _routes;
 }
 
-- (NSArray *) selectRoute {
+-(NSArray *) selectRoute {
     
     NSString *completeString = [[NSString alloc]init];
     NSURL *url = [NSURL fileURLWithPath:self.internalPath];
@@ -50,7 +53,7 @@
         
         for (int i = 0; i < 3; i++) {
             completeString = [NSString stringWithFormat:@"%@?route=%d&%@", theAbsoluteURLString , i, self.retrieveSettings];
-            
+
             NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
             
             [self.routes addObject:finalURLRequest];
@@ -61,9 +64,8 @@
         
         for (int i = 0; i < 3; i++) {
             completeString = [NSString stringWithFormat:@"%@?route=%d&%@",theAbsoluteURLString, i, self.retrieveSettings];
-            
-           NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
-            
+            NSURLRequest *finalURLRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: completeString]];
+
             [self.routes addObject:finalURLRequest];
         }
     }
@@ -75,16 +77,15 @@
     return _selectRoute;
 }
 
-- (NSString *) retrieveSettings {
+-(NSString *) retrieveSettings {
     
     int speedSetting = (int)[self.masterSettings boolForKey:@"Speed"];
     int vendorSetting = (int)[self.masterSettings boolForKey:@"Vendors"];
-    int checkpointSetting = (int)[self.masterSettings boolForKey:@"Checkpoints"];
+    int restStopSettings = (int)[self.masterSettings boolForKey:@"Rest Stops"];
     
     NSString *userSettings = [[NSString alloc]init];
     
-    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSetting, vendorSetting, checkpointSetting];
-    
+    userSettings = [NSString stringWithFormat:@"speed=%d&vendors=%d&waypoint=%d", speedSetting, vendorSetting, restStopSettings];
     return userSettings;
     
 }

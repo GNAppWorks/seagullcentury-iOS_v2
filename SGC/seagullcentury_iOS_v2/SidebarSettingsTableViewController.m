@@ -11,12 +11,11 @@
 static NSString *CellIdentifier = @"SettingsList";
 
 #import "SidebarSettingsTableViewController.h"
+#import "SeaGullRouteManager.h"
 
 @interface SidebarSettingsTableViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *myTableView;
-
-@property NSUserDefaults *masterSettings;
 @property (copy, nonatomic)NSArray *settingsList;
 
 @end
@@ -27,14 +26,14 @@ static NSString *CellIdentifier = @"SettingsList";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self buildView];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,98 +56,96 @@ static NSString *CellIdentifier = @"SettingsList";
     if (section == 0) {
         return 3;
     }
-    
+
     return 2;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.masterSettings =[NSUserDefaults standardUserDefaults];
-    
+
+
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
- 
+
     // Configure the cell...
     if (indexPath.section == 0) {
         cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[self.settingsList objectAtIndex:indexPath.row]];
-        
+
         UISwitch *settingsSwitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-        
+
         settingsSwitch.onTintColor = ColorFromRGB(0X800000);
         [cell addSubview:settingsSwitch];
         cell.accessoryView = settingsSwitch;
-        
-        [(UISwitch *) cell.accessoryView setOn:[self.masterSettings boolForKey:[self.settingsList objectAtIndex:indexPath.row]]];
-        
+
+        [(UISwitch *) cell.accessoryView setOn:[[[SeaGullRouteManager sharedInstance] masterSettings] boolForKey:[self.settingsList objectAtIndex:indexPath.row]]];
+
         [(UISwitch *) cell.accessoryView addTarget:self action:@selector(eventSwitchChanged:) forControlEvents:UIControlEventValueChanged];
-        
+
         cell.accessoryView.tag = [self.settingsList indexOfObject:[self.settingsList objectAtIndex:indexPath.row]];
-        
-        
+
+
     } if (indexPath.section == 1 ){
-        
+
         cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@",[self.settingsList objectAtIndex:indexPath.row + 3]];
-        
+
     }
-    
+
     return cell;
-    
+
 }
 
 
 - (void)buildView
 {
     self.settingsList = [NSArray arrayWithObjects:NSLocalizedString(@"Speed", nil), NSLocalizedString(@"Vendors", nil), NSLocalizedString(@"Rest Stops", nil), nil];
-    
+
     self.myTableView =[[UITableView alloc] initWithFrame:CGRectMake(0, 0, 270, 500) style:UITableViewStyleGrouped];
-    
+
     [self.myTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:CellIdentifier];
-    
+
     self.myTableView.dataSource = self;
     self.myTableView.delegate = self;
     self.myTableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.myTableView.scrollEnabled = NO;
     self.myTableView.allowsSelection = NO;
     [self.view addSubview:self.myTableView];
-     
+
 }
 
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    
+
     if (section == 0){
         return 30.0f;
     }if (section == 1) {
         return 30.0f;
     }
-    
+
     return 0.0f;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    
+
     if (section == 0){
-        return 45.0f;
-    }if (section == 1) {
-        return 45.0f;
+        return 60.0f;
     }
-    
+
     return 0.0f;
-    
+
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    
+
         if (section == 0){
             return NSLocalizedString(@"Map Options", nil);
         }
-    
+
     return nil;
-    
+
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-    
+
     if (section == 0){
         return NSLocalizedString(@"Default Options", nil);
     }
@@ -157,23 +154,23 @@ static NSString *CellIdentifier = @"SettingsList";
 }
 
 -(void) eventSwitchChanged: (id)sender{
-    
+
     UISwitch * theSwitch = (UISwitch *) sender;
     long number = ((UISwitch*) sender).tag;
-    
+
     switch (number) {
         case 0:
-            [self.masterSettings setBool:theSwitch.isOn forKey:@"Speed"];
+            [[[SeaGullRouteManager sharedInstance] masterSettings]setBool:theSwitch.isOn forKey:[self.settingsList objectAtIndex:number]];
             break;
         case 1:
-            [self.masterSettings setBool:theSwitch.isOn forKey:@"Vendors"];
+            [[[SeaGullRouteManager sharedInstance] masterSettings]setBool:theSwitch.isOn forKey:[self.settingsList objectAtIndex:number]];
             break;
         case 2:
-            [self.masterSettings setBool:theSwitch.isOn forKey:@"Checkpoints"];
+            [[[SeaGullRouteManager sharedInstance] masterSettings] setBool:theSwitch.isOn forKey:[self.settingsList objectAtIndex:number]];
             break;
         default:
             break;
     }
-    
+
 }
 @end

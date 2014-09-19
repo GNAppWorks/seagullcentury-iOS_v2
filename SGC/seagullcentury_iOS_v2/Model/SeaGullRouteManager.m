@@ -17,7 +17,8 @@
 
 @implementation SeaGullRouteManager
 
-+ (SeaGullRouteManager*) sharedInstance {
++(SeaGullRouteManager*) sharedInstance {
+    
     static SeaGullRouteManager *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -25,6 +26,22 @@
     });
     return _sharedInstance;
     
+}
+
+-(NSUserDefaults*)masterSettings{
+    if (!_masterSettings){
+        
+        _masterSettings = [NSUserDefaults standardUserDefaults];
+        
+        if ([_masterSettings boolForKey:@"Save"] == YES){
+        
+        }else{
+            [_masterSettings setBool:YES forKey:@"Speed"];
+            [_masterSettings setBool:NO forKey:@"Vendors"];
+            [_masterSettings setBool:YES forKey:@"Rest Stops"];
+        }
+    }
+    return _masterSettings;
 }
 
 -(id)init {
@@ -67,7 +84,7 @@
     return toolbar;
 }
 
-- (NSArray *)showWebBottomToolBar:(UIWebView*)webView {
+-(NSArray *)showWebBottomToolBar:(UIWebView*)webView {
     
     UIBarButtonItem *flexiableItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                   target:self
@@ -102,20 +119,20 @@
 
 - (void) checkLocation {
     
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"userWasAskedForLocationOnce"]) {
-        if ([CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized) {
-            UIAlertView *alert= [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Location Denied", nil)
-                                                          message:NSLocalizedString(@"re-enable", nil)
-                                                         delegate:nil
-                                                cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                otherButtonTitles:nil];
-            [alert show];
-            alert = nil;
-        }
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied || ![CLLocationManager locationServicesEnabled]) {
+        UIAlertView *alert= [[UIAlertView alloc]initWithTitle:NSLocalizedString(@"Location Denied", nil)
+                                                      message:NSLocalizedString(@"re-enable", nil)
+                                                     delegate:nil
+                                            cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                            otherButtonTitles:nil];
+        [alert show];
+        alert = nil;
     }
+}
+
+-(void)stopLocation{
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    [locationManager stopUpdatingLocation];
 }
 
 #pragma mark - Special Methods
@@ -141,4 +158,7 @@
         [alert show];
     }
 }
+
+
+
 @end

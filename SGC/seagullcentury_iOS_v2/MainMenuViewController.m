@@ -26,8 +26,6 @@
 - (IBAction)twitterShare:(UIBarButtonItem *)sender;
 - (IBAction)routeSelectMethod:(UIButton *)sender;
 
-@property NSUserDefaults *masterSettings;
-
 @end
 
 @implementation MainMenuViewController
@@ -44,7 +42,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [[SeaGullRouteManager sharedInstance]checkLocation];
     [self.mainView addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
@@ -81,7 +78,6 @@
                                                                                   target:nil action:nil];
             RouteMapViewController *controller = (RouteMapViewController *) [segue destinationViewController];
             controller.urlObject = self.urlObject;
-            
             controller.routeBool = [[SeaGullRouteManager sharedInstance]showCorrectToolbar:self.selectedRouteNumber];
             
         }
@@ -99,7 +95,7 @@
 
 - (IBAction)facebookShare:(UIBarButtonItem *)sender
 {
-    [[FacebookTwitterHelper sharedInstance] facebookShare:@"http://www.seagullcentury.org"];
+    [[FacebookTwitterHelper sharedInstance] facebookEasyShare:@"http://www.seagullcentury.org"];
 }
 
 - (IBAction)twitterShare:(UIBarButtonItem *)sender {
@@ -107,7 +103,7 @@
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@" #SGC14"];
+        [tweetSheet setInitialText:@" #SGC"];
         [tweetSheet addImage:[UIImage imageNamed:@"SGC_Logo.png"]];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
