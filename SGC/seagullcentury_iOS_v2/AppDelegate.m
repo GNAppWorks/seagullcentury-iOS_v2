@@ -62,6 +62,7 @@
     [[Harpy sharedInstance] setAppID:@"896362043"];
     [[Harpy sharedInstance] setAppName:@"Sea Gull Century"];
     [[Harpy sharedInstance] setAlertType:HarpyAlertTypeForce];
+    [[Harpy sharedInstance] checkVersion];
     
     
     
@@ -95,7 +96,6 @@
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
-    [[Harpy sharedInstance] checkVersionDaily];
     
 }
 
