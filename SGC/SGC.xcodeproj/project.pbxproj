@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6FD0214DC7114CC7B104E364 /* libPods-SGC_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 24BAF5D4A85F43609DC5300A /* libPods-SGC_Tests.a */; };
-		7E1A7D7E7C3749ED87CDC18F /* libPods-SGC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */; };
+		0A2979E6E328539AE7951D38 /* libPods-SGC_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C266B8FF69A610E392E007F2 /* libPods-SGC_Tests.a */; };
 		CA09E344198F193600FCBA53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA09E343198F193600FCBA53 /* Localizable.strings */; };
 		CA2A204B19196DB2003A0F27 /* seagullcentury-leaflet in Resources */ = {isa = PBXBuildFile; fileRef = CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */; };
 		CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA49C43E18F5EE9B0085E101 /* Foundation.framework */; };
@@ -39,6 +38,7 @@
 		CAED3CBF19212B150069BF7F /* SeaGullRouteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CAED3CBE19212B140069BF7F /* SeaGullRouteModel.m */; settings = {COMPILER_FLAGS = "-DNDEBUG"; }; };
 		CAED3CC1192137EC0069BF7F /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAED3CC0192137EC0069BF7F /* images.xcassets */; };
 		CAFEDE8F198583440070FEEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA49C45018F5EE9B0085E101 /* Main.storyboard */; };
+		DB6EF29A397AA8EA037FD9B9 /* libPods-SGC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 69C304DCE0C43DE97083D3CE /* libPods-SGC.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,10 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24BAF5D4A85F43609DC5300A /* libPods-SGC_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGC_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41F34FA0038249D5B9AA2C5F /* Pods-SGC_Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC_Tests.xcconfig"; path = "Pods/Pods-SGC_Tests.xcconfig"; sourceTree = "<group>"; };
-		62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC.xcconfig"; path = "Pods/Pods-SGC.xcconfig"; sourceTree = "<group>"; };
-		6C7A14B569584F9FAB0B3B2E /* Pods-SGCTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGCTests.xcconfig"; path = "Pods/Pods-SGCTests.xcconfig"; sourceTree = "<group>"; };
+		07CC744BE97F8CC8A0C44028 /* Pods-SGC_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGC_Tests/Pods-SGC_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B335229C3F99CFF3A350225 /* Pods-SGC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC.release.xcconfig"; path = "Pods/Target Support Files/Pods-SGC/Pods-SGC.release.xcconfig"; sourceTree = "<group>"; };
+		589CEFED63ADAB5BD0F76320 /* Pods-SGC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SGC_Tests/Pods-SGC_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		69C304DCE0C43DE97083D3CE /* libPods-SGC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C266B8FF69A610E392E007F2 /* libPods-SGC_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGC_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA09E343198F193600FCBA53 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = Model/Localizable.strings; sourceTree = "<group>"; };
 		CA2A204A19196DB2003A0F27 /* seagullcentury-leaflet */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "seagullcentury-leaflet"; sourceTree = "<group>"; };
 		CA49C43B18F5EE9B0085E101 /* SGC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,8 +99,7 @@
 		CAED3CBD19212B140069BF7F /* SeaGullRouteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SeaGullRouteModel.h; path = Model/SeaGullRouteModel.h; sourceTree = "<group>"; };
 		CAED3CBE19212B140069BF7F /* SeaGullRouteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SeaGullRouteModel.m; path = Model/SeaGullRouteModel.m; sourceTree = "<group>"; };
 		CAED3CC0192137EC0069BF7F /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
-		CDDCACD4F04E4AEE9B22C3D9 /* libPods-SGCTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGCTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SGC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4511AD1A75472FB5BCE30E4 /* Pods-SGC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SGC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SGC/Pods-SGC.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,9 +115,9 @@
 				CA5CC8151982731C004C1D3D /* FacebookSDK.framework in Frameworks */,
 				CA49C44318F5EE9B0085E101 /* UIKit.framework in Frameworks */,
 				CA49C43F18F5EE9B0085E101 /* Foundation.framework in Frameworks */,
-				7E1A7D7E7C3749ED87CDC18F /* libPods-SGC.a in Frameworks */,
 				CA6A29B919C0BC4000DA98FB /* GameKit.framework in Frameworks */,
 				CA6A29BA19C0BC4100DA98FB /* StoreKit.framework in Frameworks */,
+				DB6EF29A397AA8EA037FD9B9 /* libPods-SGC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +128,7 @@
 				CAA04D871980A409003D108F /* XCTest.framework in Frameworks */,
 				CAA04D891980A409003D108F /* UIKit.framework in Frameworks */,
 				CAA04D881980A409003D108F /* Foundation.framework in Frameworks */,
-				6FD0214DC7114CC7B104E364 /* libPods-SGC_Tests.a in Frameworks */,
+				0A2979E6E328539AE7951D38 /* libPods-SGC_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,12 +154,10 @@
 			isa = PBXGroup;
 			children = (
 				CA49C43D18F5EE9B0085E101 /* Frameworks */,
-				62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */,
-				6C7A14B569584F9FAB0B3B2E /* Pods-SGCTests.xcconfig */,
 				CA49C43C18F5EE9B0085E101 /* Products */,
 				CA49C44418F5EE9B0085E101 /* Main_Program */,
 				CAA04D8A1980A409003D108F /* Tests */,
-				41F34FA0038249D5B9AA2C5F /* Pods-SGC_Tests.xcconfig */,
+				D0631CEBF7DB689AD0E3C423 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,9 +184,8 @@
 				CA49C44018F5EE9B0085E101 /* CoreGraphics.framework */,
 				CA49C44218F5EE9B0085E101 /* UIKit.framework */,
 				CA49C45D18F5EE9B0085E101 /* XCTest.framework */,
-				FDD2D464B0294F3B95FAE8C9 /* libPods-SGC.a */,
-				CDDCACD4F04E4AEE9B22C3D9 /* libPods-SGCTests.a */,
-				24BAF5D4A85F43609DC5300A /* libPods-SGC_Tests.a */,
+				69C304DCE0C43DE97083D3CE /* libPods-SGC.a */,
+				C266B8FF69A610E392E007F2 /* libPods-SGC_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +260,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D0631CEBF7DB689AD0E3C423 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F4511AD1A75472FB5BCE30E4 /* Pods-SGC.debug.xcconfig */,
+				2B335229C3F99CFF3A350225 /* Pods-SGC.release.xcconfig */,
+				07CC744BE97F8CC8A0C44028 /* Pods-SGC_Tests.debug.xcconfig */,
+				589CEFED63ADAB5BD0F76320 /* Pods-SGC_Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,11 +278,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA49C46D18F5EE9B0085E101 /* Build configuration list for PBXNativeTarget "SGC" */;
 			buildPhases = (
-				5825FE4A2FFC479AA30F5152 /* Check Pods Manifest.lock */,
+				45B2060B3E9C20AA71E4322D /* [CP] Check Pods Manifest.lock */,
 				CA49C43718F5EE9B0085E101 /* Sources */,
 				CA49C43918F5EE9B0085E101 /* Resources */,
 				CA49C43818F5EE9B0085E101 /* Frameworks */,
-				F6344B7D06E64560AB7580AF /* Copy Pods Resources */,
+				7BB0664F197468AB9DDF94C6 /* [CP] Embed Pods Frameworks */,
+				1AFD0007360B1A596221FA5D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -289,11 +298,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA04D951980A409003D108F /* Build configuration list for PBXNativeTarget "SGC_Tests" */;
 			buildPhases = (
-				E7686A0EA85F48E49CC0468A /* Check Pods Manifest.lock */,
+				35282920692727E1279D6962 /* [CP] Check Pods Manifest.lock */,
 				CAA04D821980A408003D108F /* Sources */,
 				CAA04D831980A408003D108F /* Frameworks */,
 				CAA04D841980A408003D108F /* Resources */,
-				FB132CD7889B4BDEB6F856E1 /* Copy Pods Resources */,
+				6AB6D36509D92EAAB5E003D8 /* [CP] Embed Pods Frameworks */,
+				737D186F4683D5DE09A41E2C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,14 +384,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5825FE4A2FFC479AA30F5152 /* Check Pods Manifest.lock */ = {
+		1AFD0007360B1A596221FA5D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGC/Pods-SGC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		35282920692727E1279D6962 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,14 +414,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E7686A0EA85F48E49CC0468A /* Check Pods Manifest.lock */ = {
+		45B2060B3E9C20AA71E4322D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,34 +429,49 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		F6344B7D06E64560AB7580AF /* Copy Pods Resources */ = {
+		6AB6D36509D92EAAB5E003D8 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-SGC-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGC_Tests/Pods-SGC_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FB132CD7889B4BDEB6F856E1 /* Copy Pods Resources */ = {
+		737D186F4683D5DE09A41E2C /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-SGC_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGC_Tests/Pods-SGC_Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BB0664F197468AB9DDF94C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SGC/Pods-SGC-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -573,7 +613,7 @@
 		};
 		CA49C46E18F5EE9B0085E101 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */;
+			baseConfigurationReference = F4511AD1A75472FB5BCE30E4 /* Pods-SGC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -596,7 +636,7 @@
 		};
 		CA49C46F18F5EE9B0085E101 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62174886D69B40EEBF2CCE45 /* Pods-SGC.xcconfig */;
+			baseConfigurationReference = 2B335229C3F99CFF3A350225 /* Pods-SGC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -619,7 +659,7 @@
 		};
 		CAA04D961980A409003D108F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41F34FA0038249D5B9AA2C5F /* Pods-SGC_Tests.xcconfig */;
+			baseConfigurationReference = 07CC744BE97F8CC8A0C44028 /* Pods-SGC_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SGC.app/SGC";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -642,7 +682,7 @@
 		};
 		CAA04D971980A409003D108F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 41F34FA0038249D5B9AA2C5F /* Pods-SGC_Tests.xcconfig */;
+			baseConfigurationReference = 589CEFED63ADAB5BD0F76320 /* Pods-SGC_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SGC.app/SGC";
 				FRAMEWORK_SEARCH_PATHS = (

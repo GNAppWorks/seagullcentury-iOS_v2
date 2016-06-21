@@ -1,11 +1,11 @@
 PODS:
   - AFNetworking (2.4.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
+    - AFNetworking/NSURLConnection (= 2.4.1)
+    - AFNetworking/NSURLSession (= 2.4.1)
+    - AFNetworking/Reachability (= 2.4.1)
+    - AFNetworking/Security (= 2.4.1)
+    - AFNetworking/Serialization (= 2.4.1)
+    - AFNetworking/UIKit (= 2.4.1)
   - AFNetworking/NSURLConnection (2.4.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
@@ -31,9 +31,11 @@ DEPENDENCIES:
   - iRate
 
 SPEC CHECKSUMS:
-  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  Harpy: a466a4a18c5f6ae651aa291ea5aed3ea6443e09f
-  iRate: 40ebea2bb1e88866cef7393bd0abeae232cc5d38
-  UIDevice-SupportedDevices: 6b3dc841285444aeb41ab812bf20b7a205ba091a
+  AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
+  Harpy: 8ea674cc8603bf78274921ffef78e7dba61e3ddc
+  iRate: 724a3e080d5b0681e50a57d6cef1a81f83c23df3
+  UIDevice-SupportedDevices: 6931e7df59723d01d03dbe1faa4c4b5be9409030
 
-COCOAPODS: 0.33.1
+PODFILE CHECKSUM: e1a2fe17f80eba280eb6719d8e9d9293d5b1e328
+
+COCOAPODS: 1.0.1

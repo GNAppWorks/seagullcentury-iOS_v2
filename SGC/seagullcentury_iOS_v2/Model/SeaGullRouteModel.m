@@ -73,7 +73,7 @@
     [self.routes addObject:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.seagullcentury.org"]]];
     
     _selectRoute = [NSArray arrayWithArray:self.routes];
-    
+    NSLog(@"%@", completeString);
     return _selectRoute;
 }
 
